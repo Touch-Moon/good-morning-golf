@@ -48,10 +48,15 @@ export function getLatestRun(): CrawlRun {
 }
 
 export function lowestPrice(c: CourseResult): number | null {
-  const morningSlots = c.slots.filter((s) => s.time < "12:00");
-  const candidates = morningSlots.length > 0 ? morningSlots : c.slots;
-  const prices = candidates.map((s) => s.price).filter((p): p is number => !!p);
-  return prices.length ? Math.min(...prices) : null;
+  const priceOf = (slots: Slot[]) => {
+    const prices = slots.map((s) => s.price).filter((p): p is number => !!p);
+    return prices.length ? Math.min(...prices) : null;
+  };
+  return (
+    priceOf(c.slots.filter((s) => s.time < "12:00")) ??
+    priceOf(c.slots.filter((s) => s.time < "16:00")) ??
+    priceOf(c.slots)
+  );
 }
 
 export function formatTime(hhmm: string): string {
