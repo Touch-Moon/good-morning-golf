@@ -18,7 +18,6 @@ export default async function Home() {
   return (
     <main className={s.main}>
       <header className={s.header}>
-        <p className={s.eyebrow}>이번 주 토요일 티타임</p>
         <h1 className={s.title}>{formatDate(run.target_date)}</h1>
         <p className={s.subtitle}>
           전체 {mergedCourses.length}개 코스 ·{" "}

@@ -13,7 +13,7 @@ const WINNIPEG_OFFSET = "-05:00";
 type CourseSlim = { name: string; slots: string[] };
 
 function buildMessage(courseName: string, times: string[], absent: string[]): string {
-  const lines: string[] = ["이번주"];
+  const lines: string[] = [];
   lines.push(`장소: ${courseName}`);
   if (times.length > 0) {
     lines.push(`시간: ${times.map(formatTime).join(", ")}`);

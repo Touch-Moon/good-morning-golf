@@ -2,20 +2,20 @@ import type { Announcement } from "@/lib/supabase";
 import s from "./AnnouncementBanner.module.scss";
 
 type ParsedLine =
-  | { type: "header"; value: string }
   | { type: "venue"; value: string }
   | { type: "time"; value: string }
   | { type: "attending"; value: string }
   | { type: "text"; value: string };
 
 function parseMessage(message: string): ParsedLine[] {
-  return message.split("\n").map((line): ParsedLine => {
-    if (line.startsWith("장소: "))     return { type: "venue",    value: line.slice(4) };
-    if (line.startsWith("시간: "))     return { type: "time",     value: line.slice(4) };
-    if (line.startsWith("참가인원: "))   return { type: "attending", value: line.slice(6) };
-    if (line.startsWith("미참가인원: ")) return { type: "attending", value: line.slice(7) };
-    if (line === "이번주")              return { type: "header",    value: line };
-    return { type: "text", value: line };
+  return message.split("\n").flatMap((line): ParsedLine[] => {
+    if (line === "이번주")              return [];
+    if (line.startsWith("장소: "))     return [{ type: "venue",    value: line.slice(4) }];
+    if (line.startsWith("시간: "))     return [{ type: "time",     value: line.slice(4) }];
+    if (line.startsWith("참가인원: "))   return [{ type: "attending", value: line.slice(6) }];
+    if (line.startsWith("미참가인원: ")) return [{ type: "attending", value: line.slice(7) }];
+    if (line.trim() === "")            return [];
+    return [{ type: "text", value: line }];
   });
 }
 
@@ -50,9 +50,6 @@ export function AnnouncementBanner({ announcement }: { announcement: Announcemen
     <div className={s.banner} role="alert">
       <div className={s.lines}>
         {lines.map((line, i) => {
-          if (line.type === "header") {
-            return <p key={i} className={s.header}>{line.value}</p>;
-          }
           if (line.type === "text") {
             return <p key={i} className={s.text}>{line.value}</p>;
           }
