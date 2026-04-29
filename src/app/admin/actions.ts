@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 // ─── Course Overrides ─────────────────────────────────────────────────────────
 
@@ -17,7 +17,7 @@ export async function upsertCourseOverride(formData: FormData) {
   const status = statusRaw || null;
   const cart = cartRaw === "" ? null : cartRaw === "true";
 
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from("course_overrides")
     .upsert(
       {
@@ -37,7 +37,7 @@ export async function upsertCourseOverride(formData: FormData) {
 }
 
 export async function toggleOverrideActive(courseName: string, isActive: boolean) {
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from("course_overrides")
     .update({ is_active: isActive })
     .eq("course_name", courseName);
@@ -48,7 +48,7 @@ export async function toggleOverrideActive(courseName: string, isActive: boolean
 }
 
 export async function deleteOverride(courseName: string) {
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from("course_overrides")
     .delete()
     .eq("course_name", courseName);
@@ -69,13 +69,13 @@ export async function upsertAnnouncement(formData: FormData) {
   const payload = { message, is_active: isActive, expires_at: expiresAt };
 
   if (id) {
-    const { error } = await supabaseAdmin
+    const { error } = await supabase
       .from("announcements")
       .update(payload)
       .eq("id", id);
     if (error) throw new Error(error.message);
   } else {
-    const { error } = await supabaseAdmin
+    const { error } = await supabase
       .from("announcements")
       .insert(payload);
     if (error) throw new Error(error.message);
@@ -86,7 +86,7 @@ export async function upsertAnnouncement(formData: FormData) {
 }
 
 export async function deleteAnnouncement(id: string) {
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from("announcements")
     .delete()
     .eq("id", id);
@@ -99,9 +99,9 @@ export async function deleteAnnouncement(id: string) {
 export async function setAnnouncementActive(id: string, isActive: boolean) {
   // Deactivate all first (only one active at a time)
   if (isActive) {
-    await supabaseAdmin.from("announcements").update({ is_active: false }).neq("id", id);
+    await supabase.from("announcements").update({ is_active: false }).neq("id", id);
   }
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from("announcements")
     .update({ is_active: isActive })
     .eq("id", id);

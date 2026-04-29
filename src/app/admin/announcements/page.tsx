@@ -1,5 +1,5 @@
 import { AdminShell } from "@/components/AdminShell";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 import type { Announcement } from "@/lib/supabase";
 import { getLatestRun } from "@/lib/data";
 import { AnnouncementEditor } from "./AnnouncementEditor";
@@ -8,7 +8,7 @@ import s from "./page.module.scss";
 export const dynamic = "force-dynamic";
 
 export default async function AdminAnnouncementsPage() {
-  const { data: announcements } = await supabaseAdmin
+  const { data: announcements } = await supabase
     .from("announcements")
     .select("*")
     .order("created_at", { ascending: false });
