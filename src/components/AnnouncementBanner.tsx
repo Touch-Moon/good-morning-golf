@@ -12,8 +12,9 @@ function parseMessage(message: string): ParsedLine[] {
   return message.split("\n").map((line): ParsedLine => {
     if (line.startsWith("장소: "))     return { type: "venue",    value: line.slice(4) };
     if (line.startsWith("시간: "))     return { type: "time",     value: line.slice(4) };
-    if (line.startsWith("참가인원: ")) return { type: "attending", value: line.slice(6) };
-    if (line === "이번주")             return { type: "header",   value: line };
+    if (line.startsWith("참가인원: "))   return { type: "attending", value: line.slice(6) };
+    if (line.startsWith("미참가인원: ")) return { type: "attending", value: line.slice(7) };
+    if (line === "이번주")              return { type: "header",    value: line };
     return { type: "text", value: line };
   });
 }
