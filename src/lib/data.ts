@@ -48,7 +48,9 @@ export function getLatestRun(): CrawlRun {
 }
 
 export function lowestPrice(c: CourseResult): number | null {
-  const prices = c.slots.map((s) => s.price).filter((p): p is number => !!p);
+  const morningSlots = c.slots.filter((s) => s.time < "12:00");
+  const candidates = morningSlots.length > 0 ? morningSlots : c.slots;
+  const prices = candidates.map((s) => s.price).filter((p): p is number => !!p);
   return prices.length ? Math.min(...prices) : null;
 }
 

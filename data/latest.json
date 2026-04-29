@@ -7,33 +7,98 @@
       "status": "green",
       "slots": [
         {
-          "time": "09:16",
-          "price": null,
+          "time": "13:32",
+          "price": 56.7,
           "is_hot_deal": false
         },
         {
-          "time": "09:24",
-          "price": null,
+          "time": "14:28",
+          "price": 56.7,
           "is_hot_deal": false
         },
         {
-          "time": "11:32",
-          "price": null,
+          "time": "14:44",
+          "price": 56.7,
           "is_hot_deal": false
         },
         {
-          "time": "13:08",
-          "price": null,
+          "time": "14:52",
+          "price": 56.7,
           "is_hot_deal": false
         },
         {
-          "time": "13:16",
-          "price": null,
+          "time": "15:24",
+          "price": 56.7,
           "is_hot_deal": false
         },
         {
-          "time": "16:20",
-          "price": null,
+          "time": "15:32",
+          "price": 56.7,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:40",
+          "price": 56.7,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:40",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:50",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:00",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:10",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:20",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:30",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:40",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:50",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:00",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:10",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:20",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:30",
+          "price": 36.75,
           "is_hot_deal": false
         }
       ],
