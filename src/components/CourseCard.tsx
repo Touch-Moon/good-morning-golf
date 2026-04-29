@@ -9,10 +9,12 @@ export function CourseCard({
   course,
   mode = "card",
   highlight = false,
+  highlightTimes = [],
 }: {
   course: CourseResult;
   mode?: "card" | "list";
   highlight?: boolean;
+  highlightTimes?: string[];
 }) {
   const price = lowestPrice(course);
   const hasSlots = course.slots.length > 0;
@@ -25,7 +27,7 @@ export function CourseCard({
     return (
       <article
         className={s["list-item"]}
-        style={highlight ? { borderColor: "var(--warning)", boxShadow: "0 0 0 1px var(--warning)" } : undefined}
+        style={highlight ? { borderColor: "var(--warning)" } : undefined}
       >
         <div className={s["list-row"]}>
           <div className={s["list-left"]}>
@@ -44,7 +46,11 @@ export function CourseCard({
             {shown.length > 0 && (
               <div className={s.slots}>
                 {shown.map((sl) => (
-                  <span key={sl.time} className={s["slot-tag"]}>
+                  <span
+                    key={sl.time}
+                    className={s["slot-tag"]}
+                    style={highlightTimes.includes(formatTime(sl.time)) ? { borderColor: "var(--warning)", border: "1px solid var(--warning)" } : undefined}
+                  >
                     {formatTime(sl.time)}
                   </span>
                 ))}

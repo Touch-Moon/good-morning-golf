@@ -36,6 +36,13 @@ export default async function Home() {
             .find((l) => l.startsWith("장소: "))
             ?.slice(4).trim() ?? null
         }
+        highlightTimes={
+          announcement?.message
+            .split("\n")
+            .find((l) => l.startsWith("시간: "))
+            ?.slice(4).trim()
+            .split(", ") ?? []
+        }
       />
 
       <footer className={s.footer}>
