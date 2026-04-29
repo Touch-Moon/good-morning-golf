@@ -69,10 +69,13 @@ export function AnnouncementEditor({
       {/* Free-text form */}
       {formMode === "free" && (
         <form className={s.form} onSubmit={handleFreeSubmit}>
-          <h2 className={s["form-title"]}>{editing ? "공지 수정" : "직접 입력"}</h2>
+          <div className={s["form-header"]}>
+            <h2 className={s.title}>{editing ? "공지 수정" : "직접 입력"}</h2>
+            <button type="button" className={s["btn-close"]} onClick={closeForm}>✕</button>
+          </div>
           {editing && <input type="hidden" name="id" value={editing.id} />}
           <input type="hidden" name="is_active" value="false" />
-          <div className={s.field}>
+          <div className={s.section}>
             <label className={s.label}>공지 내용</label>
             <textarea
               className={s.textarea}
