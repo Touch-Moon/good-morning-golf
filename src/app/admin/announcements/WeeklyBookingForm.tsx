@@ -18,8 +18,9 @@ function buildMessage(courseName: string, times: string[], absent: string[]): st
   if (times.length > 0) {
     lines.push(`시간: ${times.map(formatTime).join(", ")}`);
   }
-  if (absent.length > 0) {
-    lines.push(`미참가인원: ${absent.join(", ")}`);
+  const attending = FIXED_MEMBERS.filter((m) => !absent.includes(m));
+  if (attending.length > 0) {
+    lines.push(`참가인원: ${attending.join(", ")}`);
   }
   return lines.join("\n");
 }
