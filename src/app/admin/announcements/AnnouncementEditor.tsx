@@ -73,8 +73,15 @@ export function AnnouncementEditor({
             <h2 className={s.title}>{editing ? "공지 수정" : "직접 입력"}</h2>
             <button type="button" className={s["btn-close"]} onClick={closeForm}>✕</button>
           </div>
-          {editing && <input type="hidden" name="id" value={editing.id} />}
-          <input type="hidden" name="is_active" value="false" />
+          {editing ? (
+            <>
+              <input type="hidden" name="id" value={editing.id} />
+              <input type="hidden" name="is_active" value={String(editing.is_active)} />
+              {editing.expires_at && <input type="hidden" name="expires_at" value={editing.expires_at} />}
+            </>
+          ) : (
+            <input type="hidden" name="is_active" value="false" />
+          )}
           <div className={s.section}>
             <label className={s.label}>공지 내용</label>
             <textarea
