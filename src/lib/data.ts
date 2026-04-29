@@ -41,8 +41,8 @@ export function getLatestRun(): CrawlRun {
   const sorted = [...run.results].sort((a, b) => {
     const s = STATUS_ORDER[a.status] - STATUS_ORDER[b.status];
     if (s !== 0) return s;
-    const ap = lowestPrice(a) ?? a.fallback_price ?? 9999;
-    const bp = lowestPrice(b) ?? b.fallback_price ?? 9999;
+    const ap = lowestPrice(a) ?? 9999;
+    const bp = lowestPrice(b) ?? 9999;
     return ap - bp;
   });
   return { ...run, results: sorted };

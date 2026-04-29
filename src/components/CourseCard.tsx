@@ -50,14 +50,12 @@ export function CourseCard({
           </div>
 
           <div className={s["list-right"]}>
-            {price != null ? (
+            {price != null && (
               <span className={s.price}>
                 ${price.toFixed(0)}
                 <span className={s["price-unit"]}>/인</span>
               </span>
-            ) : course.fallback_price != null ? (
-              <span className={s["price-fallback"]}>~${course.fallback_price}</span>
-            ) : null}
+            )}
             <div className={s["btn-group"]}>
               {course.booking_url && (
                 <a href={course.booking_url} target="_blank" rel="noreferrer" className={s["btn-book"]}>
@@ -107,20 +105,13 @@ export function CourseCard({
         </div>
       )}
 
-      {(price != null || course.fallback_price != null) && (
+      {price != null && (
         <div className={s["card-price-section"]}>
           <span className={s["card-price-label"]}>최저가</span>
-          {price != null ? (
-            <span className={s["card-price"]}>
-              ${price.toFixed(0)}
-              <span className={s["card-price-unit"]}>/인</span>
-            </span>
-          ) : (
-            <span className={s["card-price-fallback"]}>
-              ~${course.fallback_price}
-              <span> /인 (참고가)</span>
-            </span>
-          )}
+          <span className={s["card-price"]}>
+            ${price.toFixed(0)}
+            <span className={s["card-price-unit"]}>/인</span>
+          </span>
         </div>
       )}
 
