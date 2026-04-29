@@ -13,6 +13,7 @@ export function CourseCard({
   mode?: "card" | "list";
 }) {
   const price = lowestPrice(course);
+  const hasSlots = course.slots.length > 0;
   const sortedSlots = [...course.slots].sort((a, b) => a.time.localeCompare(b.time));
   const max = mode === "card" ? SLOTS_MAX_CARD : SLOTS_MAX_LIST;
   const shown = sortedSlots.slice(0, max);
@@ -50,12 +51,14 @@ export function CourseCard({
           </div>
 
           <div className={s["list-right"]}>
-            {price != null && (
+            {price != null ? (
               <span className={s.price}>
                 ${price.toFixed(0)}
                 <span className={s["price-unit"]}>/인</span>
               </span>
-            )}
+            ) : hasSlots ? (
+              <span className={s["price-inquiry"]}>문의</span>
+            ) : null}
             <div className={s["btn-group"]}>
               {course.booking_url && (
                 <a href={course.booking_url} target="_blank" rel="noreferrer" className={s["btn-book"]}>
@@ -105,13 +108,17 @@ export function CourseCard({
         </div>
       )}
 
-      {price != null && (
+      {(price != null || hasSlots) && (
         <div className={s["card-price-section"]}>
           <span className={s["card-price-label"]}>최저가</span>
-          <span className={s["card-price"]}>
-            ${price.toFixed(0)}
-            <span className={s["card-price-unit"]}>/인</span>
-          </span>
+          {price != null ? (
+            <span className={s["card-price"]}>
+              ${price.toFixed(0)}
+              <span className={s["card-price-unit"]}>/인</span>
+            </span>
+          ) : (
+            <span className={s["price-inquiry"]}>문의</span>
+          )}
         </div>
       )}
 
