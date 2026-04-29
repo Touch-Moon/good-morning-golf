@@ -27,7 +27,7 @@ export function CourseCard({
     return (
       <article
         className={s["list-item"]}
-        style={highlight ? { borderColor: "var(--warning)" } : undefined}
+        style={highlight ? { borderColor: "#d1fa66" } : undefined}
       >
         <div className={s["list-row"]}>
           <div className={s["list-left"]}>
@@ -49,7 +49,7 @@ export function CourseCard({
                   <span
                     key={sl.time}
                     className={s["slot-tag"]}
-                    style={highlightTimes.includes(formatTime(sl.time)) ? { borderColor: "var(--warning)", border: "1px solid var(--warning)" } : undefined}
+                    style={highlightTimes.includes(formatTime(sl.time)) ? { borderWidth: "1px", borderStyle: "solid", borderColor: "#d1fa66", background: "#d1fa66", color: "#101b2b" } : undefined}
                   >
                     {formatTime(sl.time)}
                   </span>
