@@ -23,7 +23,10 @@ export function CourseCard({
 
   if (mode === "list") {
     return (
-      <article className={`${s["list-item"]} ${highlight ? s["highlight"] : ""}`}>
+      <article
+        className={s["list-item"]}
+        style={highlight ? { borderColor: "var(--warning)", boxShadow: "0 0 0 1px var(--warning)" } : undefined}
+      >
         <div className={s["list-row"]}>
           <div className={s["list-left"]}>
             <div className={s["list-header"]}>

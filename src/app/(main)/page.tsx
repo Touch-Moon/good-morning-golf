@@ -34,7 +34,7 @@ export default async function Home() {
           announcement?.message
             .split("\n")
             .find((l) => l.startsWith("장소: "))
-            ?.slice(4) ?? null
+            ?.slice(4).trim() ?? null
         }
       />
 
