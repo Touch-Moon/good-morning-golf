@@ -27,7 +27,7 @@ export default async function Home() {
 
       {announcement && (
         <div className={s.announcement}>
-          <AnnouncementBanner announcement={announcement} />
+          <AnnouncementBanner announcement={announcement} bordered />
         </div>
       )}
 

@@ -49,11 +49,11 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-export function AnnouncementBanner({ announcement }: { announcement: Announcement }) {
+export function AnnouncementBanner({ announcement, bordered = false }: { announcement: Announcement; bordered?: boolean }) {
   const lines = parseMessage(announcement.message);
 
   return (
-    <div className={s.banner} role="alert">
+    <div className={bordered ? s["banner-bordered"] : s.banner} role="alert">
       <div className={s.lines}>
         {lines.map((line, i) => {
           if (line.type === "text") {
