@@ -42,11 +42,6 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-const LABELS: Record<string, string> = {
-  venue: "장소",
-  time: "시간",
-  attending: "참가인원",
-};
 
 export function AnnouncementBanner({ announcement }: { announcement: Announcement }) {
   const lines = parseMessage(announcement.message);
@@ -64,7 +59,6 @@ export function AnnouncementBanner({ announcement }: { announcement: Announcemen
           return (
             <div key={i} className={s.row}>
               <span className={s.rowIcon}>{ICONS[line.type]}</span>
-              <span className={s.rowLabel}>{LABELS[line.type]}</span>
               <span className={s.rowValue}>{line.value}</span>
             </div>
           );
