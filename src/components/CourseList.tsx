@@ -36,7 +36,7 @@ export function CourseList({ courses }: { courses: CourseResult[] }) {
         {view === "card" ? (
           <section className={s["card-view"]}>
             {courses.map((c) => (
-              <CourseCard key={c.name} course={c} mode="card" />
+              <CourseCard key={c.name} course={c} mode="list" />
             ))}
           </section>
         ) : (

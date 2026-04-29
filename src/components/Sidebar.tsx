@@ -32,6 +32,15 @@ const NAV_ITEMS = [
 export function Sidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  const closeDrawer = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setOpen(false);
+      setClosing(false);
+    }, 200);
+  };
 
   return (
     <>
@@ -54,17 +63,17 @@ export function Sidebar() {
 
       {/* ── Mobile drawer overlay ── */}
       {open && (
-        <div className={s.overlay} onClick={() => setOpen(false)}>
-          <nav className={s.drawer} onClick={(e) => e.stopPropagation()}>
+        <div className={`${s.overlay}${closing ? ` ${s["overlay--closing"]}` : ""}`} onClick={closeDrawer}>
+          <nav className={`${s.drawer}${closing ? ` ${s["drawer--closing"]}` : ""}`} onClick={(e) => e.stopPropagation()}>
             <div className={s["drawer-header"]}>
-              <div className={s.logo}>
+              <div className={s["drawer-logo"]}>
                 <Image src="/Logo-GMG.svg" alt="GMG Logo" width={40} height={40} className={s["logo-img"]} />
                 <span className={s["logo-text"]}>
                   <span className={s["logo-text-top"]}>Good Morning</span>
                   <span className={s["logo-text-bottom"]}>Golf</span>
                 </span>
               </div>
-              <button className={s["close-btn"]} onClick={() => setOpen(false)} aria-label="닫기">
+              <button className={s["close-btn"]} onClick={closeDrawer} aria-label="닫기">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
@@ -76,7 +85,7 @@ export function Sidebar() {
                   key={item.href}
                   href={item.href}
                   className={`${s["nav-item"]}${pathname === item.href ? ` ${s.active}` : ""}`}
-                  onClick={() => setOpen(false)}
+                  onClick={closeDrawer}
                 >
                   {item.icon}
                   <span className={s["nav-label"]}>{item.label}</span>
