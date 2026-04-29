@@ -2,29 +2,22 @@
   background: color-mix(in srgb, var(--warning) 10%, transparent);
   border: 1px solid color-mix(in srgb, var(--warning) 30%, transparent);
   border-radius: 0.625rem;
-  padding: 0.875rem 1rem;
+  padding: 0.875rem 1.25rem;
   margin-bottom: 1.5rem;
 }
 
 .lines {
   display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-}
-
-.header {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--warning);
-  margin-bottom: 0.125rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem 1.5rem;
 }
 
 .text {
   font-size: 1.125rem;
   color: var(--foreground);
   line-height: 1.5;
+  width: 100%;
 }
 
 .row {
@@ -43,4 +36,5 @@
 .rowValue {
   font-size: 1.125rem;
   color: var(--foreground);
+  font-weight: 500;
 }
