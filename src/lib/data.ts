@@ -6,7 +6,7 @@ export type Slot = {
   is_hot_deal: boolean;
 };
 
-export type Status = "green" | "yellow" | "red" | "error";
+export type Status = "green" | "afternoon" | "yellow" | "red" | "error";
 
 export type CourseResult = {
   name: string;
@@ -30,9 +30,10 @@ export type CrawlRun = {
 
 const STATUS_ORDER: Record<Status, number> = {
   green: 0,
-  yellow: 1,
-  red: 2,
-  error: 3,
+  afternoon: 1,
+  yellow: 2,
+  red: 3,
+  error: 4,
 };
 
 export function getLatestRun(): CrawlRun {
