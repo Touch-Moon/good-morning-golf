@@ -1,0 +1,22 @@
+.main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 64rem;
+  padding: 2rem 1rem;
+
+  @media (min-width: 640px) {
+    padding: 3rem 1.5rem;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+}
+
+.message {
+  font-size: 1.125rem;
+  color: var(--muted);
+}

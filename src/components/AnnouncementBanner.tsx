@@ -9,7 +9,7 @@ type ParsedLine =
 
 function parseMessage(message: string): ParsedLine[] {
   return message.split("\n").flatMap((line): ParsedLine[] => {
-    if (line === "이번주")              return [];
+    if (/^이번\s*주$/.test(line.trim())) return [];
     if (line.startsWith("장소: "))     return [{ type: "venue",    value: line.slice(4) }];
     if (line.startsWith("시간: "))     return [{ type: "time",     value: line.slice(4) }];
     if (line.startsWith("참가인원: "))   return [{ type: "attending", value: line.slice(6) }];
