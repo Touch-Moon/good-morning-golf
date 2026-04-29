@@ -4,8 +4,13 @@
   gap: 1.25rem;
 }
 
-.btn-new {
-  align-self: flex-start;
+.btn-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-weekly {
   background: var(--primary);
   color: var(--foreground);
   border-radius: 0.375rem;
@@ -14,9 +19,20 @@
   font-weight: 500;
   transition: background-color 150ms;
 
-  &:hover {
-    background: var(--primary-hover);
-  }
+  &:hover { background: var(--primary-hover); }
+}
+
+.btn-new {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 0.375rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 150ms;
+
+  &:hover { color: var(--foreground); }
 }
 
 // ─── Form ─────────────────────────────────────────────────────────────────────

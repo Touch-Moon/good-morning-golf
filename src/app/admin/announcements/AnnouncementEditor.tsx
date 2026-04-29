@@ -3,52 +3,70 @@
 import { useState, useTransition } from "react";
 import type { Announcement } from "@/lib/supabase";
 import { upsertAnnouncement, deleteAnnouncement, setAnnouncementActive } from "../actions";
+import { WeeklyBookingForm } from "./WeeklyBookingForm";
 import s from "./AnnouncementEditor.module.scss";
 
-export function AnnouncementEditor({ announcements }: { announcements: Announcement[] }) {
-  const [showForm, setShowForm] = useState(false);
+type CourseSlim = { name: string; slots: string[] };
+
+type FormMode = "weekly" | "free" | null;
+
+export function AnnouncementEditor({
+  announcements,
+  courses,
+}: {
+  announcements: Announcement[];
+  courses: CourseSlim[];
+}) {
+  const [formMode, setFormMode] = useState<FormMode>(null);
   const [editing, setEditing] = useState<Announcement | null>(null);
   const [pending, startTransition] = useTransition();
 
-  function openNew() {
-    setEditing(null);
-    setShowForm(true);
-  }
-
-  function openEdit(a: Announcement) {
-    setEditing(a);
-    setShowForm(true);
-  }
+  function openFree() { setEditing(null); setFormMode("free"); }
+  function openWeekly() { setEditing(null); setFormMode("weekly"); }
+  function openEdit(a: Announcement) { setEditing(a); setFormMode("free"); }
+  function closeForm() { setFormMode(null); setEditing(null); }
 
   function handleDelete(id: string) {
     if (!confirm("공지사항을 삭제할까요?")) return;
-    startTransition(async () => {
-      await deleteAnnouncement(id);
-    });
+    startTransition(async () => { await deleteAnnouncement(id); });
   }
 
   function handleToggle(a: Announcement) {
-    startTransition(async () => {
-      await setAnnouncementActive(a.id, !a.is_active);
-    });
+    startTransition(async () => { await setAnnouncementActive(a.id, !a.is_active); });
   }
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleFreeSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     startTransition(async () => {
       await upsertAnnouncement(fd);
-      setShowForm(false);
-      setEditing(null);
+      closeForm();
     });
   }
 
   return (
     <div className={s.wrap}>
-      {/* New form */}
-      {showForm ? (
-        <form className={s.form} onSubmit={handleSubmit}>
-          <h2 className={s["form-title"]}>{editing ? "공지 수정" : "새 공지 작성"}</h2>
+      {/* Action buttons */}
+      {formMode === null && (
+        <div className={s.btnRow}>
+          <button className={s["btn-weekly"]} onClick={openWeekly}>
+            📅 주간 예약 공지 작성
+          </button>
+          <button className={s["btn-new"]} onClick={openFree}>
+            + 직접 입력
+          </button>
+        </div>
+      )}
+
+      {/* Weekly structured form */}
+      {formMode === "weekly" && (
+        <WeeklyBookingForm courses={courses} onClose={closeForm} />
+      )}
+
+      {/* Free-text form */}
+      {formMode === "free" && (
+        <form className={s.form} onSubmit={handleFreeSubmit}>
+          <h2 className={s["form-title"]}>{editing ? "공지 수정" : "직접 입력"}</h2>
           {editing && <input type="hidden" name="id" value={editing.id} />}
           <input type="hidden" name="is_active" value="false" />
           <div className={s.field}>
@@ -56,24 +74,22 @@ export function AnnouncementEditor({ announcements }: { announcements: Announcem
             <textarea
               className={s.textarea}
               name="message"
-              rows={3}
+              rows={4}
               defaultValue={editing?.message ?? ""}
-              placeholder="예: 이번 주 토요일 오전 6시부터 예약 가능합니다."
+              placeholder="공지 내용을 입력하세요."
               required
             />
           </div>
           <div className={s.actions}>
             <button className={s["btn-save"]} type="submit" disabled={pending}>저장</button>
-            <button className={s["btn-cancel"]} type="button" onClick={() => setShowForm(false)}>취소</button>
+            <button className={s["btn-cancel"]} type="button" onClick={closeForm}>취소</button>
           </div>
         </form>
-      ) : (
-        <button className={s["btn-new"]} onClick={openNew}>+ 새 공지 작성</button>
       )}
 
       {/* List */}
       <div className={s.list}>
-        {announcements.length === 0 && (
+        {announcements.length === 0 && formMode === null && (
           <p className={s.empty}>공지사항이 없습니다.</p>
         )}
         {announcements.map((a) => (
