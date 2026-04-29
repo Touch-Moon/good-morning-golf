@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -30,28 +31,84 @@ const NAV_ITEMS = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   return (
-    <aside className={s.sidebar}>
-      <div className={s.logo}>
-        <Image src="/Logo-GMG.svg" alt="GMG Logo" width={48} height={48} className={s["logo-img"]} />
-        <span className={s["logo-text"]}>
-          <span className={s["logo-text-top"]}>Good Morning</span>
-          <span className={s["logo-text-bottom"]}>Golf</span>
-        </span>
-      </div>
-      <nav className={s.nav}>
-        {NAV_ITEMS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`${s["nav-item"]}${pathname === item.href ? ` ${s.active}` : ""}`}
-          >
-            {item.icon}
-            <span className={s["nav-label"]}>{item.label}</span>
-          </Link>
-        ))}
-      </nav>
-    </aside>
+    <>
+      {/* ── Mobile top header ── */}
+      <header className={s["mobile-header"]}>
+        <div className={s["mobile-logo"]}>
+          <Image src="/Logo-GMG.svg" alt="GMG" width={32} height={32} className={s["logo-img"]} />
+          <span className={s["mobile-logo-text"]}>Good Morning Golf</span>
+        </div>
+        <button
+          className={s.hamburger}
+          onClick={() => setOpen(true)}
+          aria-label="메뉴 열기"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+
+      {/* ── Mobile drawer overlay ── */}
+      {open && (
+        <div className={s.overlay} onClick={() => setOpen(false)}>
+          <nav className={s.drawer} onClick={(e) => e.stopPropagation()}>
+            <div className={s["drawer-header"]}>
+              <div className={s.logo}>
+                <Image src="/Logo-GMG.svg" alt="GMG Logo" width={40} height={40} className={s["logo-img"]} />
+                <span className={s["logo-text"]}>
+                  <span className={s["logo-text-top"]}>Good Morning</span>
+                  <span className={s["logo-text-bottom"]}>Golf</span>
+                </span>
+              </div>
+              <button className={s["close-btn"]} onClick={() => setOpen(false)} aria-label="닫기">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+            <div className={s["drawer-nav"]}>
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`${s["nav-item"]}${pathname === item.href ? ` ${s.active}` : ""}`}
+                  onClick={() => setOpen(false)}
+                >
+                  {item.icon}
+                  <span className={s["nav-label"]}>{item.label}</span>
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </div>
+      )}
+
+      {/* ── Desktop sidebar ── */}
+      <aside className={s.sidebar}>
+        <div className={s.logo}>
+          <Image src="/Logo-GMG.svg" alt="GMG Logo" width={48} height={48} className={s["logo-img"]} />
+          <span className={s["logo-text"]}>
+            <span className={s["logo-text-top"]}>Good Morning</span>
+            <span className={s["logo-text-bottom"]}>Golf</span>
+          </span>
+        </div>
+        <nav className={s.nav}>
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`${s["nav-item"]}${pathname === item.href ? ` ${s.active}` : ""}`}
+            >
+              {item.icon}
+              <span className={s["nav-label"]}>{item.label}</span>
+            </Link>
+          ))}
+        </nav>
+      </aside>
+    </>
   );
 }

@@ -3,10 +3,10 @@
 }
 
 .content {
-  padding-bottom: 4rem; // space for mobile bottom bar
+  padding-top: 3.5rem; // space for mobile top header
 
   @media (min-width: 768px) {
-    padding-bottom: 0;
+    padding-top: 0;
     margin-left: 14rem; // sidebar width
   }
 }
