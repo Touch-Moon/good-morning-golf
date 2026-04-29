@@ -97,7 +97,7 @@ export function WeeklyBookingForm({
       <div className={s.section}>
         <label className={s.label}>장소</label>
         <select
-          className={s.select}
+          className={`${s.select} ${selectedCourse ? s.chosen : ""}`}
           value={selectedCourse}
           onChange={(e) => { setSelectedCourse(e.target.value); setSelectedTimes([]); }}
           required

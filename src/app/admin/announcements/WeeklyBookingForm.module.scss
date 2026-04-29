@@ -73,6 +73,11 @@
   transition: border-color 150ms;
 
   &:focus { outline: none; border-color: var(--success); }
+
+  &.chosen {
+    border-color: var(--success);
+    background: color-mix(in srgb, var(--success) 8%, var(--surface-elevated));
+  }
 }
 
 // ─── Slot grid ────────────────────────────────────────────────────────────────
