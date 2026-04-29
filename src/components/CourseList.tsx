@@ -76,6 +76,9 @@ export function CourseList({ courses }: { courses: CourseResult[] }) {
             aria-haspopup="listbox"
             aria-expanded={dropdownOpen}
           >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M3 6h18M7 12h10M11 18h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
             {filterDot && (
               <span className={s["trigger-dot"]} style={{ background: filterDot }} />
             )}
