@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
-import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
-import s from "./layout.module.scss";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -22,21 +20,10 @@ export const metadata: Metadata = {
   icons: { icon: "/Logo-GMG.svg" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" style={{ fontFamily: "var(--font-plex-sans)" }}
-      className={`${plexSans.variable} ${plexMono.variable}`}
-    >
-      <body>
-        <div className={s.shell}>
-          <Sidebar />
-          <div className={s.content}>{children}</div>
-        </div>
-      </body>
+    <html lang="ko" className={`${plexSans.variable} ${plexMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
