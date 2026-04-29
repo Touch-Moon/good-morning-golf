@@ -24,7 +24,7 @@ const STATUS_DOT_VARS: Record<Status, string> = {
   error:     "var(--muted)",
 };
 
-export function CourseList({ courses }: { courses: CourseResult[] }) {
+export function CourseList({ courses, highlightCourse = null }: { courses: CourseResult[]; highlightCourse?: string | null }) {
   const [view, setView] = useState<ViewMode>("list");
   const [filter, setFilter] = useState<Status | "all">("all");
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -119,13 +119,13 @@ export function CourseList({ courses }: { courses: CourseResult[] }) {
         {view === "card" ? (
           <section className={s["card-view"]}>
             {filtered.map((c) => (
-              <CourseCard key={c.name} course={c} mode="list" />
+              <CourseCard key={c.name} course={c} mode="list" highlight={c.name === highlightCourse} />
             ))}
           </section>
         ) : (
           <section className={s["list-view"]}>
             {filtered.map((c) => (
-              <CourseCard key={c.name} course={c} mode="list" />
+              <CourseCard key={c.name} course={c} mode="list" highlight={c.name === highlightCourse} />
             ))}
           </section>
         )}

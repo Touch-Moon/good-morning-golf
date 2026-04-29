@@ -28,7 +28,15 @@ export default async function Home() {
 
       {announcement && <AnnouncementBanner announcement={announcement} />}
 
-      <CourseList courses={mergedCourses} />
+      <CourseList
+        courses={mergedCourses}
+        highlightCourse={
+          announcement?.message
+            .split("\n")
+            .find((l) => l.startsWith("장소: "))
+            ?.slice(4) ?? null
+        }
+      />
 
       <footer className={s.footer}>
         <p>매주 갱신 · Winnipeg 인근 골프 코스</p>

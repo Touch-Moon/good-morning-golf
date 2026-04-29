@@ -37,6 +37,11 @@
   @extend %card-base;
   padding: 1rem 1.25rem;
   container-type: inline-size;
+
+  &.highlight {
+    border-color: var(--warning);
+    box-shadow: 0 0 0 1px var(--warning);
+  }
 }
 
 .list-row {

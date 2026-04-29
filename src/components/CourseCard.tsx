@@ -8,9 +8,11 @@ const SLOTS_MAX_LIST = 6;
 export function CourseCard({
   course,
   mode = "card",
+  highlight = false,
 }: {
   course: CourseResult;
   mode?: "card" | "list";
+  highlight?: boolean;
 }) {
   const price = lowestPrice(course);
   const hasSlots = course.slots.length > 0;
@@ -21,7 +23,7 @@ export function CourseCard({
 
   if (mode === "list") {
     return (
-      <article className={s["list-item"]}>
+      <article className={`${s["list-item"]} ${highlight ? s["highlight"] : ""}`}>
         <div className={s["list-row"]}>
           <div className={s["list-left"]}>
             <div className={s["list-header"]}>
