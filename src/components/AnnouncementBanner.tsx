@@ -16,7 +16,8 @@ function parseMessage(message: string): ParsedLine[] {
     if (line.startsWith("시간: "))     return [{ type: "time",     value: line.slice(4) }];
     if (line.startsWith("참가인원: "))  return [{ type: "attending", value: line.slice(6) }];
     if (line.startsWith("미참가인원: ")) {
-      const absent = line.slice(7).split(",").map((n) => n.trim()).filter(Boolean);
+      const prefix = "미참가인원: ";
+      const absent = line.slice(prefix.length).split(",").map((n) => n.trim()).filter(Boolean);
       const attending = FIXED_MEMBERS.filter((m) => !absent.includes(m));
       return attending.length > 0 ? [{ type: "attending", value: attending.join(", ") }] : [];
     }

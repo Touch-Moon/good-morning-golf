@@ -121,26 +121,25 @@
 }
 
 .member-btn {
-  border: 1px solid var(--success);
+  border: 1px solid var(--border);
   border-radius: 9999px;
-  background: color-mix(in srgb, var(--success) 15%, transparent);
+  background: var(--surface-elevated);
   padding: 0.375rem 0.875rem;
   font-size: 0.9rem;
-  color: var(--success);
-  font-weight: 500;
+  color: var(--muted);
   cursor: pointer;
   transition: all 150ms;
 
   &:hover {
-    opacity: 0.8;
+    border-color: var(--success);
+    color: var(--foreground);
   }
 
-  &.absent {
-    border-color: var(--border);
-    background: var(--surface-elevated);
-    color: var(--muted);
-    font-weight: 400;
-    text-decoration: line-through;
+  &.attending {
+    border-color: var(--success);
+    background: color-mix(in srgb, var(--success) 15%, transparent);
+    color: var(--success);
+    font-weight: 500;
   }
 }
 

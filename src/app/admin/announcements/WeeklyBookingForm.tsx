@@ -42,7 +42,7 @@ export function WeeklyBookingForm({
 }) {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedTimes, setSelectedTimes] = useState<string[]>([]);
-  const [attendingFixed, setAttendingFixed] = useState<string[]>([...FIXED_MEMBERS]);
+  const [attendingFixed, setAttendingFixed] = useState<string[]>([]);
   const [customAttending, setCustomAttending] = useState("");
   const [pending, startTransition] = useTransition();
 
@@ -145,7 +145,7 @@ export function WeeklyBookingForm({
             <button
               key={name}
               type="button"
-              className={`${s["member-btn"]} ${!attendingFixed.includes(name) ? s.absent : ""}`}
+              className={`${s["member-btn"]} ${attendingFixed.includes(name) ? s.attending : ""}`}
               onClick={() => toggleAttending(name)}
             >
               {name}
