@@ -131,16 +131,15 @@
   transition: all 150ms;
 
   &:hover {
-    border-color: var(--danger);
+    border-color: var(--success);
     color: var(--foreground);
   }
 
-  &.absent {
-    border-color: var(--danger);
-    background: color-mix(in srgb, var(--danger) 12%, transparent);
-    color: var(--danger);
+  &.attending {
+    border-color: var(--success);
+    background: color-mix(in srgb, var(--success) 15%, transparent);
+    color: var(--success);
     font-weight: 500;
-    text-decoration: line-through;
   }
 }
 

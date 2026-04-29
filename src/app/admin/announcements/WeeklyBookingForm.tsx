@@ -12,13 +12,12 @@ const WINNIPEG_OFFSET = "-05:00";
 
 type CourseSlim = { name: string; slots: string[] };
 
-function buildMessage(courseName: string, times: string[], absent: string[]): string {
+function buildMessage(courseName: string, times: string[], attending: string[]): string {
   const lines: string[] = [];
   lines.push(`장소: ${courseName}`);
   if (times.length > 0) {
     lines.push(`시간: ${times.map(formatTime).join(", ")}`);
   }
-  const attending = FIXED_MEMBERS.filter((m) => !absent.includes(m));
   if (attending.length > 0) {
     lines.push(`참가인원: ${attending.join(", ")}`);
   }
@@ -43,20 +42,20 @@ export function WeeklyBookingForm({
 }) {
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedTimes, setSelectedTimes] = useState<string[]>([]);
-  const [absentFixed, setAbsentFixed] = useState<string[]>([]);
-  const [customAbsent, setCustomAbsent] = useState("");
+  const [attendingFixed, setAttendingFixed] = useState<string[]>([...FIXED_MEMBERS]);
+  const [customAttending, setCustomAttending] = useState("");
   const [pending, startTransition] = useTransition();
 
   const courseData = courses.find((c) => c.name === selectedCourse);
   const slots = courseData?.slots ?? [];
 
-  const allAbsent = [
-    ...absentFixed,
-    ...customAbsent.split(",").map((s) => s.trim()).filter(Boolean),
+  const allAttending = [
+    ...attendingFixed,
+    ...customAttending.split(",").map((s) => s.trim()).filter(Boolean),
   ];
 
   const preview = selectedCourse
-    ? buildMessage(selectedCourse, selectedTimes, allAbsent)
+    ? buildMessage(selectedCourse, selectedTimes, allAttending)
     : "";
 
   const expiresAt = buildExpiresAt(targetDate, selectedTimes);
@@ -67,8 +66,8 @@ export function WeeklyBookingForm({
     );
   }
 
-  function toggleAbsent(name: string) {
-    setAbsentFixed((prev) =>
+  function toggleAttending(name: string) {
+    setAttendingFixed((prev) =>
       prev.includes(name) ? prev.filter((x) => x !== name) : [...prev, name]
     );
   }
@@ -136,18 +135,18 @@ export function WeeklyBookingForm({
         )}
       </div>
 
-      {/* Absent members */}
+      {/* Attending members */}
       <div className={s.section}>
         <label className={s.label}>
-          미참가인원 <span className={s["label-hint"]}>(해당되는 인원 선택)</span>
+          참가인원 <span className={s["label-hint"]}>(참가하는 인원 선택)</span>
         </label>
         <div className={s["member-grid"]}>
           {FIXED_MEMBERS.map((name) => (
             <button
               key={name}
               type="button"
-              className={`${s["member-btn"]} ${absentFixed.includes(name) ? s.absent : ""}`}
-              onClick={() => toggleAbsent(name)}
+              className={`${s["member-btn"]} ${attendingFixed.includes(name) ? s.attending : ""}`}
+              onClick={() => toggleAttending(name)}
             >
               {name}
             </button>
@@ -157,8 +156,8 @@ export function WeeklyBookingForm({
           className={s.input}
           type="text"
           placeholder="추가 인원 (쉼표로 구분: 홍길동, 김철수)"
-          value={customAbsent}
-          onChange={(e) => setCustomAbsent(e.target.value)}
+          value={customAttending}
+          onChange={(e) => setCustomAttending(e.target.value)}
         />
       </div>
 
