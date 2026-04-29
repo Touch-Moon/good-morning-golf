@@ -170,6 +170,16 @@
   }
 }
 
+.expires-badge {
+  font-size: 0.8125rem;
+  color: var(--warning);
+
+  &.expired {
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+}
+
 .date {
   font-size: 0.8125rem;
   color: var(--muted);

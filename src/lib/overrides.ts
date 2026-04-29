@@ -3,10 +3,12 @@ import type { CourseResult, Status } from "./data";
 import type { CourseOverride, Announcement } from "./supabase";
 
 export async function getActiveAnnouncement(): Promise<Announcement | null> {
+  const now = new Date().toISOString();
   const { data } = await supabase
     .from("announcements")
     .select("*")
     .eq("is_active", true)
+    .or(`expires_at.is.null,expires_at.gt.${now}`)
     .limit(1)
     .single();
   return data ?? null;

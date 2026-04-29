@@ -13,9 +13,11 @@ type FormMode = "weekly" | "free" | null;
 export function AnnouncementEditor({
   announcements,
   courses,
+  targetDate,
 }: {
   announcements: Announcement[];
   courses: CourseSlim[];
+  targetDate: string;
 }) {
   const [formMode, setFormMode] = useState<FormMode>(null);
   const [editing, setEditing] = useState<Announcement | null>(null);
@@ -60,7 +62,7 @@ export function AnnouncementEditor({
 
       {/* Weekly structured form */}
       {formMode === "weekly" && (
-        <WeeklyBookingForm courses={courses} onClose={closeForm} />
+        <WeeklyBookingForm courses={courses} targetDate={targetDate} onClose={closeForm} />
       )}
 
       {/* Free-text form */}
@@ -92,12 +94,23 @@ export function AnnouncementEditor({
         {announcements.length === 0 && formMode === null && (
           <p className={s.empty}>공지사항이 없습니다.</p>
         )}
-        {announcements.map((a) => (
-          <div key={a.id} className={`${s.item} ${a.is_active ? s.active : ""}`}>
+        {announcements.map((a) => {
+          const isExpired = a.expires_at != null && new Date(a.expires_at) < new Date();
+          return (
+          <div key={a.id} className={`${s.item} ${a.is_active && !isExpired ? s.active : ""}`}>
             <div className={s["item-header"]}>
-              <span className={`${s["active-badge"]} ${a.is_active ? s.on : s.off}`}>
-                {a.is_active ? "활성" : "비활성"}
+              <span className={`${s["active-badge"]} ${a.is_active && !isExpired ? s.on : s.off}`}>
+                {isExpired ? "만료됨" : a.is_active ? "활성" : "비활성"}
               </span>
+              {a.expires_at && (
+                <span className={`${s["expires-badge"]} ${isExpired ? s.expired : ""}`}>
+                  ⏱ {new Date(a.expires_at).toLocaleString("ko-KR", {
+                    timeZone: "America/Winnipeg",
+                    month: "short", day: "numeric",
+                    hour: "2-digit", minute: "2-digit",
+                  })}
+                </span>
+              )}
               <span className={s.date}>
                 {new Date(a.created_at).toLocaleDateString("ko-KR")}
               </span>
@@ -119,7 +132,7 @@ export function AnnouncementEditor({
               </button>
             </div>
           </div>
-        ))}
+        );})}
       </div>
     </div>
   );

@@ -64,17 +64,20 @@ export async function upsertAnnouncement(formData: FormData) {
   const id = formData.get("id") as string | null;
   const message = formData.get("message") as string;
   const isActive = formData.get("is_active") === "true";
+  const expiresAt = (formData.get("expires_at") as string | null) || null;
+
+  const payload = { message, is_active: isActive, expires_at: expiresAt };
 
   if (id) {
     const { error } = await supabaseAdmin
       .from("announcements")
-      .update({ message, is_active: isActive })
+      .update(payload)
       .eq("id", id);
     if (error) throw new Error(error.message);
   } else {
     const { error } = await supabaseAdmin
       .from("announcements")
-      .insert({ message, is_active: isActive });
+      .insert(payload);
     if (error) throw new Error(error.message);
   }
 

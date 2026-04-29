@@ -26,6 +26,7 @@ export default async function AdminAnnouncementsPage() {
       <AnnouncementEditor
         announcements={(announcements ?? []) as Announcement[]}
         courses={courses}
+        targetDate={run.target_date}
       />
     </AdminShell>
   );

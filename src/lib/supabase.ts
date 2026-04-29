@@ -25,6 +25,7 @@ export type Announcement = {
   id: string;
   message: string;
   is_active: boolean;
+  expires_at: string | null;
   created_at: string;
   updated_at: string;
 };

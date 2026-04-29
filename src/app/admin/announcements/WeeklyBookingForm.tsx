@@ -7,13 +7,12 @@ import s from "./WeeklyBookingForm.module.scss";
 
 const FIXED_MEMBERS = ["이금정", "전지호", "박대영", "김기태", "문진철"];
 
+// Winnipeg CDT = UTC-5 (summer)
+const WINNIPEG_OFFSET = "-05:00";
+
 type CourseSlim = { name: string; slots: string[] };
 
-function buildMessage(
-  courseName: string,
-  times: string[],
-  absent: string[]
-): string {
+function buildMessage(courseName: string, times: string[], absent: string[]): string {
   const lines: string[] = ["이번주"];
   lines.push(`장소: ${courseName}`);
   if (times.length > 0) {
@@ -25,11 +24,20 @@ function buildMessage(
   return lines.join("\n");
 }
 
+// Returns ISO UTC string: targetDate + lastTime (HH:mm) in Winnipeg CDT
+function buildExpiresAt(targetDate: string, times: string[]): string | null {
+  if (!targetDate || times.length === 0) return null;
+  const lastTime = [...times].sort().at(-1)!; // "HH:mm"
+  return new Date(`${targetDate}T${lastTime}:00${WINNIPEG_OFFSET}`).toISOString();
+}
+
 export function WeeklyBookingForm({
   courses,
+  targetDate,
   onClose,
 }: {
   courses: CourseSlim[];
+  targetDate: string;
   onClose: () => void;
 }) {
   const [selectedCourse, setSelectedCourse] = useState("");
@@ -50,6 +58,8 @@ export function WeeklyBookingForm({
     ? buildMessage(selectedCourse, selectedTimes, allAbsent)
     : "";
 
+  const expiresAt = buildExpiresAt(targetDate, selectedTimes);
+
   function toggleTime(t: string) {
     setSelectedTimes((prev) =>
       prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t].sort()
@@ -68,6 +78,7 @@ export function WeeklyBookingForm({
     const fd = new FormData();
     fd.set("message", preview);
     fd.set("is_active", "false");
+    if (expiresAt) fd.set("expires_at", expiresAt);
     startTransition(async () => {
       await upsertAnnouncement(fd);
       onClose();
@@ -155,6 +166,16 @@ export function WeeklyBookingForm({
         <div className={s.preview}>
           <p className={s["preview-label"]}>미리보기</p>
           <pre className={s["preview-text"]}>{preview}</pre>
+          {expiresAt && (
+            <p className={s["preview-expires"]}>
+              ⏱ 자동 만료:{" "}
+              {new Date(expiresAt).toLocaleString("ko-KR", {
+                timeZone: "America/Winnipeg",
+                month: "long", day: "numeric",
+                hour: "2-digit", minute: "2-digit",
+              })} (위니펙 시간)
+            </p>
+          )}
         </div>
       )}
 
