@@ -145,7 +145,7 @@ export function WeeklyBookingForm({
             <button
               key={name}
               type="button"
-              className={`${s["member-btn"]} ${attendingFixed.includes(name) ? s.attending : ""}`}
+              className={`${s["member-btn"]} ${!attendingFixed.includes(name) ? s.absent : ""}`}
               onClick={() => toggleAttending(name)}
             >
               {name}

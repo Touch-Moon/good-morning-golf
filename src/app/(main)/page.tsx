@@ -25,7 +25,11 @@ export default async function Home() {
         </p>
       </header>
 
-      {announcement && <AnnouncementBanner announcement={announcement} />}
+      {announcement && (
+        <div className={s.announcement}>
+          <AnnouncementBanner announcement={announcement} />
+        </div>
+      )}
 
       <CourseList
         courses={mergedCourses}

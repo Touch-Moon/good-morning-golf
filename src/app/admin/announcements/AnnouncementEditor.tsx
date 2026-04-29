@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 import type { Announcement } from "@/lib/supabase";
 import { upsertAnnouncement, deleteAnnouncement, setAnnouncementActive } from "../actions";
 import { WeeklyBookingForm } from "./WeeklyBookingForm";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import s from "./AnnouncementEditor.module.scss";
 
 type CourseSlim = { name: string; slots: string[] };
@@ -115,7 +116,7 @@ export function AnnouncementEditor({
                 {new Date(a.created_at).toLocaleDateString("ko-KR")}
               </span>
             </div>
-            <p className={s.message}>{a.message}</p>
+            <AnnouncementBanner announcement={a} />
             <div className={s["item-actions"]}>
               <button
                 className={`${s["btn-toggle"]} ${a.is_active ? s.deactivate : s.activate}`}
