@@ -1,0 +1,12 @@
+.shell {
+  min-height: 100vh;
+}
+
+.content {
+  padding-bottom: 4rem; // space for mobile bottom bar
+
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+    margin-left: 14rem; // sidebar width
+  }
+}

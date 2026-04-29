@@ -1,18 +1,19 @@
 import type { Status } from "@/lib/data";
+import s from "./StatusBadge.module.scss";
 
 const STATUS_MAP: Record<Status, { label: string; dot: string; text: string }> = {
-  green: { label: "예약 가능", dot: "bg-success", text: "text-success" },
-  yellow: { label: "접속 불가", dot: "bg-warning", text: "text-warning" },
-  red: { label: "슬롯 없음", dot: "bg-danger", text: "text-danger" },
-  error: { label: "수집 오류", dot: "bg-muted", text: "text-muted" },
+  green:  { label: "예약 가능", dot: s["dot-success"], text: s["text-success"] },
+  yellow: { label: "접속 불가", dot: s["dot-warning"], text: s["text-warning"] },
+  red:    { label: "슬롯 없음", dot: s["dot-danger"],  text: s["text-danger"] },
+  error:  { label: "수집 오류", dot: s["dot-muted"],   text: s["text-muted"] },
 };
 
 export function StatusBadge({ status }: { status: Status }) {
-  const s = STATUS_MAP[status];
+  const m = STATUS_MAP[status];
   return (
-    <span className="inline-flex items-center gap-1.5 text-xs font-medium">
-      <span className={`h-2 w-2 rounded-full ${s.dot}`} aria-hidden />
-      <span className={s.text}>{s.label}</span>
+    <span className={s.badge}>
+      <span className={`${s.dot} ${m.dot}`} aria-hidden />
+      <span className={m.text}>{m.label}</span>
     </span>
   );
 }

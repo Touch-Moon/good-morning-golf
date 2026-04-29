@@ -101,7 +101,7 @@ export function CourseTable({ courses }: { courses: CourseResult[] }) {
                   {c.phone && (
                     <a
                       href={`tel:${c.phone.replace(/[^0-9+]/g, "")}`}
-                      className="ml-1.5 inline-flex items-center justify-center rounded-md border border-border bg-surface-elevated px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-muted"
+                      className="ml-1.5 inline-flex items-center justify-center rounded-md bg-[#D1FA66] px-3 py-1.5 text-xs font-medium text-[#101B2B] transition-colors hover:bg-[#bfe04f]"
                     >
                       📞
                     </a>

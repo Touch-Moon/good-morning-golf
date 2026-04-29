@@ -1,0 +1,60 @@
+.toolbar {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggle-group {
+  display: inline-flex;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.25rem;
+}
+
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 150ms, background-color 150ms;
+  color: var(--muted);
+
+  &:hover {
+    color: var(--foreground);
+  }
+
+  &.active {
+    background: var(--surface-elevated);
+    color: var(--foreground);
+  }
+}
+
+.content {
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
