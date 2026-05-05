@@ -12,17 +12,17 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:16",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:48",
           "price": null,
           "is_hot_deal": false
         },
         {
           "time": "13:08",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:16",
           "price": null,
           "is_hot_deal": false
         }
@@ -32,9 +32,18 @@
       "phone": "(204) 261-4653",
       "booking_url": "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=RIOA&FromCourseWebsite=true",
       "cart_mandatory": false,
-      "consecutive_slots": [],
+      "consecutive_slots": [
+        [
+          {
+            "time": "13:08"
+          },
+          {
+            "time": "13:16"
+          }
+        ]
+      ],
       "earliest_slot": "09:24",
-      "earliest_2team": null
+      "earliest_2team": "13:08 + 13:16"
     },
     {
       "name": "Lorette Golf Course",
@@ -569,16 +578,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "16:27",
-          "price": 49.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "16:36",
-          "price": 49.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "16:45",
           "price": 49.0,
           "is_hot_deal": false
@@ -784,22 +783,6 @@
           },
           {
             "time": "15:51"
-          }
-        ],
-        [
-          {
-            "time": "16:27"
-          },
-          {
-            "time": "16:36"
-          }
-        ],
-        [
-          {
-            "time": "16:36"
-          },
-          {
-            "time": "16:45"
           }
         ],
         [
@@ -1228,11 +1211,6 @@
         },
         {
           "time": "10:45",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:15",
           "price": null,
           "is_hot_deal": false
         },
