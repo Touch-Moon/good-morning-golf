@@ -2,12 +2,14 @@ import { AdminShell } from "@/components/AdminShell";
 import { supabase } from "@/lib/supabase";
 import { getLatestRun } from "@/lib/data";
 import type { CourseOverride } from "@/lib/supabase";
+import { requireAdmin } from "@/lib/auth";
 import { CourseOverrideRow } from "./CourseOverrideRow";
 import s from "./page.module.scss";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminCoursesPage() {
+  await requireAdmin();
   const run = getLatestRun();
   const { data: overrides } = await supabase
     .from("course_overrides")

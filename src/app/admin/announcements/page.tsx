@@ -2,12 +2,14 @@ import { AdminShell } from "@/components/AdminShell";
 import { supabase } from "@/lib/supabase";
 import type { Announcement } from "@/lib/supabase";
 import { getLatestRun } from "@/lib/data";
+import { requireAdmin } from "@/lib/auth";
 import { AnnouncementEditor } from "./AnnouncementEditor";
 import s from "./page.module.scss";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminAnnouncementsPage() {
+  await requireAdmin();
   const { data: announcements } = await supabase
     .from("announcements")
     .select("*")
