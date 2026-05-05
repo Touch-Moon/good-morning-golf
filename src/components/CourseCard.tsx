@@ -1,9 +1,14 @@
-import { type CourseResult, formatTime, lowestPrice } from "@/lib/data";
+import { type CourseResult, formatTime, lowestPrice, priceRange, discountTimes } from "@/lib/data";
 import { StatusBadge } from "./StatusBadge";
 import s from "./CourseCard.module.scss";
 
 const SLOTS_MAX_CARD = 8;
 const SLOTS_MAX_LIST = 6;
+
+function formatPriceRange(range: { min: number; max: number }): string {
+  if (range.min === range.max) return `$${Math.round(range.min)}`;
+  return `$${Math.round(range.min)}~$${Math.round(range.max)}`;
+}
 
 export function CourseCard({
   course,
@@ -17,6 +22,8 @@ export function CourseCard({
   highlightTimes?: string[];
 }) {
   const price = lowestPrice(course);
+  const range = priceRange(course);
+  const discountSet = discountTimes(course.slots);
   const hasSlots = course.slots.length > 0;
   const sortedSlots = [...course.slots].sort((a, b) => a.time.localeCompare(b.time));
   const max = mode === "card" ? SLOTS_MAX_CARD : SLOTS_MAX_LIST;
@@ -45,15 +52,22 @@ export function CourseCard({
             </div>
             {shown.length > 0 && (
               <div className={s.slots}>
-                {shown.map((sl) => (
-                  <span
-                    key={sl.time}
-                    className={s["slot-tag"]}
-                    style={highlightTimes.includes(formatTime(sl.time)) ? { borderWidth: "1px", borderStyle: "solid", borderColor: "#d1fa66", background: "#d1fa66", color: "#101b2b" } : undefined}
-                  >
-                    {formatTime(sl.time)}
-                  </span>
-                ))}
+                {shown.map((sl) => {
+                  const isDiscount = discountSet.has(sl.time);
+                  const isHighlighted = highlightTimes.includes(formatTime(sl.time));
+                  return (
+                    <span
+                      key={sl.time}
+                      className={[s["slot-tag"], isDiscount ? s["slot-discount"] : ""].filter(Boolean).join(" ")}
+                      style={isHighlighted ? { borderWidth: "1px", borderStyle: "solid", borderColor: "#d1fa66", background: "#d1fa66", color: "#101b2b" } : undefined}
+                    >
+                      <span className={s["slot-time"]}>{formatTime(sl.time)}</span>
+                      {sl.price !== null && (
+                        <span className={s["slot-price"]}>${Math.round(sl.price)}</span>
+                      )}
+                    </span>
+                  );
+                })}
                 {remaining > 0 && (
                   <span className={s["slot-more"]}>+{remaining}</span>
                 )}
@@ -62,7 +76,12 @@ export function CourseCard({
           </div>
 
           <div className={s["list-right"]}>
-            {price != null ? (
+            {range != null ? (
+              <span className={s.price}>
+                {formatPriceRange(range)}
+                <span className={s["price-unit"]}>/인</span>
+              </span>
+            ) : price != null ? (
               <span className={s.price}>
                 ${price.toFixed(0)}
                 <span className={s["price-unit"]}>/인</span>
@@ -107,11 +126,20 @@ export function CourseCard({
         <div className={s["card-slots-section"]}>
           <div className={s["card-slots-label"]}>티타임</div>
           <div className={s["card-slots-list"]}>
-            {shown.map((sl) => (
-              <span key={sl.time} className={s["card-slot-tag"]}>
-                {formatTime(sl.time)}
-              </span>
-            ))}
+            {shown.map((sl) => {
+              const isDiscount = discountSet.has(sl.time);
+              return (
+                <span
+                  key={sl.time}
+                  className={[s["card-slot-tag"], isDiscount ? s["slot-discount"] : ""].filter(Boolean).join(" ")}
+                >
+                  <span className={s["slot-time"]}>{formatTime(sl.time)}</span>
+                  {sl.price !== null && (
+                    <span className={s["slot-price"]}>${Math.round(sl.price)}</span>
+                  )}
+                </span>
+              );
+            })}
             {remaining > 0 && (
               <span className={s["card-slot-more"]}>+{remaining}</span>
             )}
@@ -119,10 +147,17 @@ export function CourseCard({
         </div>
       )}
 
-      {(price != null || hasSlots) && (
+      {(range != null || price != null || hasSlots) && (
         <div className={s["card-price-section"]}>
-          <span className={s["card-price-label"]}>최저가</span>
-          {price != null ? (
+          <span className={s["card-price-label"]}>
+            {range && range.min !== range.max ? "가격대" : "최저가"}
+          </span>
+          {range != null ? (
+            <span className={s["card-price"]}>
+              {formatPriceRange(range)}
+              <span className={s["card-price-unit"]}>/인</span>
+            </span>
+          ) : price != null ? (
             <span className={s["card-price"]}>
               ${price.toFixed(0)}
               <span className={s["card-price-unit"]}>/인</span>

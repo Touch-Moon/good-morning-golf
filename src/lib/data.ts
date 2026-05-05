@@ -60,6 +60,22 @@ export function lowestPrice(c: CourseResult): number | null {
   );
 }
 
+export function priceRange(c: CourseResult): { min: number; max: number } | null {
+  const prices = c.slots.map((s) => s.price).filter((p): p is number => p !== null);
+  if (prices.length === 0) return null;
+  return { min: Math.min(...prices), max: Math.max(...prices) };
+}
+
+// 최저가가 2개 미만인 경우(단 1개) 할인 슬롯으로 간주 → 오렌지 하이라이트
+export function discountTimes(slots: Slot[]): Set<string> {
+  const priced = slots.filter((s): s is Slot & { price: number } => s.price !== null);
+  if (priced.length === 0) return new Set();
+  const minPrice = Math.min(...priced.map((s) => s.price));
+  const minSlots = priced.filter((s) => s.price === minPrice);
+  if (minSlots.length < 2) return new Set(minSlots.map((s) => s.time));
+  return new Set();
+}
+
 export function formatTime(hhmm: string): string {
   const [h, m] = hhmm.split(":").map(Number);
   const period = h >= 12 ? "PM" : "AM";

@@ -61,8 +61,6 @@
   flex: 1;
 }
 
-.list-header {}
-
 .status-badge-container {
   display: flex;
   align-items: center;
@@ -101,6 +99,26 @@
 
 .slot-tag {
   @extend %slot-tag-base;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.slot-time {
+  line-height: 1.2;
+}
+
+.slot-price {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.slot-discount {
+  border: 1.5px solid #f97316 !important;
+  box-shadow: 0 0 0 1px #f97316 !important;
 }
 
 .slot-more {
