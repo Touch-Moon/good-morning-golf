@@ -409,16 +409,257 @@
     {
       "name": "Bridges Golf Course",
       "source": "individual",
-      "status": "red",
-      "slots": [],
+      "status": "green",
+      "slots": [
+        {
+          "time": "07:36",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "07:45",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "07:54",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "08:12",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "08:30",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "08:39",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "08:57",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "09:24",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "09:33",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "10:00",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "10:09",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "10:45",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:12",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:24",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:51",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:00",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:18",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:27",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:36",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:45",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:54",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:30",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:39",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:48",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:57",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:15",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:24",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:33",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:42",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:51",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:27",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:54",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:03",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:12",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:21",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:30",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:39",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:48",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:57",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:06",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:15",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:24",
+          "price": 49.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:33",
+          "price": 49.0,
+          "is_hot_deal": false
+        }
+      ],
       "fallback_price": 85,
       "distance_km": 45,
       "phone": "(204) 735-3000",
       "booking_url": "https://bridgesgccan.cps.golf/onlineresweb/search-teetime?TeeOffTimeMin=0&TeeOffTimeMax=23.999722222222225",
       "cart_mandatory": true,
-      "consecutive_slots": [],
-      "earliest_slot": null,
-      "earliest_2team": null
+      "consecutive_slots": [
+        [
+          {
+            "time": "07:36"
+          },
+          {
+            "time": "07:45"
+          }
+        ],
+        [
+          {
+            "time": "07:45"
+          },
+          {
+            "time": "07:54"
+          }
+        ],
+        [
+          {
+            "time": "08:30"
+          },
+          {
+            "time": "08:39"
+          }
+        ]
+      ],
+      "earliest_slot": "07:36",
+      "earliest_2team": "07:36 + 07:45"
     },
     {
       "name": "Larters at St. Andrews Golf Course",
