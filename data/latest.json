@@ -2085,11 +2085,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "13:27",
-          "price": 69.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:36",
           "price": 69.0,
           "is_hot_deal": false
@@ -2259,22 +2254,6 @@
           },
           {
             "time": "13:00"
-          }
-        ],
-        [
-          {
-            "time": "13:18"
-          },
-          {
-            "time": "13:27"
-          }
-        ],
-        [
-          {
-            "time": "13:27"
-          },
-          {
-            "time": "13:36"
           }
         ],
         [
@@ -4683,16 +4662,397 @@
     {
       "name": "Bel Acres Golf and Country Club",
       "source": "individual",
-      "status": "red",
-      "slots": [],
+      "status": "green",
+      "slots": [
+        {
+          "time": "11:14",
+          "price": 55.2380952381,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:24",
+          "price": 55.2380952381,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:33",
+          "price": 55.2380952381,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:43",
+          "price": 55.2380952381,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:08",
+          "price": 55.2380952381,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:43",
+          "price": 55.2380952381,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:53",
+          "price": 55.2380952381,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:02",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:12",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:21",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:31",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:40",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:50",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:59",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:09",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:18",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:28",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:37",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:47",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:56",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:06",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:15",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:25",
+          "price": 50.4761904762,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:34",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:44",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:53",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:03",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:12",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:22",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:31",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:41",
+          "price": 42.8571428571,
+          "is_hot_deal": false
+        }
+      ],
       "fallback_price": 65,
       "distance_km": 24,
       "phone": "(204) 632-8337",
       "booking_url": "https://belacres.cps.golf/",
       "cart_mandatory": false,
-      "consecutive_slots": [],
-      "earliest_slot": null,
-      "earliest_2team": null
+      "consecutive_slots": [
+        [
+          {
+            "time": "11:14"
+          },
+          {
+            "time": "11:24"
+          }
+        ],
+        [
+          {
+            "time": "11:24"
+          },
+          {
+            "time": "11:33"
+          }
+        ],
+        [
+          {
+            "time": "11:33"
+          },
+          {
+            "time": "11:43"
+          }
+        ],
+        [
+          {
+            "time": "14:43"
+          },
+          {
+            "time": "14:53"
+          }
+        ],
+        [
+          {
+            "time": "14:53"
+          },
+          {
+            "time": "15:02"
+          }
+        ],
+        [
+          {
+            "time": "15:02"
+          },
+          {
+            "time": "15:12"
+          }
+        ],
+        [
+          {
+            "time": "15:12"
+          },
+          {
+            "time": "15:21"
+          }
+        ],
+        [
+          {
+            "time": "15:21"
+          },
+          {
+            "time": "15:31"
+          }
+        ],
+        [
+          {
+            "time": "15:31"
+          },
+          {
+            "time": "15:40"
+          }
+        ],
+        [
+          {
+            "time": "15:40"
+          },
+          {
+            "time": "15:50"
+          }
+        ],
+        [
+          {
+            "time": "15:50"
+          },
+          {
+            "time": "15:59"
+          }
+        ],
+        [
+          {
+            "time": "15:59"
+          },
+          {
+            "time": "16:09"
+          }
+        ],
+        [
+          {
+            "time": "16:09"
+          },
+          {
+            "time": "16:18"
+          }
+        ],
+        [
+          {
+            "time": "16:18"
+          },
+          {
+            "time": "16:28"
+          }
+        ],
+        [
+          {
+            "time": "16:28"
+          },
+          {
+            "time": "16:37"
+          }
+        ],
+        [
+          {
+            "time": "16:37"
+          },
+          {
+            "time": "16:47"
+          }
+        ],
+        [
+          {
+            "time": "16:47"
+          },
+          {
+            "time": "16:56"
+          }
+        ],
+        [
+          {
+            "time": "16:56"
+          },
+          {
+            "time": "17:06"
+          }
+        ],
+        [
+          {
+            "time": "17:06"
+          },
+          {
+            "time": "17:15"
+          }
+        ],
+        [
+          {
+            "time": "17:15"
+          },
+          {
+            "time": "17:25"
+          }
+        ],
+        [
+          {
+            "time": "17:25"
+          },
+          {
+            "time": "17:34"
+          }
+        ],
+        [
+          {
+            "time": "17:34"
+          },
+          {
+            "time": "17:44"
+          }
+        ],
+        [
+          {
+            "time": "17:44"
+          },
+          {
+            "time": "17:53"
+          }
+        ],
+        [
+          {
+            "time": "17:53"
+          },
+          {
+            "time": "18:03"
+          }
+        ],
+        [
+          {
+            "time": "18:03"
+          },
+          {
+            "time": "18:12"
+          }
+        ],
+        [
+          {
+            "time": "18:12"
+          },
+          {
+            "time": "18:22"
+          }
+        ],
+        [
+          {
+            "time": "18:22"
+          },
+          {
+            "time": "18:31"
+          }
+        ],
+        [
+          {
+            "time": "18:31"
+          },
+          {
+            "time": "18:41"
+          }
+        ]
+      ],
+      "earliest_slot": "11:14",
+      "earliest_2team": "11:14 + 11:24"
     },
     {
       "name": "Whispering Winds of Warren",
@@ -7064,7 +7424,7 @@
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
-    "with_slots": 11,
+    "with_slots": 12,
     "telegram": "success",
     "webapp_import": "success",
     "notion_export": "success (0 created, 16 updated)",
