@@ -108,6 +108,7 @@ export function extractHotDealSlots(courses: CourseResult[]): HotDealSlot[] {
 
 export function hotDealCourses(courses: CourseResult[]): CourseResult[] {
   return courses
+    .filter((c) => resolveCartPolicy(c) !== "optional")
     .map((c) => {
       const discountSet = discountTimes(c.slots);
       const hotSlots = c.slots.filter((sl) => sl.is_hot_deal || discountSet.has(sl.time));
