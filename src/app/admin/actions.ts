@@ -12,6 +12,7 @@ export async function upsertCourseOverride(formData: FormData) {
   const cartRaw = formData.get("cart_policy_override") as string;
   const notes = formData.get("notes") as string;
   const isActive = formData.get("is_active") === "true";
+  const excludeHotdeals = formData.get("exclude_hotdeals") === "true";
 
   const price = priceRaw ? parseFloat(priceRaw) : null;
   const status = statusRaw || null;
@@ -25,6 +26,7 @@ export async function upsertCourseOverride(formData: FormData) {
         price_override: price,
         status_override: status,
         cart_policy_override: cartPolicy,
+        exclude_hotdeals: excludeHotdeals,
         notes: notes || null,
         is_active: isActive,
       },

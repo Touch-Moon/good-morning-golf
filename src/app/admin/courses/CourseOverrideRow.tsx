@@ -132,6 +132,20 @@ export function CourseOverrideRow({
               />
             </div>
 
+            <div className={s["checkbox-field"]}>
+              <input
+                type="checkbox"
+                id={`exclude-hotdeals-${course.name}`}
+                name="exclude_hotdeals"
+                value="true"
+                defaultChecked={override?.exclude_hotdeals ?? false}
+                className={s.checkbox}
+              />
+              <label htmlFor={`exclude-hotdeals-${course.name}`} className={s["checkbox-label"]}>
+                핫딜 페이지에서 제외
+              </label>
+            </div>
+
             <div className={s.actions}>
               <button className={s["btn-save"]} type="submit" disabled={pending}>
                 저장 (Override ON)

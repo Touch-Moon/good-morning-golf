@@ -156,6 +156,26 @@
   cursor: pointer;
 }
 
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-size: 0.9375rem;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
 .actions {
   display: flex;
   gap: 0.5rem;

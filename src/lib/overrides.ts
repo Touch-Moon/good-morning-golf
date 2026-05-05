@@ -38,6 +38,9 @@ export async function mergeOverrides(courses: CourseResult[]): Promise<CourseRes
     if (ov.cart_policy_override != null) {
       overridden.cart_policy = ov.cart_policy_override;
     }
+    if (ov.exclude_hotdeals) {
+      overridden.exclude_hotdeals = true;
+    }
     // Price override: inject as a synthetic slot so lowestPrice() picks it up
     if (ov.price_override != null) {
       overridden.slots = [
