@@ -15,7 +15,7 @@ export type CourseOverride = {
   course_name: string;
   price_override: number | null;
   status_override: string | null;
-  cart_mandatory_override: boolean | null;
+  cart_policy_override: "mandatory" | "optional" | "included" | null;
   notes: string | null;
   is_active: boolean;
   updated_at: string;

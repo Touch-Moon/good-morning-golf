@@ -1,4 +1,4 @@
-import { type CourseResult, formatTime, lowestPrice } from "@/lib/data";
+import { type CourseResult, formatTime, lowestPrice, resolveCartPolicy, CART_POLICY_LABELS } from "@/lib/data";
 import { StatusBadge } from "./StatusBadge";
 
 const SLOTS_MAX_INLINE = 6;
@@ -21,6 +21,8 @@ export function CourseTable({ courses }: { courses: CourseResult[] }) {
         <tbody>
           {courses.map((c) => {
             const price = lowestPrice(c);
+            const cartPolicy = resolveCartPolicy(c);
+            const cartLabel = cartPolicy ? CART_POLICY_LABELS[cartPolicy] : null;
             const sortedSlots = [...c.slots].sort((a, b) =>
               a.time.localeCompare(b.time),
             );
@@ -34,9 +36,9 @@ export function CourseTable({ courses }: { courses: CourseResult[] }) {
               >
                 <td className="px-4 py-3">
                   <div className="font-medium text-foreground">{c.name}</div>
-                  {c.cart_mandatory && (
+                  {cartLabel && (
                     <div className="mt-1 inline-block rounded bg-surface-elevated px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-muted">
-                      Cart 필수
+                      {cartLabel}
                     </div>
                   )}
                 </td>

@@ -107,21 +107,16 @@ export function CourseOverrideRow({
                 </select>
               </div>
               <div className={s.field}>
-                <label className={s.label}>카트 필수 override</label>
+                <label className={s.label}>카트 정책 override</label>
                 <select
                   className={s.select}
-                  name="cart_mandatory_override"
-                  defaultValue={
-                    override?.cart_mandatory_override == null
-                      ? ""
-                      : override.cart_mandatory_override
-                      ? "true"
-                      : "false"
-                  }
+                  name="cart_policy_override"
+                  defaultValue={override?.cart_policy_override ?? ""}
                 >
-                  <option value="">— 기본값</option>
-                  <option value="true">필수</option>
-                  <option value="false">불필요</option>
+                  <option value="">— 기본값 (스크래핑)</option>
+                  <option value="mandatory">카트 필수</option>
+                  <option value="optional">카트 선택</option>
+                  <option value="included">카트비 포함</option>
                 </select>
               </div>
             </div>

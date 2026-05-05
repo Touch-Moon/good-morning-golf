@@ -9,13 +9,13 @@ export async function upsertCourseOverride(formData: FormData) {
   const courseName = formData.get("course_name") as string;
   const priceRaw = formData.get("price_override") as string;
   const statusRaw = formData.get("status_override") as string;
-  const cartRaw = formData.get("cart_mandatory_override") as string;
+  const cartRaw = formData.get("cart_policy_override") as string;
   const notes = formData.get("notes") as string;
   const isActive = formData.get("is_active") === "true";
 
   const price = priceRaw ? parseFloat(priceRaw) : null;
   const status = statusRaw || null;
-  const cart = cartRaw === "" ? null : cartRaw === "true";
+  const cartPolicy = cartRaw || null;
 
   const { error } = await supabase
     .from("course_overrides")
@@ -24,7 +24,7 @@ export async function upsertCourseOverride(formData: FormData) {
         course_name: courseName,
         price_override: price,
         status_override: status,
-        cart_mandatory_override: cart,
+        cart_policy_override: cartPolicy,
         notes: notes || null,
         is_active: isActive,
       },

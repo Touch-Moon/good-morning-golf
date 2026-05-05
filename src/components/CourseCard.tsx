@@ -1,4 +1,4 @@
-import { type CourseResult, formatTime, lowestPrice, priceRange, discountTimes } from "@/lib/data";
+import { type CourseResult, formatTime, lowestPrice, priceRange, discountTimes, resolveCartPolicy, CART_POLICY_LABELS } from "@/lib/data";
 import { StatusBadge } from "./StatusBadge";
 import s from "./CourseCard.module.scss";
 
@@ -24,6 +24,8 @@ export function CourseCard({
   const price = lowestPrice(course);
   const range = priceRange(course);
   const discountSet = discountTimes(course.slots);
+  const cartPolicy = resolveCartPolicy(course);
+  const cartLabel = cartPolicy ? CART_POLICY_LABELS[cartPolicy] : null;
   const hasSlots = course.slots.length > 0;
   const sortedSlots = [...course.slots].sort((a, b) => a.time.localeCompare(b.time));
   const max = mode === "card" ? SLOTS_MAX_CARD : SLOTS_MAX_LIST;
@@ -42,8 +44,8 @@ export function CourseCard({
               <h2 className={s["course-name"]}>{course.name}</h2>
               <div className={s["status-badge-container"]}>
                 <StatusBadge status={course.status} />
-                {course.cart_mandatory && (
-                  <span className={s["meta-tag"]}>Cart 필수</span>
+                {cartLabel && (
+                  <span className={s["meta-tag"]}>{cartLabel}</span>
                 )}
                 {course.distance_km != null && (
                   <span className={s.distance}>~{course.distance_km}km</span>
@@ -114,8 +116,8 @@ export function CourseCard({
           <h2 className={s["card-name"]}>{course.name}</h2>
           <div className={s["card-meta"]}>
             {course.distance_km != null && <span>~{course.distance_km}km</span>}
-            {course.cart_mandatory && (
-              <span className={s["meta-tag"]}>Cart 필수</span>
+            {cartLabel && (
+              <span className={s["meta-tag"]}>{cartLabel}</span>
             )}
           </div>
         </div>

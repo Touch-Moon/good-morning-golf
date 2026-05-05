@@ -8,6 +8,8 @@ export type Slot = {
 
 export type Status = "green" | "afternoon" | "yellow" | "red" | "error";
 
+export type CartPolicy = "mandatory" | "optional" | "included";
+
 export type CourseResult = {
   name: string;
   source: string;
@@ -18,9 +20,20 @@ export type CourseResult = {
   phone: string | null;
   booking_url: string | null;
   cart_mandatory: boolean;
+  cart_policy?: CartPolicy | null;
   consecutive_slots: { time: string }[][];
   earliest_slot: string | null;
   earliest_2team: string | null;
+};
+
+export function resolveCartPolicy(c: CourseResult): CartPolicy | null {
+  return c.cart_policy ?? (c.cart_mandatory ? "mandatory" : null);
+}
+
+export const CART_POLICY_LABELS: Record<CartPolicy, string> = {
+  mandatory: "카트 필수",
+  optional: "카트 선택",
+  included: "카트비 포함",
 };
 
 export type CrawlRun = {
