@@ -61,9 +61,16 @@ export function lowestPrice(c: CourseResult): number | null {
 }
 
 export function priceRange(c: CourseResult): { min: number; max: number } | null {
-  const prices = c.slots.map((s) => s.price).filter((p): p is number => p !== null);
-  if (prices.length === 0) return null;
-  return { min: Math.min(...prices), max: Math.max(...prices) };
+  const priceOf = (slots: Slot[]) => {
+    const prices = slots.map((s) => s.price).filter((p): p is number => p !== null);
+    if (prices.length === 0) return null;
+    return { min: Math.min(...prices), max: Math.max(...prices) };
+  };
+  return (
+    priceOf(c.slots.filter((s) => s.time < "12:00")) ??
+    priceOf(c.slots.filter((s) => s.time < "14:00")) ??
+    priceOf(c.slots)
+  );
 }
 
 // 최저가가 2개 미만인 경우(단 1개) 할인 슬롯으로 간주 → 오렌지 하이라이트
