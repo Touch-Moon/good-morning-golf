@@ -86,6 +86,44 @@ export function priceRange(c: CourseResult): { min: number; max: number } | null
   );
 }
 
+export type HotDealSlot = Slot & { courseName: string; bookingUrl: string | null; phone: string | null };
+
+export function extractHotDealSlots(courses: CourseResult[]): HotDealSlot[] {
+  const result: HotDealSlot[] = [];
+  for (const c of courses) {
+    const discountSet = discountTimes(c.slots);
+    for (const sl of c.slots) {
+      if (sl.is_hot_deal || discountSet.has(sl.time)) {
+        result.push({ ...sl, courseName: c.name, bookingUrl: c.booking_url, phone: c.phone });
+      }
+    }
+  }
+  return result.sort((a, b) => {
+    const pa = a.price ?? 9999;
+    const pb = b.price ?? 9999;
+    if (pa !== pb) return pa - pb;
+    return a.time.localeCompare(b.time);
+  });
+}
+
+export function hotDealCourses(courses: CourseResult[]): CourseResult[] {
+  return courses
+    .map((c) => {
+      const discountSet = discountTimes(c.slots);
+      const hotSlots = c.slots.filter((sl) => sl.is_hot_deal || discountSet.has(sl.time));
+      if (hotSlots.length === 0) return null;
+      return { ...c, slots: hotSlots };
+    })
+    .filter((c): c is CourseResult => c !== null)
+    .sort((a, b) => {
+      const prices = (c: CourseResult) =>
+        c.slots.map((s) => s.price).filter((p): p is number => p !== null);
+      const minA = prices(a).length ? Math.min(...prices(a)) : 9999;
+      const minB = prices(b).length ? Math.min(...prices(b)) : 9999;
+      return minA - minB;
+    });
+}
+
 // 최저가가 2개 미만인 경우(단 1개) 할인 슬롯으로 간주 → 오렌지 하이라이트
 export function discountTimes(slots: Slot[]): Set<string> {
   const priced = slots.filter((s): s is Slot & { price: number } => s.price !== null);
