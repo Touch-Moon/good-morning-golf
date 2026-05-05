@@ -2025,11 +2025,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:30",
-          "price": 69.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:39",
           "price": 69.0,
           "is_hot_deal": false
@@ -2240,14 +2235,6 @@
           },
           {
             "time": "07:54"
-          }
-        ],
-        [
-          {
-            "time": "08:30"
-          },
-          {
-            "time": "08:39"
           }
         ],
         [
