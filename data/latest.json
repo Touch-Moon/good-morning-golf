@@ -2040,11 +2040,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:33",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:42",
           "price": null,
           "is_hot_deal": false
@@ -2056,6 +2051,11 @@
         },
         {
           "time": "12:00",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:09",
           "price": null,
           "is_hot_deal": false
         }
@@ -2260,22 +2260,6 @@
         ],
         [
           {
-            "time": "11:24"
-          },
-          {
-            "time": "11:33"
-          }
-        ],
-        [
-          {
-            "time": "11:33"
-          },
-          {
-            "time": "11:42"
-          }
-        ],
-        [
-          {
             "time": "11:42"
           },
           {
@@ -2288,6 +2272,14 @@
           },
           {
             "time": "12:00"
+          }
+        ],
+        [
+          {
+            "time": "12:00"
+          },
+          {
+            "time": "12:09"
           }
         ]
       ],
@@ -10523,7 +10515,7 @@
     "with_slots": 14,
     "telegram": "success",
     "webapp_import": "success",
-    "notion_export": "success (16 created, 0 updated)",
+    "notion_export": "success (0 created, 16 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-05-16.csv"
   }
