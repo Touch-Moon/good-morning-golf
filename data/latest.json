@@ -92,11 +92,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:44",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:56",
           "price": 56.7,
           "is_hot_deal": false
@@ -299,14 +294,6 @@
           },
           {
             "time": "12:36"
-          }
-        ],
-        [
-          {
-            "time": "12:36"
-          },
-          {
-            "time": "12:44"
           }
         ],
         [
@@ -622,11 +609,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:00",
           "price": null,
           "is_hot_deal": false
@@ -693,11 +675,6 @@
         },
         {
           "time": "11:37",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:52",
           "price": null,
           "is_hot_deal": false
         },
@@ -1122,22 +1099,6 @@
         ],
         [
           {
-            "time": "09:45"
-          },
-          {
-            "time": "09:52"
-          }
-        ],
-        [
-          {
-            "time": "09:52"
-          },
-          {
-            "time": "10:00"
-          }
-        ],
-        [
-          {
             "time": "10:00"
           },
           {
@@ -1238,14 +1199,6 @@
           },
           {
             "time": "11:37"
-          }
-        ],
-        [
-          {
-            "time": "11:52"
-          },
-          {
-            "time": "12:00"
           }
         ],
         [
@@ -1807,17 +1760,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:48",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:57",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:15",
           "price": null,
           "is_hot_deal": false
         },
@@ -1858,6 +1801,11 @@
         },
         {
           "time": "12:45",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:54",
           "price": null,
           "is_hot_deal": false
         }
@@ -1974,30 +1922,6 @@
         ],
         [
           {
-            "time": "10:39"
-          },
-          {
-            "time": "10:48"
-          }
-        ],
-        [
-          {
-            "time": "10:48"
-          },
-          {
-            "time": "10:57"
-          }
-        ],
-        [
-          {
-            "time": "11:15"
-          },
-          {
-            "time": "11:24"
-          }
-        ],
-        [
-          {
             "time": "11:42"
           },
           {
@@ -2034,6 +1958,14 @@
           },
           {
             "time": "12:45"
+          }
+        ],
+        [
+          {
+            "time": "12:45"
+          },
+          {
+            "time": "12:54"
           }
         ]
       ],
@@ -9597,7 +9529,7 @@
     "with_slots": 14,
     "telegram": "success",
     "webapp_import": "success",
-    "notion_export": "success (1 created, 15 updated)",
+    "notion_export": "success (0 created, 16 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-05-16.csv"
   }
