@@ -7,11 +7,6 @@
       "status": "green",
       "slots": [
         {
-          "time": "07:40",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:12",
           "price": 56.7,
           "is_hot_deal": false
@@ -23,21 +18,6 @@
         },
         {
           "time": "08:44",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:08",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:40",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:48",
           "price": 56.7,
           "is_hot_deal": false
         },
@@ -97,22 +77,12 @@
           "is_hot_deal": false
         },
         {
-          "time": "14:12",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
           "time": "14:20",
           "price": 56.7,
           "is_hot_deal": false
         },
         {
           "time": "14:28",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:36",
           "price": 56.7,
           "is_hot_deal": false
         },
@@ -149,11 +119,6 @@
         {
           "time": "15:40",
           "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
-          "time": "16:10",
-          "price": 36.75,
           "is_hot_deal": false
         },
         {
@@ -250,14 +215,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "09:40"
-          },
-          {
-            "time": "09:48"
-          }
-        ],
-        [
-          {
             "time": "11:08"
           },
           {
@@ -298,34 +255,10 @@
         ],
         [
           {
-            "time": "14:12"
-          },
-          {
-            "time": "14:20"
-          }
-        ],
-        [
-          {
             "time": "14:20"
           },
           {
             "time": "14:28"
-          }
-        ],
-        [
-          {
-            "time": "14:28"
-          },
-          {
-            "time": "14:36"
-          }
-        ],
-        [
-          {
-            "time": "14:36"
-          },
-          {
-            "time": "14:44"
           }
         ],
         [
@@ -366,14 +299,6 @@
           },
           {
             "time": "15:40"
-          }
-        ],
-        [
-          {
-            "time": "16:10"
-          },
-          {
-            "time": "16:20"
           }
         ],
         [
@@ -505,8 +430,8 @@
           }
         ]
       ],
-      "earliest_slot": "07:40",
-      "earliest_2team": "09:40 + 09:48"
+      "earliest_slot": "08:12",
+      "earliest_2team": "11:08 + 11:16"
     },
     {
       "name": "Lorette Golf Course",
@@ -739,11 +664,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "13:30",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:37",
           "price": null,
           "is_hot_deal": false
@@ -820,11 +740,6 @@
         },
         {
           "time": "15:37",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:45",
           "price": null,
           "is_hot_deal": false
         },
@@ -1291,22 +1206,6 @@
         ],
         [
           {
-            "time": "13:22"
-          },
-          {
-            "time": "13:30"
-          }
-        ],
-        [
-          {
-            "time": "13:30"
-          },
-          {
-            "time": "13:37"
-          }
-        ],
-        [
-          {
             "time": "13:52"
           },
           {
@@ -1415,22 +1314,6 @@
           },
           {
             "time": "15:37"
-          }
-        ],
-        [
-          {
-            "time": "15:37"
-          },
-          {
-            "time": "15:45"
-          }
-        ],
-        [
-          {
-            "time": "15:45"
-          },
-          {
-            "time": "15:52"
           }
         ],
         [
@@ -1745,22 +1628,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:12",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:21",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:39",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:57",
           "price": null,
           "is_hot_deal": false
         },
@@ -1806,6 +1674,21 @@
         },
         {
           "time": "12:54",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:03",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:12",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:21",
           "price": null,
           "is_hot_deal": false
         }
@@ -1914,14 +1797,6 @@
         ],
         [
           {
-            "time": "10:12"
-          },
-          {
-            "time": "10:21"
-          }
-        ],
-        [
-          {
             "time": "11:42"
           },
           {
@@ -1966,6 +1841,30 @@
           },
           {
             "time": "12:54"
+          }
+        ],
+        [
+          {
+            "time": "12:54"
+          },
+          {
+            "time": "13:03"
+          }
+        ],
+        [
+          {
+            "time": "13:03"
+          },
+          {
+            "time": "13:12"
+          }
+        ],
+        [
+          {
+            "time": "13:12"
+          },
+          {
+            "time": "13:21"
           }
         ]
       ],
@@ -2839,12 +2738,17 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:39",
+          "time": "11:03",
           "price": 69.0,
           "is_hot_deal": false
         },
         {
-          "time": "11:48",
+          "time": "11:12",
+          "price": 69.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:21",
           "price": 69.0,
           "is_hot_deal": false
         },
@@ -2865,11 +2769,6 @@
         },
         {
           "time": "12:51",
-          "price": 69.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "13:09",
           "price": 69.0,
           "is_hot_deal": false
         },
@@ -3135,18 +3034,18 @@
         ],
         [
           {
-            "time": "11:39"
+            "time": "11:03"
           },
           {
-            "time": "11:48"
+            "time": "11:12"
           }
         ],
         [
           {
-            "time": "11:48"
+            "time": "11:12"
           },
           {
-            "time": "11:57"
+            "time": "11:21"
           }
         ],
         [
@@ -3423,26 +3322,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "14:45",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:07",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:22",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:30",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "15:37",
           "price": 68.0,
           "is_hot_deal": false
@@ -3601,14 +3480,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "15:22"
-          },
-          {
-            "time": "15:30"
-          }
-        ],
-        [
-          {
             "time": "15:37"
           },
           {
@@ -3704,8 +3575,8 @@
           }
         ]
       ],
-      "earliest_slot": "14:45",
-      "earliest_2team": "15:22 + 15:30"
+      "earliest_slot": "15:37",
+      "earliest_2team": "15:37 + 15:45"
     },
     {
       "name": "Kingswood Golf & Country Club",
@@ -3719,16 +3590,6 @@
         },
         {
           "time": "09:30",
-          "price": 93.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:38",
-          "price": 93.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:45",
           "price": 93.0,
           "is_hot_deal": false
         },
@@ -3774,7 +3635,7 @@
         },
         {
           "time": "11:08",
-          "price": 79.99,
+          "price": 76.99,
           "is_hot_deal": true
         },
         {
@@ -3794,7 +3655,7 @@
         },
         {
           "time": "11:38",
-          "price": 77.99,
+          "price": 74.99,
           "is_hot_deal": true
         },
         {
@@ -3824,11 +3685,6 @@
         },
         {
           "time": "12:23",
-          "price": 93.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:30",
           "price": 93.0,
           "is_hot_deal": false
         },
@@ -4021,22 +3877,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "09:30"
-          },
-          {
-            "time": "09:38"
-          }
-        ],
-        [
-          {
-            "time": "09:45"
-          },
-          {
-            "time": "09:53"
-          }
-        ],
-        [
-          {
             "time": "10:00"
           },
           {
@@ -4097,14 +3937,6 @@
           },
           {
             "time": "12:23"
-          }
-        ],
-        [
-          {
-            "time": "12:30"
-          },
-          {
-            "time": "12:38"
           }
         ],
         [
@@ -4245,7 +4077,7 @@
         ]
       ],
       "earliest_slot": "09:00",
-      "earliest_2team": "09:30 + 09:38"
+      "earliest_2team": "10:00 + 10:08"
     },
     {
       "name": "Maplewood Golf Club",
@@ -4318,11 +4150,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:15",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:30",
           "price": 85.0,
           "is_hot_deal": false
@@ -4343,7 +4170,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:36",
+          "time": "10:21",
           "price": 85.0,
           "is_hot_deal": false
         },
@@ -4353,17 +4180,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:57",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:06",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:33",
           "price": 85.0,
           "is_hot_deal": false
         },
@@ -4393,17 +4210,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:27",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:36",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:45",
           "price": 85.0,
           "is_hot_deal": false
         },
@@ -4504,11 +4311,6 @@
         },
         {
           "time": "15:31",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:38",
           "price": 85.0,
           "is_hot_deal": false
         },
@@ -4651,14 +4453,6 @@
         ],
         [
           {
-            "time": "08:07"
-          },
-          {
-            "time": "08:15"
-          }
-        ],
-        [
-          {
             "time": "08:37"
           },
           {
@@ -4667,30 +4461,6 @@
         ],
         [
           {
-            "time": "10:48"
-          },
-          {
-            "time": "10:57"
-          }
-        ],
-        [
-          {
-            "time": "10:57"
-          },
-          {
-            "time": "11:06"
-          }
-        ],
-        [
-          {
-            "time": "11:33"
-          },
-          {
-            "time": "11:42"
-          }
-        ],
-        [
-          {
             "time": "11:42"
           },
           {
@@ -4719,38 +4489,6 @@
           },
           {
             "time": "12:18"
-          }
-        ],
-        [
-          {
-            "time": "12:18"
-          },
-          {
-            "time": "12:27"
-          }
-        ],
-        [
-          {
-            "time": "12:27"
-          },
-          {
-            "time": "12:36"
-          }
-        ],
-        [
-          {
-            "time": "12:36"
-          },
-          {
-            "time": "12:45"
-          }
-        ],
-        [
-          {
-            "time": "12:45"
-          },
-          {
-            "time": "12:54"
           }
         ],
         [
@@ -4815,14 +4553,6 @@
           },
           {
             "time": "15:31"
-          }
-        ],
-        [
-          {
-            "time": "15:38"
-          },
-          {
-            "time": "15:46"
           }
         ],
         [
@@ -4949,11 +4679,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:00",
           "price": null,
           "is_hot_deal": false
@@ -5035,11 +4760,6 @@
         },
         {
           "time": "12:07",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:15",
           "price": null,
           "is_hot_deal": false
         },
@@ -5321,14 +5041,6 @@
         ],
         [
           {
-            "time": "09:52"
-          },
-          {
-            "time": "10:00"
-          }
-        ],
-        [
-          {
             "time": "10:07"
           },
           {
@@ -5381,14 +5093,6 @@
           },
           {
             "time": "11:45"
-          }
-        ],
-        [
-          {
-            "time": "12:07"
-          },
-          {
-            "time": "12:15"
           }
         ],
         [
@@ -5643,11 +5347,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:56",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:16",
           "price": 77.0,
           "is_hot_deal": false
@@ -5669,11 +5368,6 @@
         },
         {
           "time": "11:48",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:56",
           "price": 77.0,
           "is_hot_deal": false
         },
@@ -5709,11 +5403,6 @@
         },
         {
           "time": "13:00",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "13:08",
           "price": 77.0,
           "is_hot_deal": false
         },
@@ -6010,14 +5699,6 @@
         ],
         [
           {
-            "time": "09:48"
-          },
-          {
-            "time": "09:56"
-          }
-        ],
-        [
-          {
             "time": "11:16"
           },
           {
@@ -6046,22 +5727,6 @@
           },
           {
             "time": "11:48"
-          }
-        ],
-        [
-          {
-            "time": "11:48"
-          },
-          {
-            "time": "11:56"
-          }
-        ],
-        [
-          {
-            "time": "11:56"
-          },
-          {
-            "time": "12:04"
           }
         ],
         [
@@ -6102,22 +5767,6 @@
           },
           {
             "time": "13:00"
-          }
-        ],
-        [
-          {
-            "time": "13:00"
-          },
-          {
-            "time": "13:08"
-          }
-        ],
-        [
-          {
-            "time": "13:08"
-          },
-          {
-            "time": "13:16"
           }
         ],
         [
@@ -6484,6 +6133,16 @@
           "is_hot_deal": false
         },
         {
+          "time": "07:42",
+          "price": 60.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "07:50",
+          "price": 60.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "07:58",
           "price": 60.0,
           "is_hot_deal": false
@@ -6509,7 +6168,17 @@
           "is_hot_deal": false
         },
         {
+          "time": "09:39",
+          "price": 60.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "10:27",
+          "price": 60.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "10:36",
           "price": 60.0,
           "is_hot_deal": false
         },
@@ -6545,16 +6214,6 @@
         },
         {
           "time": "13:56",
-          "price": 56.6666666667,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:24",
-          "price": 56.6666666667,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:34",
           "price": 56.6666666667,
           "is_hot_deal": false
         },
@@ -6712,6 +6371,22 @@
       "consecutive_slots": [
         [
           {
+            "time": "07:42"
+          },
+          {
+            "time": "07:50"
+          }
+        ],
+        [
+          {
+            "time": "07:50"
+          },
+          {
+            "time": "07:58"
+          }
+        ],
+        [
+          {
             "time": "07:58"
           },
           {
@@ -6732,6 +6407,14 @@
           },
           {
             "time": "08:38"
+          }
+        ],
+        [
+          {
+            "time": "10:27"
+          },
+          {
+            "time": "10:36"
           }
         ],
         [
@@ -6772,22 +6455,6 @@
           },
           {
             "time": "13:56"
-          }
-        ],
-        [
-          {
-            "time": "14:24"
-          },
-          {
-            "time": "14:34"
-          }
-        ],
-        [
-          {
-            "time": "14:34"
-          },
-          {
-            "time": "14:43"
           }
         ],
         [
@@ -7016,7 +6683,7 @@
         ]
       ],
       "earliest_slot": "07:02",
-      "earliest_2team": "07:58 + 08:06"
+      "earliest_2team": "07:42 + 07:50"
     },
     {
       "name": "Whispering Winds of Warren",
@@ -7030,11 +6697,6 @@
         },
         {
           "time": "09:30",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:37",
           "price": 73.0,
           "is_hot_deal": false
         },
@@ -7095,11 +6757,6 @@
         },
         {
           "time": "11:22",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:30",
           "price": 73.0,
           "is_hot_deal": false
         },
@@ -7225,11 +6882,6 @@
         },
         {
           "time": "14:37",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:45",
           "price": 73.0,
           "is_hot_deal": false
         },
@@ -7420,14 +7072,6 @@
         ],
         [
           {
-            "time": "09:37"
-          },
-          {
-            "time": "09:45"
-          }
-        ],
-        [
-          {
             "time": "10:22"
           },
           {
@@ -7456,14 +7100,6 @@
           },
           {
             "time": "11:15"
-          }
-        ],
-        [
-          {
-            "time": "11:22"
-          },
-          {
-            "time": "11:30"
           }
         ],
         [
@@ -7560,14 +7196,6 @@
           },
           {
             "time": "14:30"
-          }
-        ],
-        [
-          {
-            "time": "14:37"
-          },
-          {
-            "time": "14:45"
           }
         ],
         [
@@ -7731,11 +7359,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "06:40",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "06:48",
           "price": null,
           "is_hot_deal": false
@@ -7747,11 +7370,6 @@
         },
         {
           "time": "07:04",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "07:12",
           "price": null,
           "is_hot_deal": false
         },
@@ -7782,11 +7400,6 @@
         },
         {
           "time": "08:24",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:40",
           "price": null,
           "is_hot_deal": false
         },
@@ -7826,11 +7439,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:08",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:16",
           "price": null,
           "is_hot_deal": false
@@ -7856,22 +7464,12 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:56",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:04",
           "price": null,
           "is_hot_deal": false
         },
         {
           "time": "11:12",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:56",
           "price": null,
           "is_hot_deal": false
         },
@@ -7887,16 +7485,6 @@
         },
         {
           "time": "13:36",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "13:44",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "13:52",
           "price": null,
           "is_hot_deal": false
         },
@@ -7967,11 +7555,6 @@
         },
         {
           "time": "15:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "16:00",
           "price": null,
           "is_hot_deal": false
         },
@@ -8140,14 +7723,6 @@
         ],
         [
           {
-            "time": "06:40"
-          },
-          {
-            "time": "06:48"
-          }
-        ],
-        [
-          {
             "time": "06:48"
           },
           {
@@ -8160,22 +7735,6 @@
           },
           {
             "time": "07:04"
-          }
-        ],
-        [
-          {
-            "time": "07:04"
-          },
-          {
-            "time": "07:12"
-          }
-        ],
-        [
-          {
-            "time": "07:12"
-          },
-          {
-            "time": "07:20"
           }
         ],
         [
@@ -8212,14 +7771,6 @@
         ],
         [
           {
-            "time": "08:40"
-          },
-          {
-            "time": "08:48"
-          }
-        ],
-        [
-          {
             "time": "08:48"
           },
           {
@@ -8252,14 +7803,6 @@
         ],
         [
           {
-            "time": "10:08"
-          },
-          {
-            "time": "10:16"
-          }
-        ],
-        [
-          {
             "time": "10:16"
           },
           {
@@ -8288,22 +7831,6 @@
           },
           {
             "time": "10:48"
-          }
-        ],
-        [
-          {
-            "time": "10:48"
-          },
-          {
-            "time": "10:56"
-          }
-        ],
-        [
-          {
-            "time": "10:56"
-          },
-          {
-            "time": "11:04"
           }
         ],
         [
@@ -8320,30 +7847,6 @@
           },
           {
             "time": "13:20"
-          }
-        ],
-        [
-          {
-            "time": "13:36"
-          },
-          {
-            "time": "13:44"
-          }
-        ],
-        [
-          {
-            "time": "13:44"
-          },
-          {
-            "time": "13:52"
-          }
-        ],
-        [
-          {
-            "time": "13:52"
-          },
-          {
-            "time": "14:00"
           }
         ],
         [
@@ -8440,22 +7943,6 @@
           },
           {
             "time": "15:52"
-          }
-        ],
-        [
-          {
-            "time": "15:52"
-          },
-          {
-            "time": "16:00"
-          }
-        ],
-        [
-          {
-            "time": "16:00"
-          },
-          {
-            "time": "16:08"
           }
         ],
         [
@@ -8701,26 +8188,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:15",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:22",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:45",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:22",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:30",
           "price": null,
           "is_hot_deal": false
@@ -8741,12 +8208,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:00",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:07",
+          "time": "13:30",
           "price": null,
           "is_hot_deal": false
         },
@@ -8757,11 +8219,6 @@
         },
         {
           "time": "13:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:00",
           "price": null,
           "is_hot_deal": false
         },
@@ -8924,34 +8381,10 @@
       "consecutive_slots": [
         [
           {
-            "time": "11:22"
-          },
-          {
-            "time": "11:30"
-          }
-        ],
-        [
-          {
             "time": "11:37"
           },
           {
             "time": "11:45"
-          }
-        ],
-        [
-          {
-            "time": "11:52"
-          },
-          {
-            "time": "12:00"
-          }
-        ],
-        [
-          {
-            "time": "13:52"
-          },
-          {
-            "time": "14:00"
           }
         ],
         [
@@ -9068,23 +8501,13 @@
         ]
       ],
       "earliest_slot": "07:00",
-      "earliest_2team": "11:22 + 11:30"
+      "earliest_2team": "11:37 + 11:45"
     },
     {
       "name": "Windsor Park Golf Course",
       "source": "individual",
       "status": "green",
       "slots": [
-        {
-          "time": "06:22",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "06:45",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
         {
           "time": "06:52",
           "price": 48.0,
@@ -9122,51 +8545,6 @@
         },
         {
           "time": "07:45",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:22",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:37",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:45",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:52",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:07",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "13:45",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "13:52",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:07",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:22",
           "price": 48.0,
           "is_hot_deal": false
         },
@@ -9381,22 +8759,6 @@
         ],
         [
           {
-            "time": "08:37"
-          },
-          {
-            "time": "08:45"
-          }
-        ],
-        [
-          {
-            "time": "14:22"
-          },
-          {
-            "time": "14:30"
-          }
-        ],
-        [
-          {
             "time": "14:37"
           },
           {
@@ -9516,7 +8878,7 @@
           }
         ]
       ],
-      "earliest_slot": "06:22",
+      "earliest_slot": "06:52",
       "earliest_2team": "06:52 + 07:00"
     }
   ],
@@ -9527,7 +8889,7 @@
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
     "with_slots": 14,
-    "telegram": "success",
+    "telegram": "skipped (not Monday)",
     "webapp_import": "success",
     "notion_export": "success (0 created, 16 updated)",
     "obsidian_export": "failed",
