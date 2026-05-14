@@ -44,6 +44,7 @@ export function WeeklyBookingForm({
   const [selectedTimes, setSelectedTimes] = useState<string[]>([]);
   const [attendingFixed, setAttendingFixed] = useState<string[]>([]);
   const [customAttending, setCustomAttending] = useState("");
+  const [isActive, setIsActive] = useState(false);
   const [pending, startTransition] = useTransition();
 
   const courseData = courses.find((c) => c.name === selectedCourse);
@@ -77,7 +78,7 @@ export function WeeklyBookingForm({
     if (!selectedCourse) return;
     const fd = new FormData();
     fd.set("message", preview);
-    fd.set("is_active", "false");
+    fd.set("is_active", String(isActive));
     if (expiresAt) fd.set("expires_at", expiresAt);
     startTransition(async () => {
       await upsertAnnouncement(fd);
@@ -102,7 +103,7 @@ export function WeeklyBookingForm({
           required
         >
           <option value="">골프장을 선택하세요</option>
-          {courses.map((c) => (
+          {[...courses].sort((a, b) => a.name.localeCompare(b.name)).map((c) => (
             <option key={c.name} value={c.name}>{c.name}</option>
           ))}
         </select>
@@ -179,13 +180,34 @@ export function WeeklyBookingForm({
         </div>
       )}
 
+      {/* Active toggle */}
+      <div className={s.section}>
+        <label className={s.label}>공지 상태</label>
+        <div className={s["toggle-row"]}>
+          <button
+            type="button"
+            className={`${s["status-btn"]} ${isActive ? s.on : ""}`}
+            onClick={() => setIsActive(true)}
+          >
+            공지사항 활성화
+          </button>
+          <button
+            type="button"
+            className={`${s["status-btn"]} ${!isActive ? s.off : ""}`}
+            onClick={() => setIsActive(false)}
+          >
+            비활성화
+          </button>
+        </div>
+      </div>
+
       <div className={s.actions}>
         <button
           className={s["btn-save"]}
           type="submit"
           disabled={!selectedCourse || pending}
         >
-          저장 (비활성 상태로)
+          {isActive ? "저장 (활성화)" : "저장 (비활성)"}
         </button>
         <button className={s["btn-cancel"]} type="button" onClick={onClose}>
           취소

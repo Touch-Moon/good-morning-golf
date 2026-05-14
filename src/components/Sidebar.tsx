@@ -56,10 +56,10 @@ export function Sidebar() {
     <>
       {/* ── Mobile top header ── */}
       <header className={s["mobile-header"]}>
-        <div className={s["mobile-logo"]}>
+        <Link href="/" className={s["mobile-logo"]}>
           <Image src="/Logo-GMG.svg" alt="GMG" width={32} height={32} className={s["logo-img"]} />
           <span className={s["mobile-logo-text"]}>Good Morning Golf</span>
-        </div>
+        </Link>
         <button
           className={s.hamburger}
           onClick={() => setOpen(true)}
@@ -76,13 +76,13 @@ export function Sidebar() {
         <div className={`${s.overlay}${closing ? ` ${s["overlay--closing"]}` : ""}`} onClick={closeDrawer}>
           <nav className={`${s.drawer}${closing ? ` ${s["drawer--closing"]}` : ""}`} onClick={(e) => e.stopPropagation()}>
             <div className={s["drawer-header"]}>
-              <div className={s["drawer-logo"]}>
+              <Link href="/" className={s["drawer-logo"]} onClick={closeDrawer}>
                 <Image src="/Logo-GMG.svg" alt="GMG Logo" width={40} height={40} className={s["logo-img"]} />
                 <span className={s["logo-text"]}>
                   <span className={s["logo-text-top"]}>Good Morning</span>
                   <span className={s["logo-text-bottom"]}>Golf</span>
                 </span>
-              </div>
+              </Link>
               <button className={s["close-btn"]} onClick={closeDrawer} aria-label="닫기">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -108,13 +108,13 @@ export function Sidebar() {
 
       {/* ── Desktop sidebar ── */}
       <aside className={s.sidebar}>
-        <div className={s.logo}>
+        <Link href="/" className={s.logo}>
           <Image src="/Logo-GMG.svg" alt="GMG Logo" width={48} height={48} className={s["logo-img"]} />
           <span className={s["logo-text"]}>
             <span className={s["logo-text-top"]}>Good Morning</span>
             <span className={s["logo-text-bottom"]}>Golf</span>
           </span>
-        </div>
+        </Link>
         <nav className={s.nav}>
           {NAV_ITEMS.map((item) => (
             <Link

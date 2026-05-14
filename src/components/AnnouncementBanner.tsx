@@ -1,4 +1,5 @@
 import type { Announcement } from "@/lib/supabase";
+import { maskName, maskNameList } from "@/lib/mask";
 import s from "./AnnouncementBanner.module.scss";
 
 const FIXED_MEMBERS = ["이금정", "전지호", "박대영", "김기태", "문진철"];
@@ -9,17 +10,22 @@ type ParsedLine =
   | { type: "attending"; value: string }
   | { type: "text"; value: string };
 
-function parseMessage(message: string): ParsedLine[] {
+function parseMessage(message: string, maskNames: boolean): ParsedLine[] {
   return message.split("\n").flatMap((line): ParsedLine[] => {
     if (/^이번\s*주$/.test(line.trim())) return [];
     if (line.startsWith("장소: "))     return [{ type: "venue",    value: line.slice(4) }];
     if (line.startsWith("시간: "))     return [{ type: "time",     value: line.slice(4) }];
-    if (line.startsWith("참가인원: "))  return [{ type: "attending", value: line.slice(6) }];
+    if (line.startsWith("참가인원: ")) {
+      const raw = line.slice(6);
+      return [{ type: "attending", value: maskNames ? maskNameList(raw) : raw }];
+    }
     if (line.startsWith("미참가인원: ")) {
       const prefix = "미참가인원: ";
       const absent = line.slice(prefix.length).split(",").map((n) => n.trim()).filter(Boolean);
       const attending = FIXED_MEMBERS.filter((m) => !absent.includes(m));
-      return attending.length > 0 ? [{ type: "attending", value: attending.join(", ") }] : [];
+      if (attending.length === 0) return [];
+      const value = (maskNames ? attending.map(maskName) : attending).join(", ");
+      return [{ type: "attending", value }];
     }
     if (line.trim() === "") return [];
     return [{ type: "text", value: line }];
@@ -49,8 +55,16 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-export function AnnouncementBanner({ announcement, bordered = false }: { announcement: Announcement; bordered?: boolean }) {
-  const lines = parseMessage(announcement.message);
+export function AnnouncementBanner({
+  announcement,
+  bordered = false,
+  maskNames = false,
+}: {
+  announcement: Announcement;
+  bordered?: boolean;
+  maskNames?: boolean;
+}) {
+  const lines = parseMessage(announcement.message, maskNames);
 
   return (
     <div className={bordered ? s["banner-bordered"] : s.banner} role="alert">

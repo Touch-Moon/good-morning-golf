@@ -16,7 +16,7 @@ export default async function Home() {
   ]);
 
   const visibleCourses = mergedCourses.filter(
-    (c) => c.status !== "afternoon" && !HIDDEN_COURSES.includes(c.name)
+    (c) => !HIDDEN_COURSES.includes(c.name)
   );
 
   const greenCount = visibleCourses.filter((r) => r.status === "green").length;

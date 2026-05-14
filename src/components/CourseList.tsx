@@ -2,129 +2,97 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CourseResult, Status } from "@/lib/data";
+import { lowestPrice } from "@/lib/data";
 import { CourseCard } from "./CourseCard";
 import s from "./CourseList.module.scss";
 
 type ViewMode = "list" | "card";
+type SortMode = "alpha" | "distance" | "price";
 const STORAGE_KEY = "golf:view-mode";
+const SORT_STORAGE_KEY = "golf:sort-mode";
 
-const STATUS_LABELS: Record<Status, string> = {
-  green:     "예약 가능",
-  afternoon: "오후만 가능",
-  yellow:    "접속 불가",
-  red:       "슬롯 없음",
-  error:     "오류",
-};
+const FILTER_OPTIONS: { value: "all" | Status; label: string }[] = [
+  { value: "all",       label: "전체" },
+  { value: "green",     label: "예약가능" },
+  { value: "afternoon", label: "오후가능" },
+];
 
-const STATUS_DOT_VARS: Record<Status, string> = {
-  green:     "var(--success)",
-  afternoon: "var(--info)",
-  yellow:    "var(--warning)",
-  red:       "var(--danger)",
-  error:     "var(--muted)",
-};
+const SORT_OPTIONS: { value: SortMode; label: string }[] = [
+  { value: "alpha",    label: "알파벳순" },
+  { value: "distance", label: "거리순" },
+  { value: "price",    label: "가격순" },
+];
 
 export function CourseList({ courses, highlightCourse = null, highlightTimes = [] }: { courses: CourseResult[]; highlightCourse?: string | null; highlightTimes?: string[] }) {
-  const [view, setView] = useState<ViewMode>("list");
-  const [filter, setFilter] = useState<Status | "all">("all");
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [view, setView]     = useState<ViewMode>("list");
+  const [filter, setFilter] = useState<"all" | Status>("green");
+  const [sort, setSort]     = useState<SortMode>("alpha");
   const [hydrated, setHydrated] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "list" || stored === "card") setView(stored);
+    const storedSort = localStorage.getItem(SORT_STORAGE_KEY);
+    if (storedSort === "alpha" || storedSort === "distance" || storedSort === "price") setSort(storedSort as SortMode);
     setHydrated(true);
   }, []);
-
-  useEffect(() => {
-    if (!dropdownOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [dropdownOpen]);
 
   const changeView = (next: ViewMode) => {
     setView(next);
     localStorage.setItem(STORAGE_KEY, next);
   };
 
-  const presentStatuses = useMemo(() => {
-    const seen = new Set<Status>();
-    for (const c of courses) seen.add(c.status);
-    return (["green", "afternoon", "yellow", "red", "error"] as Status[]).filter((st) => seen.has(st));
-  }, [courses]);
+  const changeSort = (next: SortMode) => {
+    setSort(next);
+    localStorage.setItem(SORT_STORAGE_KEY, next);
+  };
 
-  const filtered = filter === "all" ? courses : courses.filter((c) => c.status === filter);
-
-  const filterLabel = filter === "all" ? "전체" : STATUS_LABELS[filter];
-  const filterDot = filter !== "all" ? STATUS_DOT_VARS[filter] : null;
+  const displayCourses = useMemo(() => {
+    const base = filter === "all" ? courses : courses.filter((c) => c.status === filter);
+    const sorted = [...base].sort((a, b) => {
+      if (sort === "alpha")    return a.name.localeCompare(b.name);
+      if (sort === "distance") return (a.distance_km ?? 9999) - (b.distance_km ?? 9999);
+      if (sort === "price")    return (lowestPrice(a) ?? 9999) - (lowestPrice(b) ?? 9999);
+      return 0;
+    });
+    if (!highlightCourse) return sorted;
+    const hi   = sorted.filter((c) => c.name === highlightCourse);
+    const rest = sorted.filter((c) => c.name !== highlightCourse);
+    return [...hi, ...rest];
+  }, [courses, filter, sort, highlightCourse]);
 
   return (
     <div>
       <div className={s.toolbar}>
-        {/* Filter dropdown */}
-        <div className={s["dropdown-wrap"]} ref={dropdownRef}>
-          <button
-            type="button"
-            className={`${s["dropdown-trigger"]}${dropdownOpen ? ` ${s.open}` : ""}`}
-            onClick={() => setDropdownOpen((v) => !v)}
-            aria-haspopup="listbox"
-            aria-expanded={dropdownOpen}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M3 6h18M7 12h10M11 18h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            {filterDot && (
-              <span className={s["trigger-dot"]} style={{ background: filterDot }} />
-            )}
-            {filterLabel}
-            <svg className={s["chevron"]} width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-
-          {dropdownOpen && (
-            <ul className={s.dropdown} role="listbox">
-              <DropdownItem
-                active={filter === "all"}
-                onClick={() => { setFilter("all"); setDropdownOpen(false); }}
-                label="전체"
-              />
-              {presentStatuses.map((st) => (
-                <DropdownItem
-                  key={st}
-                  active={filter === st}
-                  dot={STATUS_DOT_VARS[st]}
-                  onClick={() => { setFilter(st); setDropdownOpen(false); }}
-                  label={STATUS_LABELS[st]}
-                />
-              ))}
-            </ul>
-          )}
+        <div className={s["toolbar-left"]}>
+          <Dropdown
+            options={FILTER_OPTIONS}
+            value={filter}
+            onChange={(v) => setFilter(v as "all" | Status)}
+          />
+          <Dropdown
+            options={SORT_OPTIONS}
+            value={sort}
+            onChange={(v) => changeSort(v as SortMode)}
+          />
         </div>
 
-        {/* View toggle */}
         <div role="tablist" aria-label="보기 방식" className={s["toggle-group"]}>
-          <ToggleButton active={view === "list"} onClick={() => changeView("list")} label="리스트" icon={<ListIcon />} />
-          <ToggleButton active={view === "card"} onClick={() => changeView("card")} label="카드" icon={<CardIcon />} />
+          <ToggleButton active={view === "list"} onClick={() => changeView("list")} label="리스트" icon={<ListIcon />} iconOnly />
+          <ToggleButton active={view === "card"} onClick={() => changeView("card")} label="카드"   icon={<CardIcon />} iconOnly />
         </div>
       </div>
 
       <div className={`${s.content}${hydrated ? "" : ` ${s.hidden}`}`}>
         {view === "card" ? (
           <section className={s["card-view"]}>
-            {filtered.map((c) => (
+            {displayCourses.map((c) => (
               <CourseCard key={c.name} course={c} mode="list" highlight={c.name === highlightCourse} highlightTimes={c.name === highlightCourse ? highlightTimes : []} />
             ))}
           </section>
         ) : (
           <section className={s["list-view"]}>
-            {filtered.map((c) => (
+            {displayCourses.map((c) => (
               <CourseCard key={c.name} course={c} mode="list" highlight={c.name === highlightCourse} highlightTimes={c.name === highlightCourse ? highlightTimes : []} />
             ))}
           </section>
@@ -134,51 +102,82 @@ export function CourseList({ courses, highlightCourse = null, highlightTimes = [
   );
 }
 
-function DropdownItem({
-  active,
-  dot,
-  label,
-  onClick,
+// ─── Shared dropdown ──────────────────────────────────────────────────────────
+
+function Dropdown({
+  options,
+  value,
+  onChange,
 }: {
-  active: boolean;
-  dot?: string;
-  label: string;
-  onClick: () => void;
+  options: { value: string; label: string }[];
+  value: string;
+  onChange: (v: string) => void;
 }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  const currentLabel = options.find((o) => o.value === value)?.label ?? "";
+
   return (
-    <li role="option" aria-selected={active}>
+    <div className={s["dropdown-wrap"]} ref={ref}>
       <button
         type="button"
-        className={`${s["dropdown-item"]}${active ? ` ${s.active}` : ""}`}
-        onClick={onClick}
+        className={`${s["dropdown-trigger"]}${open ? ` ${s.open}` : ""}`}
+        onClick={() => setOpen((v) => !v)}
       >
-        {dot && <span className={s["item-dot"]} style={{ background: dot }} />}
-        {label}
-        {active && (
-          <svg className={s["check"]} width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        )}
+        {currentLabel}
+        <svg className={s.chevron} width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </button>
-    </li>
+
+      {open && (
+        <ul className={s.dropdown} role="listbox">
+          {options.map((opt) => (
+            <li key={opt.value} role="option" aria-selected={value === opt.value}>
+              <button
+                type="button"
+                className={`${s["dropdown-item"]}${value === opt.value ? ` ${s.active}` : ""}`}
+                onClick={() => { onChange(opt.value); setOpen(false); }}
+              >
+                {opt.label}
+                {value === opt.value && (
+                  <svg className={s.check} width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
-function ToggleButton({
-  active, onClick, label, icon,
-}: {
-  active: boolean; onClick: () => void; label: string; icon: React.ReactNode;
-}) {
+// ─── View toggle ──────────────────────────────────────────────────────────────
+
+function ToggleButton({ active, onClick, label, icon, iconOnly = false }: { active: boolean; onClick: () => void; label: string; icon: React.ReactNode; iconOnly?: boolean }) {
   return (
     <button
       type="button"
       role="tab"
       aria-selected={active}
+      aria-label={label}
       onClick={onClick}
       className={`${s["toggle-btn"]}${active ? ` ${s.active}` : ""}`}
     >
       {icon}
-      {label}
+      {!iconOnly && label}
     </button>
   );
 }

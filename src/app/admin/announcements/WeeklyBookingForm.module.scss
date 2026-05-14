@@ -191,6 +191,39 @@
   color: var(--warning);
 }
 
+// ─── Active toggle ────────────────────────────────────────────────────────────
+
+.toggle-row {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.status-btn {
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  background: var(--surface-elevated);
+  padding: 0.375rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 150ms;
+
+  &:hover { color: var(--foreground); }
+
+  &.on {
+    border-color: var(--success);
+    background: color-mix(in srgb, var(--success) 15%, transparent);
+    color: var(--success);
+  }
+
+  &.off {
+    border-color: var(--danger);
+    background: color-mix(in srgb, var(--danger) 10%, transparent);
+    color: var(--danger);
+  }
+}
+
 // ─── Actions ──────────────────────────────────────────────────────────────────
 
 .actions {

@@ -9,14 +9,79 @@
   }
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 20rem;
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
 }
 
-.message {
-  font-size: 1.125rem;
+.desc {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.empty {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.625rem;
+  padding: 1rem 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+
+  &.active {
+    border-color: var(--success);
+  }
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.active-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.125rem 0.5rem;
+
+  &.on {
+    background: color-mix(in srgb, var(--success) 15%, transparent);
+    color: var(--success);
+  }
+
+  &.off {
+    background: var(--surface-elevated);
+    color: var(--muted);
+  }
+}
+
+.expires-badge {
+  font-size: 0.8125rem;
+  color: var(--warning);
+
+  &.expired {
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+}
+
+.date {
+  font-size: 0.8125rem;
   color: var(--muted);
 }
