@@ -6,6 +6,8 @@ import s from "./page.module.scss";
 
 export const dynamic = "force-dynamic";
 
+const HIDDEN_COURSES = ["Rossmere Country Club", "Lorette Golf Course"];
+
 export default async function Home() {
   const run = getLatestRun();
   const [mergedCourses, announcement] = await Promise.all([
@@ -13,26 +15,30 @@ export default async function Home() {
     getActiveAnnouncement(),
   ]);
 
-  const greenCount = mergedCourses.filter((r) => r.status === "green").length;
+  const visibleCourses = mergedCourses.filter(
+    (c) => c.status !== "afternoon" && !HIDDEN_COURSES.includes(c.name)
+  );
+
+  const greenCount = visibleCourses.filter((r) => r.status === "green").length;
 
   return (
     <main className={s.main}>
       <header className={s.header}>
         <h1 className={s.title}>{formatDate(run.target_date)}</h1>
         <p className={s.subtitle}>
-          전체 {mergedCourses.length}개 코스 ·{" "}
+          전체 {visibleCourses.length}개 코스 ·{" "}
           <span className={s.available}>{greenCount}개 예약 가능</span>
         </p>
       </header>
 
       {announcement && (
         <div className={s.announcement}>
-          <AnnouncementBanner announcement={announcement} bordered />
+          <AnnouncementBanner announcement={announcement} bordered maskNames />
         </div>
       )}
 
       <CourseList
-        courses={mergedCourses}
+        courses={visibleCourses}
         highlightCourse={
           announcement?.message
             .split("\n")
