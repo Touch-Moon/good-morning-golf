@@ -488,11 +488,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:30",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:37",
           "price": null,
           "is_hot_deal": false
@@ -1012,22 +1007,6 @@
         ],
         [
           {
-            "time": "11:22"
-          },
-          {
-            "time": "11:30"
-          }
-        ],
-        [
-          {
-            "time": "11:30"
-          },
-          {
-            "time": "11:37"
-          }
-        ],
-        [
-          {
             "time": "12:00"
           },
           {
@@ -1528,11 +1507,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:51",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:00",
           "price": null,
           "is_hot_deal": false
@@ -1669,14 +1643,6 @@
           },
           {
             "time": "09:54"
-          }
-        ],
-        [
-          {
-            "time": "11:51"
-          },
-          {
-            "time": "12:00"
           }
         ],
         [
@@ -2256,11 +2222,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "07:45",
-          "price": 69.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "07:54",
           "price": 69.0,
           "is_hot_deal": false
@@ -2276,12 +2237,12 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:39",
+          "time": "08:48",
           "price": 69.0,
           "is_hot_deal": false
         },
         {
-          "time": "08:48",
+          "time": "08:57",
           "price": 69.0,
           "is_hot_deal": false
         },
@@ -2362,11 +2323,6 @@
         },
         {
           "time": "14:39",
-          "price": 69.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:48",
           "price": 69.0,
           "is_hot_deal": false
         },
@@ -2538,34 +2494,18 @@
         ],
         [
           {
-            "time": "07:36"
-          },
-          {
-            "time": "07:45"
-          }
-        ],
-        [
-          {
-            "time": "07:45"
-          },
-          {
-            "time": "07:54"
-          }
-        ],
-        [
-          {
-            "time": "08:30"
-          },
-          {
-            "time": "08:39"
-          }
-        ],
-        [
-          {
-            "time": "08:39"
-          },
-          {
             "time": "08:48"
+          },
+          {
+            "time": "08:57"
+          }
+        ],
+        [
+          {
+            "time": "08:57"
+          },
+          {
+            "time": "09:06"
           }
         ],
         [
@@ -2638,22 +2578,6 @@
           },
           {
             "time": "13:54"
-          }
-        ],
-        [
-          {
-            "time": "14:39"
-          },
-          {
-            "time": "14:48"
-          }
-        ],
-        [
-          {
-            "time": "14:48"
-          },
-          {
-            "time": "14:57"
           }
         ],
         [
@@ -7571,11 +7495,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:45",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:30",
           "price": null,
           "is_hot_deal": false
@@ -8036,6 +7955,16 @@
           "is_hot_deal": false
         },
         {
+          "time": "18:37",
+          "price": 34.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:45",
+          "price": 34.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "18:52",
           "price": 34.0,
           "is_hot_deal": false
@@ -8170,6 +8099,14 @@
           },
           {
             "time": "18:30"
+          }
+        ],
+        [
+          {
+            "time": "18:37"
+          },
+          {
+            "time": "18:45"
           }
         ],
         [
