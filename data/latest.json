@@ -791,11 +791,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:30",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "09:37",
           "price": null,
           "is_hot_deal": false
@@ -877,11 +872,6 @@
         },
         {
           "time": "11:37",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:45",
           "price": null,
           "is_hot_deal": false
         },
@@ -1305,22 +1295,6 @@
         ],
         [
           {
-            "time": "09:22"
-          },
-          {
-            "time": "09:30"
-          }
-        ],
-        [
-          {
-            "time": "09:30"
-          },
-          {
-            "time": "09:37"
-          }
-        ],
-        [
-          {
             "time": "09:37"
           },
           {
@@ -1445,22 +1419,6 @@
           },
           {
             "time": "11:37"
-          }
-        ],
-        [
-          {
-            "time": "11:37"
-          },
-          {
-            "time": "11:45"
-          }
-        ],
-        [
-          {
-            "time": "11:45"
-          },
-          {
-            "time": "11:52"
           }
         ],
         [
@@ -3060,6 +3018,11 @@
       "status": "green",
       "slots": [
         {
+          "time": "07:18",
+          "price": 98.998,
+          "is_hot_deal": false
+        },
+        {
           "time": "07:27",
           "price": 98.998,
           "is_hot_deal": false
@@ -3126,11 +3089,6 @@
         },
         {
           "time": "10:09",
-          "price": 98.998,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:18",
           "price": 98.998,
           "is_hot_deal": false
         },
@@ -3403,6 +3361,14 @@
       "consecutive_slots": [
         [
           {
+            "time": "07:18"
+          },
+          {
+            "time": "07:27"
+          }
+        ],
+        [
+          {
             "time": "07:27"
           },
           {
@@ -3479,22 +3445,6 @@
           },
           {
             "time": "09:51"
-          }
-        ],
-        [
-          {
-            "time": "10:09"
-          },
-          {
-            "time": "10:18"
-          }
-        ],
-        [
-          {
-            "time": "10:18"
-          },
-          {
-            "time": "10:27"
           }
         ],
         [
@@ -3890,8 +3840,8 @@
           }
         ]
       ],
-      "earliest_slot": "07:27",
-      "earliest_2team": "07:27 + 07:36"
+      "earliest_slot": "07:18",
+      "earliest_2team": "07:18 + 07:27"
     },
     {
       "name": "Larters at St. Andrews Golf Course",
@@ -6487,11 +6437,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:16",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:24",
           "price": null,
           "is_hot_deal": false
@@ -6548,11 +6493,6 @@
         },
         {
           "time": "12:40",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:48",
           "price": null,
           "is_hot_deal": false
         },
@@ -6918,22 +6858,6 @@
         ],
         [
           {
-            "time": "08:08"
-          },
-          {
-            "time": "08:16"
-          }
-        ],
-        [
-          {
-            "time": "08:16"
-          },
-          {
-            "time": "08:24"
-          }
-        ],
-        [
-          {
             "time": "08:24"
           },
           {
@@ -7010,22 +6934,6 @@
           },
           {
             "time": "09:44"
-          }
-        ],
-        [
-          {
-            "time": "12:40"
-          },
-          {
-            "time": "12:48"
-          }
-        ],
-        [
-          {
-            "time": "12:48"
-          },
-          {
-            "time": "12:56"
           }
         ],
         [
@@ -8353,7 +8261,7 @@
     "with_slots": 11,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
-    "notion_export": "success (16 created, 0 updated)",
+    "notion_export": "success (0 created, 16 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-05-23.csv"
   }
