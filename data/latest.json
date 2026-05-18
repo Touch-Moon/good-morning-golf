@@ -8891,7 +8891,7 @@
     "bridges_coupon": "n/a",
     "with_slots": 12,
     "telegram": "success",
-    "webapp_import": "failed",
+    "webapp_import": "success",
     "notion_export": "success (0 created, 16 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-05-23.csv"
