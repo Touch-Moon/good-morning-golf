@@ -1,7 +1,9 @@
 import { CourseList } from "@/components/CourseList";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
-import { formatDate, getLatestRun } from "@/lib/data";
+import { getLatestRun } from "@/lib/data";
 import { mergeOverrides, getActiveAnnouncement } from "@/lib/overrides";
+import { getLocale } from "@/lib/i18n-server";
+import { dict, formatDateLocalized } from "@/lib/i18n";
 import s from "./page.module.scss";
 
 export const dynamic = "force-dynamic";
@@ -9,6 +11,8 @@ export const dynamic = "force-dynamic";
 const HIDDEN_COURSES = ["Rossmere Country Club", "Lorette Golf Course"];
 
 export default async function Home() {
+  const locale = await getLocale();
+  const t = dict[locale];
   const run = getLatestRun();
   const [mergedCourses, announcement] = await Promise.all([
     mergeOverrides(run.results),
@@ -24,10 +28,10 @@ export default async function Home() {
   return (
     <main className={s.main}>
       <header className={s.header}>
-        <h1 className={s.title}>{formatDate(run.target_date)}</h1>
+        <h1 className={s.title}>{formatDateLocalized(run.target_date, locale)}</h1>
         <p className={s.subtitle}>
-          전체 {visibleCourses.length}개 코스 ·{" "}
-          <span className={s.available}>{greenCount}개 예약 가능</span>
+          {t.main.courses(visibleCourses.length)} ·{" "}
+          <span className={s.available}>{t.main.available(greenCount)}</span>
         </p>
       </header>
 
@@ -55,7 +59,7 @@ export default async function Home() {
       />
 
       <footer className={s.footer}>
-        <p>매주 갱신 · Winnipeg 인근 골프 코스</p>
+        <p>{t.main.footer}</p>
       </footer>
     </main>
   );

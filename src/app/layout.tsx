@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { LocaleProvider } from "@/lib/locale-context";
+import { getLocale } from "@/lib/i18n-server";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -16,14 +18,17 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Saturday Tee Times — Winnipeg",
-  description: "이번 주 토요일 골프 티타임 한눈에 보기",
+  description: "Weekly Saturday tee times near Winnipeg",
   icons: { icon: "/Logo-GMG.svg" },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
   return (
-    <html lang="ko" className={`${plexSans.variable} ${plexMono.variable}`}>
-      <body>{children}</body>
+    <html lang={locale} className={`${plexSans.variable} ${plexMono.variable}`}>
+      <body>
+        <LocaleProvider locale={locale}>{children}</LocaleProvider>
+      </body>
     </html>
   );
 }

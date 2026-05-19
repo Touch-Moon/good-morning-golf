@@ -1,4 +1,7 @@
-import { type CourseResult, formatTime, lowestPrice, priceRange, discountTimes, resolveCartPolicy, CART_POLICY_LABELS } from "@/lib/data";
+"use client";
+
+import { type CourseResult, formatTime, lowestPrice, priceRange, discountTimes, resolveCartPolicy, type CartPolicy } from "@/lib/data";
+import { useT } from "@/lib/locale-context";
 import { StatusBadge } from "./StatusBadge";
 import s from "./CourseCard.module.scss";
 
@@ -21,11 +24,12 @@ export function CourseCard({
   highlight?: boolean;
   highlightTimes?: string[];
 }) {
+  const t = useT();
   const price = lowestPrice(course);
   const range = priceRange(course);
   const discountSet = discountTimes(course.slots);
   const cartPolicy = resolveCartPolicy(course);
-  const cartLabel = cartPolicy ? CART_POLICY_LABELS[cartPolicy] : null;
+  const cartLabel = cartPolicy ? cartLabelFor(cartPolicy, t) : null;
   const hasSlots = course.slots.length > 0;
   const sortedSlots = [...course.slots].sort((a, b) => a.time.localeCompare(b.time));
   const max = mode === "card" ? SLOTS_MAX_CARD : SLOTS_MAX_LIST;
@@ -81,20 +85,20 @@ export function CourseCard({
             {range != null ? (
               <span className={s.price}>
                 {formatPriceRange(range)}
-                <span className={s["price-unit"]}>/인</span>
+                <span className={s["price-unit"]}>{t.card.perPerson}</span>
               </span>
             ) : price != null ? (
               <span className={s.price}>
                 ${price.toFixed(0)}
-                <span className={s["price-unit"]}>/인</span>
+                <span className={s["price-unit"]}>{t.card.perPerson}</span>
               </span>
             ) : hasSlots ? (
-              <span className={s["price-inquiry"]}>문의</span>
+              <span className={s["price-inquiry"]}>{t.card.inquiry}</span>
             ) : null}
             <div className={s["btn-group"]}>
               {course.booking_url && (
                 <a href={course.booking_url} target="_blank" rel="noreferrer" className={s["btn-book"]}>
-                  예약
+                  {t.card.book}
                 </a>
               )}
               {course.phone && (
@@ -126,7 +130,7 @@ export function CourseCard({
 
       {shown.length > 0 && (
         <div className={s["card-slots-section"]}>
-          <div className={s["card-slots-label"]}>티타임</div>
+          <div className={s["card-slots-label"]}>{t.card.teeTimes}</div>
           <div className={s["card-slots-list"]}>
             {shown.map((sl) => {
               const isDiscount = discountSet.has(sl.time);
@@ -152,20 +156,20 @@ export function CourseCard({
       {(range != null || price != null || hasSlots) && (
         <div className={s["card-price-section"]}>
           <span className={s["card-price-label"]}>
-            {range && range.min !== range.max ? "가격대" : "최저가"}
+            {range && range.min !== range.max ? t.card.priceRange : t.card.priceLowest}
           </span>
           {range != null ? (
             <span className={s["card-price"]}>
               {formatPriceRange(range)}
-              <span className={s["card-price-unit"]}>/인</span>
+              <span className={s["card-price-unit"]}>{t.card.perPerson}</span>
             </span>
           ) : price != null ? (
             <span className={s["card-price"]}>
               ${price.toFixed(0)}
-              <span className={s["card-price-unit"]}>/인</span>
+              <span className={s["card-price-unit"]}>{t.card.perPerson}</span>
             </span>
           ) : (
-            <span className={s["price-inquiry"]}>문의</span>
+            <span className={s["price-inquiry"]}>{t.card.inquiry}</span>
           )}
         </div>
       )}
@@ -173,7 +177,7 @@ export function CourseCard({
       <footer className={s["card-footer"]}>
         {course.booking_url && (
           <a href={course.booking_url} target="_blank" rel="noreferrer" className={s["btn-book-card"]}>
-            온라인 예약
+            {t.card.bookOnline}
           </a>
         )}
         {course.phone && (
@@ -184,4 +188,10 @@ export function CourseCard({
       </footer>
     </article>
   );
+}
+
+function cartLabelFor(p: CartPolicy, t: ReturnType<typeof useT>): string {
+  if (p === "mandatory") return t.card.cartMandatory;
+  if (p === "optional")  return t.card.cartOptional;
+  return t.card.cartIncluded;
 }

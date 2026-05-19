@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CourseResult, Status } from "@/lib/data";
 import { lowestPrice } from "@/lib/data";
+import { useT } from "@/lib/locale-context";
 import { CourseCard } from "./CourseCard";
 import s from "./CourseList.module.scss";
 
@@ -11,23 +12,24 @@ type SortMode = "alpha" | "distance" | "price";
 const STORAGE_KEY = "golf:view-mode";
 const SORT_STORAGE_KEY = "golf:sort-mode";
 
-const FILTER_OPTIONS: { value: "all" | Status; label: string }[] = [
-  { value: "all",       label: "전체" },
-  { value: "green",     label: "예약가능" },
-  { value: "afternoon", label: "오후가능" },
-];
-
-const SORT_OPTIONS: { value: SortMode; label: string }[] = [
-  { value: "alpha",    label: "알파벳순" },
-  { value: "distance", label: "거리순" },
-  { value: "price",    label: "가격순" },
-];
-
 export function CourseList({ courses, highlightCourse = null, highlightTimes = [] }: { courses: CourseResult[]; highlightCourse?: string | null; highlightTimes?: string[] }) {
+  const t = useT();
   const [view, setView]     = useState<ViewMode>("list");
   const [filter, setFilter] = useState<"all" | Status>("green");
   const [sort, setSort]     = useState<SortMode>("alpha");
   const [hydrated, setHydrated] = useState(false);
+
+  const filterOptions: { value: "all" | Status; label: string }[] = [
+    { value: "all",       label: t.list.filterAll },
+    { value: "green",     label: t.list.filterAvailable },
+    { value: "afternoon", label: t.list.filterAfternoon },
+  ];
+
+  const sortOptions: { value: SortMode; label: string }[] = [
+    { value: "alpha",    label: t.list.sortAlpha },
+    { value: "distance", label: t.list.sortDistance },
+    { value: "price",    label: t.list.sortPrice },
+  ];
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -66,20 +68,20 @@ export function CourseList({ courses, highlightCourse = null, highlightTimes = [
       <div className={s.toolbar}>
         <div className={s["toolbar-left"]}>
           <Dropdown
-            options={FILTER_OPTIONS}
+            options={filterOptions}
             value={filter}
             onChange={(v) => setFilter(v as "all" | Status)}
           />
           <Dropdown
-            options={SORT_OPTIONS}
+            options={sortOptions}
             value={sort}
             onChange={(v) => changeSort(v as SortMode)}
           />
         </div>
 
-        <div role="tablist" aria-label="보기 방식" className={s["toggle-group"]}>
-          <ToggleButton active={view === "list"} onClick={() => changeView("list")} label="리스트" icon={<ListIcon />} iconOnly />
-          <ToggleButton active={view === "card"} onClick={() => changeView("card")} label="카드"   icon={<CardIcon />} iconOnly />
+        <div role="tablist" aria-label="View" className={s["toggle-group"]}>
+          <ToggleButton active={view === "list"} onClick={() => changeView("list")} label={t.list.viewList} icon={<ListIcon />} iconOnly />
+          <ToggleButton active={view === "card"} onClick={() => changeView("card")} label={t.list.viewCard} icon={<CardIcon />} iconOnly />
         </div>
       </div>
 

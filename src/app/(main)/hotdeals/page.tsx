@@ -1,11 +1,15 @@
 import { CourseList } from "@/components/CourseList";
-import { formatDate, getLatestRun, hotDealCourses } from "@/lib/data";
+import { getLatestRun, hotDealCourses } from "@/lib/data";
 import { mergeOverrides } from "@/lib/overrides";
+import { getLocale } from "@/lib/i18n-server";
+import { dict, formatDateLocalized } from "@/lib/i18n";
 import s from "./page.module.scss";
 
 export const dynamic = "force-dynamic";
 
 export default async function HotDealsPage() {
+  const locale = await getLocale();
+  const t = dict[locale];
   const run = getLatestRun();
   const mergedCourses = await mergeOverrides(run.results);
   const deals = hotDealCourses(mergedCourses);
@@ -13,13 +17,13 @@ export default async function HotDealsPage() {
   return (
     <main className={s.main}>
       <header className={s.header}>
-        <h1 className={s.title}>핫딜</h1>
+        <h1 className={s.title}>{t.hotdeals.title}</h1>
         <p className={s.subtitle}>
-          {formatDate(run.target_date)} ·{" "}
+          {formatDateLocalized(run.target_date, locale)} ·{" "}
           {deals.length > 0 ? (
-            <span className={s.count}>{deals.length}개 코스에서 할인 발견</span>
+            <span className={s.count}>{t.hotdeals.countFound(deals.length)}</span>
           ) : (
-            "현재 등록된 핫딜 없음"
+            t.hotdeals.noneActive
           )}
         </p>
       </header>
@@ -34,13 +38,13 @@ export default async function HotDealsPage() {
               <path d="M12 17a2 2 0 000-4c-.7 0-1.3.36-1.65.9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </div>
-          <p className={s["empty-text"]}>이번 주 핫딜이 없습니다.</p>
-          <p className={s["empty-sub"]}>GolfNow 특가 및 최저가 슬롯이 등록되면 여기에 표시됩니다.</p>
+          <p className={s["empty-text"]}>{t.hotdeals.emptyTitle}</p>
+          <p className={s["empty-sub"]}>{t.hotdeals.emptySub}</p>
         </div>
       )}
 
       <footer className={s.footer}>
-        <p>GolfNow 및 개별 코스 웹사이트 기준 · 매주 갱신</p>
+        <p>{t.hotdeals.footer}</p>
       </footer>
     </main>
   );

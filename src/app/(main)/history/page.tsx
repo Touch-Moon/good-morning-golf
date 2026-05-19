@@ -1,11 +1,17 @@
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { supabase } from "@/lib/supabase";
 import type { Announcement } from "@/lib/supabase";
+import { getLocale } from "@/lib/i18n-server";
+import { dict } from "@/lib/i18n";
 import s from "./page.module.scss";
 
 export const dynamic = "force-dynamic";
 
 export default async function HistoryPage() {
+  const locale = await getLocale();
+  const t = dict[locale];
+  const dateLocale = locale === "ko" ? "ko-KR" : "en-US";
+
   const { data } = await supabase
     .from("announcements")
     .select("*")
@@ -15,12 +21,12 @@ export default async function HistoryPage() {
 
   return (
     <main className={s.main}>
-      <h1 className={s.title}>히스토리</h1>
-      <p className={s.desc}>지난 주간 공지사항을 모아 봅니다.</p>
+      <h1 className={s.title}>{t.history.title}</h1>
+      <p className={s.desc}>{t.history.desc}</p>
 
       <div className={s.list}>
         {announcements.length === 0 && (
-          <p className={s.empty}>지난 공지사항이 없습니다.</p>
+          <p className={s.empty}>{t.history.empty}</p>
         )}
         {announcements.map((a) => {
           const isExpired = a.expires_at != null && new Date(a.expires_at) < new Date();
@@ -29,11 +35,11 @@ export default async function HistoryPage() {
             <article key={a.id} className={`${s.item} ${isLive ? s.active : ""}`}>
               <div className={s["item-header"]}>
                 <span className={`${s["active-badge"]} ${isLive ? s.on : s.off}`}>
-                  {isExpired ? "만료됨" : a.is_active ? "활성" : "비활성"}
+                  {isExpired ? t.history.expired : a.is_active ? t.history.active : t.history.inactive}
                 </span>
                 {a.expires_at && (
                   <span className={`${s["expires-badge"]} ${isExpired ? s.expired : ""}`}>
-                    ⏱ {new Date(a.expires_at).toLocaleString("ko-KR", {
+                    ⏱ {new Date(a.expires_at).toLocaleString(dateLocale, {
                       timeZone: "America/Winnipeg",
                       month: "short",
                       day: "numeric",
@@ -43,7 +49,7 @@ export default async function HistoryPage() {
                   </span>
                 )}
                 <span className={s.date}>
-                  {new Date(a.created_at).toLocaleDateString("ko-KR", {
+                  {new Date(a.created_at).toLocaleDateString(dateLocale, {
                     timeZone: "America/Winnipeg",
                   })}
                 </span>
