@@ -1665,7 +1665,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:12",
+          "time": "10:00",
           "price": null,
           "is_hot_deal": false
         },
@@ -1847,10 +1847,10 @@
         ],
         [
           {
-            "time": "11:12"
+            "time": "09:51"
           },
           {
-            "time": "11:21"
+            "time": "10:00"
           }
         ],
         [
@@ -4357,11 +4357,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:00",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:08",
           "price": 77.0,
           "is_hot_deal": false
@@ -4408,11 +4403,6 @@
         },
         {
           "time": "12:44",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:52",
           "price": 77.0,
           "is_hot_deal": false
         },
@@ -4765,22 +4755,6 @@
         ],
         [
           {
-            "time": "10:52"
-          },
-          {
-            "time": "11:00"
-          }
-        ],
-        [
-          {
-            "time": "11:00"
-          },
-          {
-            "time": "11:08"
-          }
-        ],
-        [
-          {
             "time": "11:08"
           },
           {
@@ -4841,14 +4815,6 @@
           },
           {
             "time": "12:12"
-          }
-        ],
-        [
-          {
-            "time": "12:44"
-          },
-          {
-            "time": "12:52"
           }
         ],
         [
@@ -6533,11 +6499,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "13:28",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:36",
           "price": null,
           "is_hot_deal": false
@@ -6885,14 +6846,6 @@
           },
           {
             "time": "09:20"
-          }
-        ],
-        [
-          {
-            "time": "13:28"
-          },
-          {
-            "time": "13:36"
           }
         ],
         [
@@ -8532,7 +8485,7 @@
     "with_slots": 13,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
-    "notion_export": "success (1 created, 16 updated)",
+    "notion_export": "success (0 created, 17 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-05-23.csv"
   }
