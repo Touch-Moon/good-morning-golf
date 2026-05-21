@@ -27,11 +27,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "14:28",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
           "time": "14:36",
           "price": 56.7,
           "is_hot_deal": false
@@ -189,14 +184,6 @@
           },
           {
             "time": "13:24"
-          }
-        ],
-        [
-          {
-            "time": "14:28"
-          },
-          {
-            "time": "14:36"
           }
         ],
         [
@@ -1789,16 +1776,374 @@
     {
       "name": "Rossmere Country Club",
       "source": "individual",
-      "status": "red",
-      "slots": [],
+      "status": "green",
+      "slots": [
+        {
+          "time": "11:07",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:16",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:24",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:33",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:41",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:50",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:58",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:07",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:15",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:24",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:32",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:41",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:49",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:58",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:06",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:15",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:23",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:32",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:40",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:49",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:57",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:06",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:14",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:23",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:31",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:40",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:48",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:57",
+          "price": null,
+          "is_hot_deal": false
+        }
+      ],
       "fallback_price": 62,
       "distance_km": 18,
       "phone": "(204) 988-1540",
       "booking_url": "https://rossmeregc.clubhouseonline-e3.net/PublicTeeTimes/TeeSheet.aspx",
       "cart_mandatory": false,
-      "consecutive_slots": [],
-      "earliest_slot": null,
-      "earliest_2team": null
+      "consecutive_slots": [
+        [
+          {
+            "time": "11:07"
+          },
+          {
+            "time": "11:16"
+          }
+        ],
+        [
+          {
+            "time": "11:16"
+          },
+          {
+            "time": "11:24"
+          }
+        ],
+        [
+          {
+            "time": "11:24"
+          },
+          {
+            "time": "11:33"
+          }
+        ],
+        [
+          {
+            "time": "11:33"
+          },
+          {
+            "time": "11:41"
+          }
+        ],
+        [
+          {
+            "time": "11:41"
+          },
+          {
+            "time": "11:50"
+          }
+        ],
+        [
+          {
+            "time": "11:50"
+          },
+          {
+            "time": "11:58"
+          }
+        ],
+        [
+          {
+            "time": "11:58"
+          },
+          {
+            "time": "12:07"
+          }
+        ],
+        [
+          {
+            "time": "12:07"
+          },
+          {
+            "time": "12:15"
+          }
+        ],
+        [
+          {
+            "time": "12:15"
+          },
+          {
+            "time": "12:24"
+          }
+        ],
+        [
+          {
+            "time": "12:24"
+          },
+          {
+            "time": "12:32"
+          }
+        ],
+        [
+          {
+            "time": "12:32"
+          },
+          {
+            "time": "12:41"
+          }
+        ],
+        [
+          {
+            "time": "12:41"
+          },
+          {
+            "time": "12:49"
+          }
+        ],
+        [
+          {
+            "time": "12:49"
+          },
+          {
+            "time": "12:58"
+          }
+        ],
+        [
+          {
+            "time": "12:58"
+          },
+          {
+            "time": "13:06"
+          }
+        ],
+        [
+          {
+            "time": "13:06"
+          },
+          {
+            "time": "13:15"
+          }
+        ],
+        [
+          {
+            "time": "13:15"
+          },
+          {
+            "time": "13:23"
+          }
+        ],
+        [
+          {
+            "time": "13:23"
+          },
+          {
+            "time": "13:32"
+          }
+        ],
+        [
+          {
+            "time": "13:32"
+          },
+          {
+            "time": "13:40"
+          }
+        ],
+        [
+          {
+            "time": "13:40"
+          },
+          {
+            "time": "13:49"
+          }
+        ],
+        [
+          {
+            "time": "13:49"
+          },
+          {
+            "time": "13:57"
+          }
+        ],
+        [
+          {
+            "time": "13:57"
+          },
+          {
+            "time": "14:06"
+          }
+        ],
+        [
+          {
+            "time": "14:06"
+          },
+          {
+            "time": "14:14"
+          }
+        ],
+        [
+          {
+            "time": "14:14"
+          },
+          {
+            "time": "14:23"
+          }
+        ],
+        [
+          {
+            "time": "14:23"
+          },
+          {
+            "time": "14:31"
+          }
+        ],
+        [
+          {
+            "time": "14:31"
+          },
+          {
+            "time": "14:40"
+          }
+        ],
+        [
+          {
+            "time": "14:40"
+          },
+          {
+            "time": "14:48"
+          }
+        ],
+        [
+          {
+            "time": "14:48"
+          },
+          {
+            "time": "14:57"
+          }
+        ]
+      ],
+      "earliest_slot": "11:07",
+      "earliest_2team": "11:07 + 11:16"
     },
     {
       "name": "St. Boniface Golf Club",
@@ -3709,11 +4054,6 @@
       "status": "green",
       "slots": [
         {
-          "time": "07:32",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "07:40",
           "price": 77.0,
           "is_hot_deal": false
@@ -3795,11 +4135,6 @@
         },
         {
           "time": "11:08",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:16",
           "price": 77.0,
           "is_hot_deal": false
         },
@@ -4032,14 +4367,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "07:32"
-          },
-          {
-            "time": "07:40"
-          }
-        ],
-        [
-          {
             "time": "07:40"
           },
           {
@@ -4140,22 +4467,6 @@
           },
           {
             "time": "10:52"
-          }
-        ],
-        [
-          {
-            "time": "11:08"
-          },
-          {
-            "time": "11:16"
-          }
-        ],
-        [
-          {
-            "time": "11:16"
-          },
-          {
-            "time": "11:24"
           }
         ],
         [
@@ -4471,14 +4782,19 @@
           }
         ]
       ],
-      "earliest_slot": "07:32",
-      "earliest_2team": "07:32 + 07:40"
+      "earliest_slot": "07:40",
+      "earliest_2team": "07:40 + 07:48"
     },
     {
       "name": "Bel Acres Golf and Country Club",
       "source": "individual",
       "status": "green",
       "slots": [
+        {
+          "time": "07:02",
+          "price": 61.9047619048,
+          "is_hot_deal": false
+        },
         {
           "time": "07:10",
           "price": 61.9047619048,
@@ -4701,6 +5017,14 @@
       "booking_url": "https://belacres.cps.golf/",
       "cart_mandatory": false,
       "consecutive_slots": [
+        [
+          {
+            "time": "07:02"
+          },
+          {
+            "time": "07:10"
+          }
+        ],
         [
           {
             "time": "11:33"
@@ -4926,8 +5250,8 @@
           }
         ]
       ],
-      "earliest_slot": "07:10",
-      "earliest_2team": "11:33 + 11:43"
+      "earliest_slot": "07:02",
+      "earliest_2team": "07:02 + 07:10"
     },
     {
       "name": "Whispering Winds of Warren",
@@ -7533,7 +7857,7 @@
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
-    "with_slots": 11,
+    "with_slots": 12,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
     "notion_export": "success (0 created, 17 updated)",
