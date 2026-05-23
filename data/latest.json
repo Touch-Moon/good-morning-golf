@@ -246,11 +246,6 @@
       "status": "green",
       "slots": [
         {
-          "time": "09:45",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "09:52",
           "price": null,
           "is_hot_deal": false
@@ -569,14 +564,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "09:45"
-          },
-          {
-            "time": "09:52"
-          }
-        ],
-        [
-          {
             "time": "09:52"
           },
           {
@@ -992,24 +979,14 @@
           }
         ]
       ],
-      "earliest_slot": "09:45",
-      "earliest_2team": "09:45 + 09:52"
+      "earliest_slot": "09:52",
+      "earliest_2team": "09:52 + 10:00"
     },
     {
       "name": "Quarry Oaks Golf Course",
       "source": "individual",
-      "status": "green",
+      "status": "afternoon",
       "slots": [
-        {
-          "time": "09:24",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:33",
-          "price": null,
-          "is_hot_deal": false
-        },
         {
           "time": "12:06",
           "price": null,
@@ -1144,6 +1121,16 @@
           "time": "18:15",
           "price": null,
           "is_hot_deal": false
+        },
+        {
+          "time": "18:24",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:33",
+          "price": null,
+          "is_hot_deal": false
         }
       ],
       "fallback_price": 74,
@@ -1152,14 +1139,6 @@
       "booking_url": "https://secure.east.prophetservices.com/LinksatQuarryOaksV3",
       "cart_mandatory": false,
       "consecutive_slots": [
-        [
-          {
-            "time": "09:24"
-          },
-          {
-            "time": "09:33"
-          }
-        ],
         [
           {
             "time": "12:24"
@@ -1327,10 +1306,26 @@
           {
             "time": "18:15"
           }
+        ],
+        [
+          {
+            "time": "18:15"
+          },
+          {
+            "time": "18:24"
+          }
+        ],
+        [
+          {
+            "time": "18:24"
+          },
+          {
+            "time": "18:33"
+          }
         ]
       ],
-      "earliest_slot": "09:24",
-      "earliest_2team": "09:24 + 09:33"
+      "earliest_slot": "12:06",
+      "earliest_2team": "12:24 + 12:33"
     },
     {
       "name": "Rossmere Country Club",
@@ -1366,22 +1361,17 @@
       "status": "green",
       "slots": [
         {
-          "time": "09:33",
-          "price": 98.998,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:51",
-          "price": 98.998,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:09",
           "price": 98.998,
           "is_hot_deal": false
         },
         {
           "time": "10:36",
+          "price": 98.998,
+          "is_hot_deal": false
+        },
+        {
+          "time": "10:54",
           "price": 98.998,
           "is_hot_deal": false
         },
@@ -1526,11 +1516,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "17:21",
-          "price": 49.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "17:30",
           "price": 49.0,
           "is_hot_deal": false
@@ -1572,6 +1557,14 @@
       "booking_url": "https://bridgesgccan.cps.golf/onlineresweb/search-teetime?TeeOffTimeMin=0&TeeOffTimeMax=23.999722222222225",
       "cart_mandatory": true,
       "consecutive_slots": [
+        [
+          {
+            "time": "10:54"
+          },
+          {
+            "time": "11:03"
+          }
+        ],
         [
           {
             "time": "11:03"
@@ -1718,22 +1711,6 @@
         ],
         [
           {
-            "time": "17:12"
-          },
-          {
-            "time": "17:21"
-          }
-        ],
-        [
-          {
-            "time": "17:21"
-          },
-          {
-            "time": "17:30"
-          }
-        ],
-        [
-          {
             "time": "17:30"
           },
           {
@@ -1781,8 +1758,8 @@
           }
         ]
       ],
-      "earliest_slot": "09:33",
-      "earliest_2team": "11:03 + 11:12"
+      "earliest_slot": "10:09",
+      "earliest_2team": "10:54 + 11:03"
     },
     {
       "name": "Larters at St. Andrews Golf Course",
@@ -1872,16 +1849,41 @@
     {
       "name": "Kingswood Golf & Country Club",
       "source": "individual",
-      "status": "red",
-      "slots": [],
+      "status": "green",
+      "slots": [
+        {
+          "time": "11:30",
+          "price": 49.58,
+          "is_hot_deal": true
+        },
+        {
+          "time": "11:38",
+          "price": 49.58,
+          "is_hot_deal": true
+        },
+        {
+          "time": "15:00",
+          "price": 49.58,
+          "is_hot_deal": true
+        }
+      ],
       "fallback_price": 40,
       "distance_km": 29,
       "phone": "(204) 736-4079",
       "booking_url": "https://kingswood-golf-country-club.book.teeitup.com/",
       "cart_mandatory": false,
-      "consecutive_slots": [],
-      "earliest_slot": null,
-      "earliest_2team": null
+      "consecutive_slots": [
+        [
+          {
+            "time": "11:30"
+          },
+          {
+            "time": "11:38"
+          }
+        ]
+      ],
+      "earliest_slot": "11:30",
+      "earliest_2team": "11:30 + 11:38"
     },
     {
       "name": "Maplewood Golf Club",
@@ -1922,11 +1924,6 @@
       "source": "individual",
       "status": "green",
       "slots": [
-        {
-          "time": "10:22",
-          "price": null,
-          "is_hot_deal": false
-        },
         {
           "time": "10:30",
           "price": null,
@@ -2158,11 +2155,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "16:22",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "16:30",
           "price": null,
           "is_hot_deal": false
@@ -2254,14 +2246,6 @@
       "booking_url": "https://john-blumberg-golf-course.book.teeitup.com/",
       "cart_mandatory": false,
       "consecutive_slots": [
-        [
-          {
-            "time": "10:22"
-          },
-          {
-            "time": "10:30"
-          }
-        ],
         [
           {
             "time": "10:37"
@@ -2440,14 +2424,6 @@
         ],
         [
           {
-            "time": "16:22"
-          },
-          {
-            "time": "16:30"
-          }
-        ],
-        [
-          {
             "time": "16:37"
           },
           {
@@ -2511,29 +2487,14 @@
           }
         ]
       ],
-      "earliest_slot": "10:22",
-      "earliest_2team": "10:22 + 10:30"
+      "earliest_slot": "10:30",
+      "earliest_2team": "10:37 + 10:45"
     },
     {
       "name": "Assiniboine Golf Club",
       "source": "individual",
       "status": "green",
       "slots": [
-        {
-          "time": "10:04",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:12",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:20",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
         {
           "time": "10:28",
           "price": 48.0,
@@ -2711,30 +2672,6 @@
       "booking_url": "https://assiniboine-golf-club.book.teeitup.com/",
       "cart_mandatory": false,
       "consecutive_slots": [
-        [
-          {
-            "time": "10:04"
-          },
-          {
-            "time": "10:12"
-          }
-        ],
-        [
-          {
-            "time": "10:12"
-          },
-          {
-            "time": "10:20"
-          }
-        ],
-        [
-          {
-            "time": "10:20"
-          },
-          {
-            "time": "10:28"
-          }
-        ],
         [
           {
             "time": "13:16"
@@ -2920,8 +2857,8 @@
           }
         ]
       ],
-      "earliest_slot": "10:04",
-      "earliest_2team": "10:04 + 10:12"
+      "earliest_slot": "10:28",
+      "earliest_2team": "13:16 + 13:24"
     },
     {
       "name": "Bel Acres Golf and Country Club",
@@ -2929,7 +2866,7 @@
       "status": "green",
       "slots": [
         {
-          "time": "09:30",
+          "time": "09:58",
           "price": 61.9047619048,
           "is_hot_deal": false
         },
@@ -2940,6 +2877,11 @@
         },
         {
           "time": "10:17",
+          "price": 61.9047619048,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:05",
           "price": 61.9047619048,
           "is_hot_deal": false
         },
@@ -3090,6 +3032,14 @@
       "booking_url": "https://belacres.cps.golf/",
       "cart_mandatory": false,
       "consecutive_slots": [
+        [
+          {
+            "time": "09:58"
+          },
+          {
+            "time": "10:08"
+          }
+        ],
         [
           {
             "time": "10:08"
@@ -3251,29 +3201,14 @@
           }
         ]
       ],
-      "earliest_slot": "09:30",
-      "earliest_2team": "10:08 + 10:17"
+      "earliest_slot": "09:58",
+      "earliest_2team": "09:58 + 10:08"
     },
     {
       "name": "Whispering Winds of Warren",
       "source": "individual",
       "status": "green",
       "slots": [
-        {
-          "time": "10:00",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:15",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:22",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
         {
           "time": "10:30",
           "price": 73.0,
@@ -3593,14 +3528,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "10:22"
-          },
-          {
-            "time": "10:30"
-          }
-        ],
-        [
-          {
             "time": "10:37"
           },
           {
@@ -3816,8 +3743,8 @@
           }
         ]
       ],
-      "earliest_slot": "10:00",
-      "earliest_2team": "10:22 + 10:30"
+      "earliest_slot": "10:30",
+      "earliest_2team": "10:37 + 10:45"
     },
     {
       "name": "Southside Golf Course",
@@ -4465,16 +4392,6 @@
       "status": "green",
       "slots": [
         {
-          "time": "10:39",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:48",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:24",
           "price": null,
           "is_hot_deal": false
@@ -4521,11 +4438,6 @@
         },
         {
           "time": "14:15",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:24",
           "price": null,
           "is_hot_deal": false
         },
@@ -4683,14 +4595,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "10:39"
-          },
-          {
-            "time": "10:48"
-          }
-        ],
-        [
-          {
             "time": "11:24"
           },
           {
@@ -4711,22 +4615,6 @@
           },
           {
             "time": "14:15"
-          }
-        ],
-        [
-          {
-            "time": "14:15"
-          },
-          {
-            "time": "14:24"
-          }
-        ],
-        [
-          {
-            "time": "14:24"
-          },
-          {
-            "time": "14:33"
           }
         ],
         [
@@ -4914,8 +4802,8 @@
           }
         ]
       ],
-      "earliest_slot": "10:39",
-      "earliest_2team": "10:39 + 10:48"
+      "earliest_slot": "11:24",
+      "earliest_2team": "11:24 + 11:33"
     }
   ],
   "stats": {
