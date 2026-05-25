@@ -2323,11 +2323,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "14:39",
-          "price": 78.9955,
-          "is_hot_deal": false
-        },
-        {
           "time": "14:48",
           "price": 78.9955,
           "is_hot_deal": false
@@ -2661,14 +2656,6 @@
           },
           {
             "time": "13:54"
-          }
-        ],
-        [
-          {
-            "time": "14:39"
-          },
-          {
-            "time": "14:48"
           }
         ],
         [
@@ -5806,16 +5793,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:15",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:00",
           "price": null,
           "is_hot_deal": false
@@ -5928,14 +5905,6 @@
           },
           {
             "time": "07:45"
-          }
-        ],
-        [
-          {
-            "time": "12:52"
-          },
-          {
-            "time": "13:00"
           }
         ],
         [
@@ -6337,6 +6306,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "18:37",
+          "price": 34.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "18:45",
           "price": 34.0,
           "is_hot_deal": false
@@ -6556,6 +6530,14 @@
           },
           {
             "time": "18:30"
+          }
+        ],
+        [
+          {
+            "time": "18:37"
+          },
+          {
+            "time": "18:45"
           }
         ],
         [
