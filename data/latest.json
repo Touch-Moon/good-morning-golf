@@ -167,6 +167,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "17:40",
+          "price": 36.75,
+          "is_hot_deal": false
+        },
+        {
           "time": "17:50",
           "price": 36.75,
           "is_hot_deal": false
@@ -385,6 +390,22 @@
           },
           {
             "time": "17:30"
+          }
+        ],
+        [
+          {
+            "time": "17:30"
+          },
+          {
+            "time": "17:40"
+          }
+        ],
+        [
+          {
+            "time": "17:40"
+          },
+          {
+            "time": "17:50"
           }
         ],
         [
@@ -5006,11 +5027,6 @@
         {
           "time": "16:52",
           "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "17:30",
-          "price": 34.0,
           "is_hot_deal": false
         },
         {
