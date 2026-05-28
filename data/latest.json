@@ -408,32 +408,12 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:00",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:37",
           "price": null,
           "is_hot_deal": false
         },
         {
           "time": "15:22",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "17:07",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "17:22",
           "price": null,
           "is_hot_deal": false
         },
@@ -629,30 +609,6 @@
           },
           {
             "time": "09:45"
-          }
-        ],
-        [
-          {
-            "time": "09:45"
-          },
-          {
-            "time": "09:52"
-          }
-        ],
-        [
-          {
-            "time": "09:52"
-          },
-          {
-            "time": "10:00"
-          }
-        ],
-        [
-          {
-            "time": "17:22"
-          },
-          {
-            "time": "17:30"
           }
         ],
         [
@@ -1585,11 +1541,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:06",
-          "price": 98.998,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:15",
           "price": 98.998,
           "is_hot_deal": false
@@ -1752,14 +1703,6 @@
           },
           {
             "time": "09:06"
-          }
-        ],
-        [
-          {
-            "time": "12:06"
-          },
-          {
-            "time": "12:15"
           }
         ],
         [
@@ -2232,11 +2175,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "09:00",
           "price": null,
           "is_hot_deal": false
@@ -2615,14 +2553,6 @@
           },
           {
             "time": "08:15"
-          }
-        ],
-        [
-          {
-            "time": "08:52"
-          },
-          {
-            "time": "09:00"
           }
         ],
         [
@@ -3118,6 +3048,11 @@
       "slots": [
         {
           "time": "08:37",
+          "price": 73.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "09:22",
           "price": 73.0,
           "is_hot_deal": false
         },
