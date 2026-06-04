@@ -2574,6 +2574,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "07:37",
+          "price": 85.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "08:37",
           "price": 85.0,
           "is_hot_deal": false
@@ -5173,6 +5178,11 @@
         },
         {
           "time": "18:00",
+          "price": 34.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:15",
           "price": 34.0,
           "is_hot_deal": false
         },
