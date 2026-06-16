@@ -6348,11 +6348,25 @@
       ],
       "earliest_slot": "06:09",
       "earliest_2team": "06:09 + 06:18"
+    },
+    {
+      "name": "Transcona Golf Club",
+      "source": "individual",
+      "status": "yellow",
+      "slots": [],
+      "fallback_price": null,
+      "distance_km": 20,
+      "phone": "(204) 224-7867",
+      "booking_url": "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=TRAN&FromCourseWebsite=true",
+      "cart_mandatory": false,
+      "consecutive_slots": [],
+      "earliest_slot": null,
+      "earliest_2team": null
     }
   ],
   "stats": {
     "failures": "none",
-    "individual_checked": 17,
+    "individual_checked": 18,
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
