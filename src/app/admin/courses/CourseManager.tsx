@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { COURSE_ADAPTERS, type Course } from "@/lib/supabase";
+import { COURSE_ADAPTERS, type Course } from "@/lib/courses";
 import { createCourse, updateCourse, deleteCourse, toggleCourseActive } from "../actions";
 import s from "./CourseManager.module.scss";
 
