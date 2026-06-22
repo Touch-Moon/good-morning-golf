@@ -11,6 +11,13 @@
   margin-bottom: 1.5rem;
 }
 
+.subtitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0.5rem 0 0.875rem;
+}
+
 .list {
   display: flex;
   flex-direction: column;

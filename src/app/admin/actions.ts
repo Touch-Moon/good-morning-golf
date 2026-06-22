@@ -1,7 +1,101 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAdmin } from "@/lib/supabase";
+import { requireAdmin } from "@/lib/auth";
+
+// ─── Courses (WS-A: 등록/수정/삭제) ──────────────────────────────────────────────
+
+function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9가-힣\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
+function buildSourceRef(adapter: string, fd: FormData): Record<string, unknown> {
+  const courseCode = (fd.get("ref_course_code") as string)?.trim();
+  const facilityId = (fd.get("ref_facility_id") as string)?.trim();
+  const gnSlug = (fd.get("ref_slug") as string)?.trim();
+  if (adapter === "golfnow") {
+    const ref: Record<string, unknown> = {};
+    if (facilityId) ref.facility_id = facilityId;
+    if (gnSlug) ref.slug = gnSlug;
+    return ref;
+  }
+  if (adapter === "teeon" || adapter === "teeon_portal") {
+    return courseCode ? { course_code: courseCode } : {};
+  }
+  return {};
+}
+
+function readCourseFields(fd: FormData) {
+  const name = (fd.get("name") as string)?.trim();
+  if (!name) throw new Error("코스 이름은 필수입니다.");
+  const adapter = ((fd.get("adapter") as string) || "manual").trim();
+  const slugRaw = (fd.get("slug") as string)?.trim();
+  const distanceRaw = (fd.get("distance_km") as string)?.trim();
+  const playersRaw = (fd.get("default_players") as string)?.trim();
+  const sortRaw = (fd.get("sort_order") as string)?.trim();
+
+  return {
+    name,
+    slug: slugRaw ? slugify(slugRaw) : slugify(name),
+    adapter,
+    source_type: adapter === "golfnow" ? "golfnow" : "individual",
+    source_ref: buildSourceRef(adapter, fd),
+    booking_url: ((fd.get("booking_url") as string) || "").trim() || null,
+    phone: ((fd.get("phone") as string) || "").trim() || null,
+    distance_km: distanceRaw ? parseInt(distanceRaw, 10) : null,
+    cart_mandatory: fd.get("cart_mandatory") === "true",
+    default_players: playersRaw ? parseInt(playersRaw, 10) : 4,
+    is_active: fd.get("is_active") !== "false",
+    sort_order: sortRaw ? parseInt(sortRaw, 10) : 0,
+    notes: ((fd.get("notes") as string) || "").trim() || null,
+  };
+}
+
+export async function createCourse(formData: FormData) {
+  await requireAdmin();
+  const fields = readCourseFields(formData);
+  const { error } = await supabaseAdmin.from("courses").insert(fields);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/courses");
+  revalidatePath("/");
+}
+
+export async function updateCourse(formData: FormData) {
+  await requireAdmin();
+  const id = parseInt(formData.get("id") as string, 10);
+  if (!id) throw new Error("코스 id가 없습니다.");
+  const fields = readCourseFields(formData);
+  const { error } = await supabaseAdmin.from("courses").update(fields).eq("id", id);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/courses");
+  revalidatePath("/");
+}
+
+export async function deleteCourse(id: number) {
+  await requireAdmin();
+  const { error } = await supabaseAdmin.from("courses").delete().eq("id", id);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/courses");
+  revalidatePath("/");
+}
+
+export async function toggleCourseActive(id: number, isActive: boolean) {
+  await requireAdmin();
+  const { error } = await supabaseAdmin
+    .from("courses")
+    .update({ is_active: isActive })
+    .eq("id", id);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/courses");
+  revalidatePath("/");
+}
 
 // ─── Course Overrides ─────────────────────────────────────────────────────────
 
