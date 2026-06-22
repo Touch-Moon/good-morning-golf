@@ -72,6 +72,27 @@
   flex: 1;
 }
 
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  transition: color 150ms, background-color 150ms;
+
+  &:hover {
+    color: var(--foreground);
+    background: var(--surface-elevated);
+  }
+}
+
 .nav-logout {
   display: flex;
   align-items: center;

@@ -97,6 +97,27 @@ export async function toggleCourseActive(id: number, isActive: boolean) {
   revalidatePath("/");
 }
 
+// manual 코스 티타임 직접 저장 (A4)
+export async function updateManualSlots(formData: FormData) {
+  await requireAdmin();
+  const id = parseInt(formData.get("id") as string, 10);
+  if (!id) throw new Error("코스 id가 없습니다.");
+  let slots: unknown = [];
+  try {
+    slots = JSON.parse((formData.get("slots_json") as string) || "[]");
+  } catch {
+    throw new Error("슬롯 형식 오류");
+  }
+  if (!Array.isArray(slots)) throw new Error("슬롯은 배열이어야 합니다.");
+  const { error } = await supabaseAdmin
+    .from("courses")
+    .update({ manual_slots: slots })
+    .eq("id", id);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/courses");
+  revalidatePath("/");
+}
+
 // ─── Course Overrides ─────────────────────────────────────────────────────────
 
 export async function upsertCourseOverride(formData: FormData) {
