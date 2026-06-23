@@ -2364,16 +2364,282 @@
     {
       "name": "Bridges Golf Course",
       "source": "individual",
-      "status": "red",
-      "slots": [],
+      "status": "green",
+      "slots": [
+        {
+          "time": "11:57",
+          "price": 99,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:42",
+          "price": 99,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:51",
+          "price": 99,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:36",
+          "price": 79,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:45",
+          "price": 79,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:51",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:00",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:09",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:18",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:27",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:36",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:45",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:54",
+          "price": 69,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:21",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:30",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:39",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:48",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:57",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:15",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:24",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:33",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:42",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:51",
+          "price": 49,
+          "is_hot_deal": false
+        },
+        {
+          "time": "19:00",
+          "price": 49,
+          "is_hot_deal": false
+        }
+      ],
       "fallback_price": 85,
       "distance_km": 45,
       "phone": "(204) 735-3000",
       "booking_url": "https://bridgesgccan.cps.golf/onlineresweb/search-teetime?TeeOffTimeMin=0&TeeOffTimeMax=23.999722222222225",
       "cart_mandatory": true,
-      "consecutive_slots": [],
-      "earliest_slot": null,
-      "earliest_2team": null
+      "consecutive_slots": [
+        [
+          {
+            "time": "12:42"
+          },
+          {
+            "time": "12:51"
+          }
+        ],
+        [
+          {
+            "time": "13:36"
+          },
+          {
+            "time": "13:45"
+          }
+        ],
+        [
+          {
+            "time": "15:51"
+          },
+          {
+            "time": "16:00"
+          }
+        ],
+        [
+          {
+            "time": "16:00"
+          },
+          {
+            "time": "16:09"
+          }
+        ],
+        [
+          {
+            "time": "16:09"
+          },
+          {
+            "time": "16:18"
+          }
+        ],
+        [
+          {
+            "time": "16:18"
+          },
+          {
+            "time": "16:27"
+          }
+        ],
+        [
+          {
+            "time": "16:27"
+          },
+          {
+            "time": "16:36"
+          }
+        ],
+        [
+          {
+            "time": "16:36"
+          },
+          {
+            "time": "16:45"
+          }
+        ],
+        [
+          {
+            "time": "16:45"
+          },
+          {
+            "time": "16:54"
+          }
+        ],
+        [
+          {
+            "time": "17:21"
+          },
+          {
+            "time": "17:30"
+          }
+        ],
+        [
+          {
+            "time": "17:30"
+          },
+          {
+            "time": "17:39"
+          }
+        ],
+        [
+          {
+            "time": "17:39"
+          },
+          {
+            "time": "17:48"
+          }
+        ],
+        [
+          {
+            "time": "17:48"
+          },
+          {
+            "time": "17:57"
+          }
+        ],
+        [
+          {
+            "time": "18:15"
+          },
+          {
+            "time": "18:24"
+          }
+        ],
+        [
+          {
+            "time": "18:24"
+          },
+          {
+            "time": "18:33"
+          }
+        ],
+        [
+          {
+            "time": "18:33"
+          },
+          {
+            "time": "18:42"
+          }
+        ],
+        [
+          {
+            "time": "18:42"
+          },
+          {
+            "time": "18:51"
+          }
+        ],
+        [
+          {
+            "time": "18:51"
+          },
+          {
+            "time": "19:00"
+          }
+        ]
+      ],
+      "earliest_slot": "11:57",
+      "earliest_2team": "12:42 + 12:51"
     },
     {
       "name": "Larters at St. Andrews Golf Course",
@@ -8476,7 +8742,7 @@
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
-    "with_slots": 12,
+    "with_slots": 13,
     "telegram": "success",
     "webapp_import": "failed",
     "notion_export": "success (0 created, 18 updated)",
