@@ -9,14 +9,27 @@ import s from "./CourseList.module.scss";
 
 type ViewMode = "list" | "card";
 type SortMode = "alpha" | "distance" | "price";
+type TimeRange = "all" | "early" | "am79" | "amAll" | "pm";
 const STORAGE_KEY = "golf:view-mode";
 const SORT_STORAGE_KEY = "golf:sort-mode";
+const TIME_STORAGE_KEY = "golf:time-range";
+
+function inTimeRange(time: string, range: TimeRange): boolean {
+  switch (range) {
+    case "early": return time < "07:00";
+    case "am79": return time >= "07:00" && time < "09:00";
+    case "amAll": return time < "12:00";
+    case "pm": return time >= "12:00";
+    default: return true;
+  }
+}
 
 export function CourseList({ courses, highlightCourse = null, highlightTimes = [] }: { courses: CourseResult[]; highlightCourse?: string | null; highlightTimes?: string[] }) {
   const t = useT();
   const [view, setView]     = useState<ViewMode>("list");
   const [filter, setFilter] = useState<"all" | Status>("green");
   const [sort, setSort]     = useState<SortMode>("alpha");
+  const [timeRange, setTimeRange] = useState<TimeRange>("all");
   const [hydrated, setHydrated] = useState(false);
 
   const filterOptions: { value: "all" | Status; label: string }[] = [
@@ -31,13 +44,28 @@ export function CourseList({ courses, highlightCourse = null, highlightTimes = [
     { value: "price",    label: t.list.sortPrice },
   ];
 
+  const timeOptions: { value: TimeRange; label: string }[] = [
+    { value: "all",    label: t.list.timeAll },
+    { value: "early",  label: t.list.timeEarly },
+    { value: "am79",   label: t.list.timeAM79 },
+    { value: "amAll",  label: t.list.timeAMAll },
+    { value: "pm",     label: t.list.timePM },
+  ];
+
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "list" || stored === "card") setView(stored);
     const storedSort = localStorage.getItem(SORT_STORAGE_KEY);
     if (storedSort === "alpha" || storedSort === "distance" || storedSort === "price") setSort(storedSort as SortMode);
+    const storedTime = localStorage.getItem(TIME_STORAGE_KEY);
+    if (["all", "early", "am79", "amAll", "pm"].includes(storedTime ?? "")) setTimeRange(storedTime as TimeRange);
     setHydrated(true);
   }, []);
+
+  const changeTime = (next: TimeRange) => {
+    setTimeRange(next);
+    localStorage.setItem(TIME_STORAGE_KEY, next);
+  };
 
   const changeView = (next: ViewMode) => {
     setView(next);
@@ -50,7 +78,15 @@ export function CourseList({ courses, highlightCourse = null, highlightTimes = [
   };
 
   const displayCourses = useMemo(() => {
-    const base = filter === "all" ? courses : courses.filter((c) => c.status === filter);
+    const ranged =
+      timeRange === "all"
+        ? courses
+        : courses.map((c) => ({
+            ...c,
+            slots: c.slots.filter((sl) => inTimeRange(sl.time, timeRange)),
+          }));
+    let base = filter === "all" ? ranged : ranged.filter((c) => c.status === filter);
+    if (timeRange !== "all") base = base.filter((c) => c.slots.length > 0);
     const sorted = [...base].sort((a, b) => {
       if (sort === "alpha")    return a.name.localeCompare(b.name);
       if (sort === "distance") return (a.distance_km ?? 9999) - (b.distance_km ?? 9999);
@@ -61,7 +97,7 @@ export function CourseList({ courses, highlightCourse = null, highlightTimes = [
     const hi   = sorted.filter((c) => c.name === highlightCourse);
     const rest = sorted.filter((c) => c.name !== highlightCourse);
     return [...hi, ...rest];
-  }, [courses, filter, sort, highlightCourse]);
+  }, [courses, filter, sort, timeRange, highlightCourse]);
 
   return (
     <div>
@@ -76,6 +112,11 @@ export function CourseList({ courses, highlightCourse = null, highlightTimes = [
             options={sortOptions}
             value={sort}
             onChange={(v) => changeSort(v as SortMode)}
+          />
+          <Dropdown
+            options={timeOptions}
+            value={timeRange}
+            onChange={(v) => changeTime(v as TimeRange)}
           />
         </div>
 

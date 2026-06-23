@@ -16,6 +16,11 @@ export const dict = {
       sortPrice: "Price",
       viewList: "List",
       viewCard: "Card",
+      timeAll: "All times",
+      timeEarly: "Before 7am",
+      timeAM79: "7–9am",
+      timeAMAll: "Morning",
+      timePM: "Afternoon",
     },
     main: {
       courses: (n: number) => `${n} courses`,
@@ -120,6 +125,11 @@ export const dict = {
       sortPrice: "가격순",
       viewList: "리스트",
       viewCard: "카드",
+      timeAll: "전체 시간",
+      timeEarly: "새벽(7시 이전)",
+      timeAM79: "오전 7–9시",
+      timeAMAll: "오전",
+      timePM: "오후",
     },
     main: {
       courses: (n: number) => `전체 ${n}개 코스`,

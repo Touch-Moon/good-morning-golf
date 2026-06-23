@@ -1,7 +1,7 @@
 import { CourseList } from "@/components/CourseList";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
-import { getLatestRun } from "@/lib/data";
-import { mergeOverrides, getActiveAnnouncement } from "@/lib/overrides";
+import { getHomeRun } from "@/lib/home-data";
+import { getActiveAnnouncement } from "@/lib/overrides";
 import { getLocale } from "@/lib/i18n-server";
 import { dict, formatDateLocalized } from "@/lib/i18n";
 import s from "./page.module.scss";
@@ -13,11 +13,11 @@ const HIDDEN_COURSES = ["Rossmere Country Club", "Lorette Golf Course"];
 export default async function Home() {
   const locale = await getLocale();
   const t = dict[locale];
-  const run = getLatestRun();
-  const [mergedCourses, announcement] = await Promise.all([
-    mergeOverrides(run.results),
+  const [run, announcement] = await Promise.all([
+    getHomeRun(),
     getActiveAnnouncement(),
   ]);
+  const mergedCourses = run.results;
 
   const visibleCourses = mergedCourses.filter(
     (c) => !HIDDEN_COURSES.includes(c.name)
