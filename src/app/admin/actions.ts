@@ -80,6 +80,15 @@ export async function updateCourse(formData: FormData) {
 
 export async function deleteCourse(id: number) {
   await requireAdmin();
+  // courses(id)를 참조하는 의존 데이터를 먼저 정리해야 FK(NO ACTION) 위반을 피함.
+  //  - crawl_results: 재생성 가능한 크롤 이력 → 삭제
+  //  - poll_votes / events: 해당 코스 관련 항목 → 삭제 (코스가 사라지면 무의미)
+  //  - weekly_polls.winner_course_id: 우승 코스 참조 → null 처리(투표 기록은 보존)
+  await supabaseAdmin.from("crawl_results").delete().eq("course_id", id);
+  await supabaseAdmin.from("poll_votes").delete().eq("course_id", id);
+  await supabaseAdmin.from("events").delete().eq("course_id", id);
+  await supabaseAdmin.from("weekly_polls").update({ winner_course_id: null }).eq("winner_course_id", id);
+
   const { error } = await supabaseAdmin.from("courses").delete().eq("id", id);
   if (error) throw new Error(error.message);
   revalidatePath("/admin/courses");

@@ -21,9 +21,13 @@ function CourseForm({ course, onDone }: { course?: Course; onDone?: () => void }
 
   function handleSubmit(formData: FormData) {
     startTransition(async () => {
-      if (isEdit) await updateCourse(formData);
-      else await createCourse(formData);
-      onDone?.();
+      try {
+        if (isEdit) await updateCourse(formData);
+        else await createCourse(formData);
+        onDone?.();
+      } catch (e) {
+        alert((e as Error)?.message ?? "저장에 실패했습니다.");
+      }
     });
   }
 
@@ -145,10 +149,14 @@ function ManualSlotsEditor({ course }: { course: Course }) {
   }
   function save() {
     startTransition(async () => {
-      const fd = new FormData();
-      fd.append("id", String(course.id));
-      fd.append("slots_json", JSON.stringify(slots));
-      await updateManualSlots(fd);
+      try {
+        const fd = new FormData();
+        fd.append("id", String(course.id));
+        fd.append("slots_json", JSON.stringify(slots));
+        await updateManualSlots(fd);
+      } catch (e) {
+        alert((e as Error)?.message ?? "저장에 실패했습니다.");
+      }
     });
   }
 
@@ -200,12 +208,20 @@ function CourseRow({ course }: { course: Course }) {
   function handleDelete() {
     if (!confirm(t.delConfirm(course.name))) return;
     startTransition(async () => {
-      await deleteCourse(course.id);
+      try {
+        await deleteCourse(course.id);
+      } catch (e) {
+        alert((e as Error)?.message ?? "삭제에 실패했습니다.");
+      }
     });
   }
   function handleToggle() {
     startTransition(async () => {
-      await toggleCourseActive(course.id, !course.is_active);
+      try {
+        await toggleCourseActive(course.id, !course.is_active);
+      } catch (e) {
+        alert((e as Error)?.message ?? "변경에 실패했습니다.");
+      }
     });
   }
 
