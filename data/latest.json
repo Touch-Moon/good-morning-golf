@@ -2392,11 +2392,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "15:51",
-          "price": 69,
-          "is_hot_deal": false
-        },
-        {
           "time": "16:00",
           "price": 69,
           "is_hot_deal": false
@@ -2507,14 +2502,6 @@
           },
           {
             "time": "13:45"
-          }
-        ],
-        [
-          {
-            "time": "15:51"
-          },
-          {
-            "time": "16:00"
           }
         ],
         [
@@ -3761,11 +3748,6 @@
       "status": "green",
       "slots": [
         {
-          "time": "07:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:07",
           "price": null,
           "is_hot_deal": false
@@ -4637,7 +4619,7 @@
           }
         ]
       ],
-      "earliest_slot": "07:52",
+      "earliest_slot": "08:07",
       "earliest_2team": "08:07 + 08:15"
     },
     {
@@ -8744,7 +8726,7 @@
     "bridges_coupon": "n/a",
     "with_slots": 13,
     "telegram": "success",
-    "webapp_import": "failed",
+    "webapp_import": "success",
     "notion_export": "success (0 created, 18 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-06-27.csv"
