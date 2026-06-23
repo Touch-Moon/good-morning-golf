@@ -2385,7 +2385,7 @@
       "status": "green",
       "slots": [
         {
-          "time": "11:57",
+          "time": "08:21",
           "price": 99,
           "is_hot_deal": false
         },
@@ -2635,7 +2635,7 @@
           }
         ]
       ],
-      "earliest_slot": "11:57",
+      "earliest_slot": "08:21",
       "earliest_2team": "12:42 + 12:51"
     },
     {
@@ -7752,6 +7752,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "16:22",
+          "price": 48.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "16:30",
           "price": 48.0,
           "is_hot_deal": false
@@ -7960,6 +7965,14 @@
           },
           {
             "time": "16:15"
+          }
+        ],
+        [
+          {
+            "time": "16:22"
+          },
+          {
+            "time": "16:30"
           }
         ],
         [
