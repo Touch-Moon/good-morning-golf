@@ -8337,16 +8337,343 @@
     {
       "name": "Transcona Golf Club",
       "source": "individual",
-      "status": "red",
-      "slots": [],
+      "status": "green",
+      "slots": [
+        {
+          "time": "07:52",
+          "price": 57.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "09:00",
+          "price": 57.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "09:30",
+          "price": 57.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "09:45",
+          "price": 57.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:52",
+          "price": 57.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:37",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:00",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:07",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:15",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:22",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:30",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:37",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "14:52",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:00",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:07",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:15",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:22",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:30",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:37",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:45",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:52",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:22",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:30",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:37",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:45",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "16:52",
+          "price": 45.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:07",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:15",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:22",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:30",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:37",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:45",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "17:52",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:00",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:07",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:15",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:22",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:30",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:37",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "18:52",
+          "price": 38.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "19:00",
+          "price": 38.0,
+          "is_hot_deal": false
+        }
+      ],
       "fallback_price": null,
       "distance_km": 20,
       "phone": "(204) 224-7867",
       "booking_url": "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=TRAN&FromCourseWebsite=true",
       "cart_mandatory": false,
-      "consecutive_slots": [],
-      "earliest_slot": null,
-      "earliest_2team": null
+      "consecutive_slots": [
+        [
+          {
+            "time": "14:07"
+          },
+          {
+            "time": "14:15"
+          }
+        ],
+        [
+          {
+            "time": "14:22"
+          },
+          {
+            "time": "14:30"
+          }
+        ],
+        [
+          {
+            "time": "14:52"
+          },
+          {
+            "time": "15:00"
+          }
+        ],
+        [
+          {
+            "time": "15:07"
+          },
+          {
+            "time": "15:15"
+          }
+        ],
+        [
+          {
+            "time": "15:22"
+          },
+          {
+            "time": "15:30"
+          }
+        ],
+        [
+          {
+            "time": "15:37"
+          },
+          {
+            "time": "15:45"
+          }
+        ],
+        [
+          {
+            "time": "16:22"
+          },
+          {
+            "time": "16:30"
+          }
+        ],
+        [
+          {
+            "time": "16:37"
+          },
+          {
+            "time": "16:45"
+          }
+        ],
+        [
+          {
+            "time": "17:07"
+          },
+          {
+            "time": "17:15"
+          }
+        ],
+        [
+          {
+            "time": "17:22"
+          },
+          {
+            "time": "17:30"
+          }
+        ],
+        [
+          {
+            "time": "17:37"
+          },
+          {
+            "time": "17:45"
+          }
+        ],
+        [
+          {
+            "time": "17:52"
+          },
+          {
+            "time": "18:00"
+          }
+        ],
+        [
+          {
+            "time": "18:07"
+          },
+          {
+            "time": "18:15"
+          }
+        ],
+        [
+          {
+            "time": "18:22"
+          },
+          {
+            "time": "18:30"
+          }
+        ],
+        [
+          {
+            "time": "18:52"
+          },
+          {
+            "time": "19:00"
+          }
+        ]
+      ],
+      "earliest_slot": "07:52",
+      "earliest_2team": "14:07 + 14:15"
     }
   ],
   "stats": {
@@ -8355,7 +8682,7 @@
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
-    "with_slots": 13,
+    "with_slots": 14,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
     "notion_export": "success (0 created, 18 updated)",
