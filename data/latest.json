@@ -411,6 +411,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "06:37",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
           "time": "06:52",
           "price": null,
           "is_hot_deal": false
@@ -442,11 +447,6 @@
         },
         {
           "time": "08:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:07",
           "price": null,
           "is_hot_deal": false
         },
@@ -754,6 +754,14 @@
       "consecutive_slots": [
         [
           {
+            "time": "06:30"
+          },
+          {
+            "time": "06:37"
+          }
+        ],
+        [
+          {
             "time": "06:52"
           },
           {
@@ -782,14 +790,6 @@
           },
           {
             "time": "07:37"
-          }
-        ],
-        [
-          {
-            "time": "09:07"
-          },
-          {
-            "time": "09:15"
           }
         ],
         [
@@ -1154,7 +1154,7 @@
         ]
       ],
       "earliest_slot": "06:30",
-      "earliest_2team": "06:52 + 07:00"
+      "earliest_2team": "06:30 + 06:37"
     },
     {
       "name": "Quarry Oaks Golf Course",
@@ -2095,6 +2095,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "09:33",
+          "price": 99,
+          "is_hot_deal": false
+        },
+        {
           "time": "10:36",
           "price": 99,
           "is_hot_deal": false
@@ -2107,11 +2112,6 @@
         {
           "time": "11:48",
           "price": 99,
-          "is_hot_deal": false
-        },
-        {
-          "time": "16:00",
-          "price": 69,
           "is_hot_deal": false
         },
         {
@@ -2211,14 +2211,6 @@
       "booking_url": "https://bridgesgccan.cps.golf/onlineresweb/search-teetime?TeeOffTimeMin=0&TeeOffTimeMax=23.999722222222225",
       "cart_mandatory": true,
       "consecutive_slots": [
-        [
-          {
-            "time": "16:00"
-          },
-          {
-            "time": "16:09"
-          }
-        ],
         [
           {
             "time": "16:09"
@@ -2341,7 +2333,7 @@
         ]
       ],
       "earliest_slot": "07:54",
-      "earliest_2team": "16:00 + 16:09"
+      "earliest_2team": "16:09 + 16:18"
     },
     {
       "name": "Larters at St. Andrews Golf Course",
@@ -4146,11 +4138,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "17:08",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "17:16",
           "price": 48.0,
           "is_hot_deal": false
@@ -4177,11 +4164,6 @@
         },
         {
           "time": "17:56",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "18:04",
           "price": 48.0,
           "is_hot_deal": false
         },
@@ -4317,14 +4299,6 @@
         ],
         [
           {
-            "time": "17:08"
-          },
-          {
-            "time": "17:16"
-          }
-        ],
-        [
-          {
             "time": "17:16"
           },
           {
@@ -4361,22 +4335,6 @@
           },
           {
             "time": "17:56"
-          }
-        ],
-        [
-          {
-            "time": "17:56"
-          },
-          {
-            "time": "18:04"
-          }
-        ],
-        [
-          {
-            "time": "18:04"
-          },
-          {
-            "time": "18:12"
           }
         ],
         [
@@ -4893,21 +4851,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:00",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:07",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:15",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:22",
           "price": 73.0,
           "is_hot_deal": false
@@ -5204,22 +5147,6 @@
           },
           {
             "time": "11:30"
-          }
-        ],
-        [
-          {
-            "time": "11:52"
-          },
-          {
-            "time": "12:00"
-          }
-        ],
-        [
-          {
-            "time": "12:07"
-          },
-          {
-            "time": "12:15"
           }
         ],
         [
@@ -6029,11 +5956,6 @@
       "status": "green",
       "slots": [
         {
-          "time": "06:30",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "06:45",
           "price": null,
           "is_hot_deal": false
@@ -6508,7 +6430,7 @@
           }
         ]
       ],
-      "earliest_slot": "06:30",
+      "earliest_slot": "06:45",
       "earliest_2team": "09:37 + 09:45"
     },
     {
@@ -6548,11 +6470,6 @@
         },
         {
           "time": "12:45",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:52",
           "price": 48.0,
           "is_hot_deal": false
         },
@@ -7003,11 +6920,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "18:27",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "18:36",
           "price": null,
           "is_hot_deal": false
@@ -7258,22 +7170,6 @@
         ],
         [
           {
-            "time": "18:18"
-          },
-          {
-            "time": "18:27"
-          }
-        ],
-        [
-          {
-            "time": "18:27"
-          },
-          {
-            "time": "18:36"
-          }
-        ],
-        [
-          {
             "time": "18:36"
           },
           {
@@ -7355,11 +7251,6 @@
       "slots": [
         {
           "time": "07:45",
-          "price": 57.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:00",
           "price": 57.0,
           "is_hot_deal": false
         },
