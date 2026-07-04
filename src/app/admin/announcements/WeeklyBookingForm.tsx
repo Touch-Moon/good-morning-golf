@@ -40,6 +40,7 @@ export function WeeklyBookingForm({
   targetDate: string;
   onClose: () => void;
 }) {
+  const [bookingDate, setBookingDate] = useState(targetDate);
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedTimes, setSelectedTimes] = useState<string[]>([]);
   const [attendingFixed, setAttendingFixed] = useState<string[]>([]);
@@ -59,7 +60,7 @@ export function WeeklyBookingForm({
     ? buildMessage(selectedCourse, selectedTimes, allAttending)
     : "";
 
-  const expiresAt = buildExpiresAt(targetDate, selectedTimes);
+  const expiresAt = buildExpiresAt(bookingDate, selectedTimes);
 
   function toggleTime(t: string) {
     setSelectedTimes((prev) =>
@@ -91,6 +92,20 @@ export function WeeklyBookingForm({
       <div className={s["form-header"]}>
         <h2 className={s.title}>주간 예약 공지 작성</h2>
         <button type="button" className={s["btn-close"]} onClick={onClose}>✕</button>
+      </div>
+
+      {/* Booking date */}
+      <div className={s.section}>
+        <label className={s.label}>
+          예약 날짜 <span className={s["label-hint"]}>(자동 만료 시각 계산에 사용됩니다)</span>
+        </label>
+        <input
+          type="date"
+          className={s.input}
+          value={bookingDate}
+          onChange={(e) => setBookingDate(e.target.value)}
+          required
+        />
       </div>
 
       {/* Course selector */}
