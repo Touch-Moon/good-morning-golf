@@ -62,22 +62,17 @@
           "is_hot_deal": false
         },
         {
-          "time": "15:16",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:24",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
           "time": "15:32",
           "price": 56.7,
           "is_hot_deal": false
         },
         {
           "time": "15:40",
+          "price": 56.7,
+          "is_hot_deal": false
+        },
+        {
+          "time": "15:48",
           "price": 56.7,
           "is_hot_deal": false
         },
@@ -233,26 +228,18 @@
         ],
         [
           {
-            "time": "15:16"
-          },
-          {
-            "time": "15:24"
-          }
-        ],
-        [
-          {
-            "time": "15:24"
-          },
-          {
-            "time": "15:32"
-          }
-        ],
-        [
-          {
             "time": "15:32"
           },
           {
             "time": "15:40"
+          }
+        ],
+        [
+          {
+            "time": "15:40"
+          },
+          {
+            "time": "15:48"
           }
         ],
         [
@@ -1781,192 +1768,16 @@
     {
       "name": "Rossmere Country Club",
       "source": "individual",
-      "status": "afternoon",
-      "slots": [
-        {
-          "time": "14:08",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:16",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:25",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:33",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:42",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:50",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:59",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:07",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:16",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:24",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:33",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:41",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:50",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:58",
-          "price": null,
-          "is_hot_deal": false
-        }
-      ],
+      "status": "red",
+      "slots": [],
       "fallback_price": 62,
       "distance_km": 18,
       "phone": "(204) 988-1540",
       "booking_url": "https://rossmeregc.clubhouseonline-e3.net/PublicTeeTimes/TeeSheet.aspx",
       "cart_mandatory": false,
-      "consecutive_slots": [
-        [
-          {
-            "time": "14:08"
-          },
-          {
-            "time": "14:16"
-          }
-        ],
-        [
-          {
-            "time": "14:16"
-          },
-          {
-            "time": "14:25"
-          }
-        ],
-        [
-          {
-            "time": "14:25"
-          },
-          {
-            "time": "14:33"
-          }
-        ],
-        [
-          {
-            "time": "14:33"
-          },
-          {
-            "time": "14:42"
-          }
-        ],
-        [
-          {
-            "time": "14:42"
-          },
-          {
-            "time": "14:50"
-          }
-        ],
-        [
-          {
-            "time": "14:50"
-          },
-          {
-            "time": "14:59"
-          }
-        ],
-        [
-          {
-            "time": "14:59"
-          },
-          {
-            "time": "15:07"
-          }
-        ],
-        [
-          {
-            "time": "15:07"
-          },
-          {
-            "time": "15:16"
-          }
-        ],
-        [
-          {
-            "time": "15:16"
-          },
-          {
-            "time": "15:24"
-          }
-        ],
-        [
-          {
-            "time": "15:24"
-          },
-          {
-            "time": "15:33"
-          }
-        ],
-        [
-          {
-            "time": "15:33"
-          },
-          {
-            "time": "15:41"
-          }
-        ],
-        [
-          {
-            "time": "15:41"
-          },
-          {
-            "time": "15:50"
-          }
-        ],
-        [
-          {
-            "time": "15:50"
-          },
-          {
-            "time": "15:58"
-          }
-        ]
-      ],
-      "earliest_slot": "14:08",
-      "earliest_2team": "14:08 + 14:16"
+      "consecutive_slots": [],
+      "earliest_slot": null,
+      "earliest_2team": null
     },
     {
       "name": "St. Boniface Golf Club",
@@ -3303,6 +3114,31 @@
           "is_hot_deal": false
         },
         {
+          "time": "11:24",
+          "price": 85.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:33",
+          "price": 85.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:42",
+          "price": 85.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "11:51",
+          "price": 85.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:00",
+          "price": 85.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "12:09",
           "price": 85.0,
           "is_hot_deal": false
@@ -3460,6 +3296,46 @@
           },
           {
             "time": "09:45"
+          }
+        ],
+        [
+          {
+            "time": "11:24"
+          },
+          {
+            "time": "11:33"
+          }
+        ],
+        [
+          {
+            "time": "11:33"
+          },
+          {
+            "time": "11:42"
+          }
+        ],
+        [
+          {
+            "time": "11:42"
+          },
+          {
+            "time": "11:51"
+          }
+        ],
+        [
+          {
+            "time": "11:51"
+          },
+          {
+            "time": "12:00"
+          }
+        ],
+        [
+          {
+            "time": "12:00"
+          },
+          {
+            "time": "12:09"
           }
         ],
         [
@@ -4510,11 +4386,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:08",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "09:16",
           "price": 77.0,
           "is_hot_deal": false
@@ -4646,11 +4517,6 @@
         },
         {
           "time": "12:52",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "13:00",
           "price": 77.0,
           "is_hot_deal": false
         },
@@ -4952,14 +4818,6 @@
         ],
         [
           {
-            "time": "09:08"
-          },
-          {
-            "time": "09:16"
-          }
-        ],
-        [
-          {
             "time": "09:16"
           },
           {
@@ -5156,22 +5014,6 @@
           },
           {
             "time": "12:52"
-          }
-        ],
-        [
-          {
-            "time": "12:52"
-          },
-          {
-            "time": "13:00"
-          }
-        ],
-        [
-          {
-            "time": "13:00"
-          },
-          {
-            "time": "13:08"
           }
         ],
         [
@@ -6496,16 +6338,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:16",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:24",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:32",
           "price": null,
           "is_hot_deal": false
@@ -7021,30 +6853,6 @@
           },
           {
             "time": "12:08"
-          }
-        ],
-        [
-          {
-            "time": "12:08"
-          },
-          {
-            "time": "12:16"
-          }
-        ],
-        [
-          {
-            "time": "12:16"
-          },
-          {
-            "time": "12:24"
-          }
-        ],
-        [
-          {
-            "time": "12:24"
-          },
-          {
-            "time": "12:32"
           }
         ],
         [
@@ -8416,11 +8224,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:45",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:12",
           "price": null,
           "is_hot_deal": false
@@ -8760,14 +8563,6 @@
           },
           {
             "time": "09:36"
-          }
-        ],
-        [
-          {
-            "time": "09:36"
-          },
-          {
-            "time": "09:45"
           }
         ],
         [
