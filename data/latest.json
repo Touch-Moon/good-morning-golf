@@ -32,11 +32,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:52",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:56",
           "price": 56.7,
           "is_hot_deal": false
@@ -297,14 +292,6 @@
           },
           {
             "time": "10:44"
-          }
-        ],
-        [
-          {
-            "time": "10:44"
-          },
-          {
-            "time": "10:52"
           }
         ],
         [
@@ -2110,11 +2097,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "07:27",
-          "price": 99,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:03",
           "price": 99,
           "is_hot_deal": false
@@ -2377,14 +2359,6 @@
           },
           {
             "time": "07:18"
-          }
-        ],
-        [
-          {
-            "time": "07:18"
-          },
-          {
-            "time": "07:27"
           }
         ],
         [
@@ -5398,11 +5372,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:33",
-          "price": 62,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:43",
           "price": 62,
           "is_hot_deal": false
@@ -5544,14 +5513,6 @@
       "booking_url": "https://belacres.cps.golf/",
       "cart_mandatory": false,
       "consecutive_slots": [
-        [
-          {
-            "time": "11:33"
-          },
-          {
-            "time": "11:43"
-          }
-        ],
         [
           {
             "time": "11:43"
@@ -5746,7 +5707,7 @@
         ]
       ],
       "earliest_slot": "06:46",
-      "earliest_2team": "11:33 + 11:43"
+      "earliest_2team": "11:43 + 11:52"
     },
     {
       "name": "Whispering Winds of Warren",
@@ -5815,11 +5776,6 @@
         },
         {
           "time": "09:52",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:00",
           "price": 73.0,
           "is_hot_deal": false
         },
@@ -6168,14 +6124,6 @@
           },
           {
             "time": "09:45"
-          }
-        ],
-        [
-          {
-            "time": "09:52"
-          },
-          {
-            "time": "10:00"
           }
         ],
         [
