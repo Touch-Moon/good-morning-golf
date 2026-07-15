@@ -641,11 +641,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:00",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:07",
           "price": null,
           "is_hot_deal": false
@@ -918,14 +913,6 @@
           },
           {
             "time": "08:45"
-          }
-        ],
-        [
-          {
-            "time": "10:00"
-          },
-          {
-            "time": "10:07"
           }
         ],
         [
@@ -1234,11 +1221,6 @@
       "status": "green",
       "slots": [
         {
-          "time": "07:42",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "09:21",
           "price": null,
           "is_hot_deal": false
@@ -1360,6 +1342,11 @@
         },
         {
           "time": "13:42",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:51",
           "price": null,
           "is_hot_deal": false
         }
@@ -1529,9 +1516,17 @@
           {
             "time": "13:42"
           }
+        ],
+        [
+          {
+            "time": "13:42"
+          },
+          {
+            "time": "13:51"
+          }
         ]
       ],
-      "earliest_slot": "07:42",
+      "earliest_slot": "09:21",
       "earliest_2team": "09:21 + 09:30"
     },
     {
@@ -2037,11 +2032,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:57",
-          "price": 99,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:15",
           "price": 99,
           "is_hot_deal": false
@@ -2243,14 +2233,6 @@
           },
           {
             "time": "11:48"
-          }
-        ],
-        [
-          {
-            "time": "11:48"
-          },
-          {
-            "time": "11:57"
           }
         ],
         [
@@ -6508,11 +6490,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "06:45",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:45",
           "price": 48.0,
           "is_hot_deal": false
@@ -6796,14 +6773,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "06:37"
-          },
-          {
-            "time": "06:45"
-          }
-        ],
-        [
-          {
             "time": "11:07"
           },
           {
@@ -6996,18 +6965,13 @@
         ]
       ],
       "earliest_slot": "06:22",
-      "earliest_2team": "06:37 + 06:45"
+      "earliest_2team": "11:07 + 11:15"
     },
     {
       "name": "Steinbach Golf Club",
       "source": "individual",
-      "status": "green",
+      "status": "afternoon",
       "slots": [
-        {
-          "time": "11:51",
-          "price": null,
-          "is_hot_deal": false
-        },
         {
           "time": "12:09",
           "price": null,
@@ -7611,7 +7575,7 @@
           }
         ]
       ],
-      "earliest_slot": "11:51",
+      "earliest_slot": "12:09",
       "earliest_2team": "12:09 + 12:18"
     },
     {
@@ -7678,7 +7642,7 @@
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
-    "with_slots": 12,
+    "with_slots": 11,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
     "notion_export": "success (0 created, 18 updated)",
