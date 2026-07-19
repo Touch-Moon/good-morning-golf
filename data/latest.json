@@ -2308,11 +2308,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:21",
-          "price": 99,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:03",
           "price": 99,
           "is_hot_deal": false
@@ -8824,7 +8819,7 @@
     "with_slots": 11,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
-    "notion_export": "success (18 created, 0 updated)",
+    "notion_export": "success (0 created, 18 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-07-25.csv"
   }
