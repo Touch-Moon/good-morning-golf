@@ -614,11 +614,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:07",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:15",
           "price": null,
           "is_hot_deal": false
@@ -887,14 +882,6 @@
           },
           {
             "time": "11:22"
-          }
-        ],
-        [
-          {
-            "time": "12:07"
-          },
-          {
-            "time": "12:15"
           }
         ],
         [
@@ -4981,11 +4968,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "07:28",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "07:36",
           "price": null,
           "is_hot_deal": false
@@ -5435,22 +5417,6 @@
           },
           {
             "time": "06:56"
-          }
-        ],
-        [
-          {
-            "time": "07:20"
-          },
-          {
-            "time": "07:28"
-          }
-        ],
-        [
-          {
-            "time": "07:28"
-          },
-          {
-            "time": "07:36"
           }
         ],
         [
@@ -6081,11 +6047,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:37",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:52",
           "price": 48.0,
           "is_hot_deal": false
@@ -6162,16 +6123,6 @@
         },
         {
           "time": "15:07",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:15",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:22",
           "price": 48.0,
           "is_hot_deal": false
         },
@@ -6368,22 +6319,6 @@
           },
           {
             "time": "15:00"
-          }
-        ],
-        [
-          {
-            "time": "15:07"
-          },
-          {
-            "time": "15:15"
-          }
-        ],
-        [
-          {
-            "time": "15:22"
-          },
-          {
-            "time": "15:30"
           }
         ],
         [
