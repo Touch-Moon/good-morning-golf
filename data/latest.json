@@ -2048,11 +2048,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "18:45",
-          "price": 47.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "18:52",
           "price": 47.0,
           "is_hot_deal": false
@@ -2111,14 +2106,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "18:37"
-          },
-          {
-            "time": "18:45"
-          }
-        ],
-        [
-          {
             "time": "18:52"
           },
           {
@@ -2159,7 +2146,7 @@
         ]
       ],
       "earliest_slot": "18:22",
-      "earliest_2team": "18:37 + 18:45"
+      "earliest_2team": "18:52 + 19:00"
     },
     {
       "name": "Kingswood Golf & Country Club",
@@ -3736,11 +3723,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:45",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:52",
           "price": 73.0,
           "is_hot_deal": false
@@ -4089,14 +4071,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "08:37"
-          },
-          {
-            "time": "08:45"
-          }
-        ],
-        [
-          {
             "time": "10:22"
           },
           {
@@ -4345,7 +4319,7 @@
         ]
       ],
       "earliest_slot": "08:07",
-      "earliest_2team": "08:37 + 08:45"
+      "earliest_2team": "10:22 + 10:30"
     },
     {
       "name": "Southside Golf Course",
@@ -5578,6 +5552,11 @@
         },
         {
           "time": "07:30",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "08:06",
           "price": null,
           "is_hot_deal": false
         },
