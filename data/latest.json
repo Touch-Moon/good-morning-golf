@@ -87,11 +87,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "17:40",
-          "price": 36.75,
-          "is_hot_deal": false
-        },
-        {
           "time": "17:50",
           "price": 36.75,
           "is_hot_deal": false
@@ -254,22 +249,6 @@
           },
           {
             "time": "17:30"
-          }
-        ],
-        [
-          {
-            "time": "17:30"
-          },
-          {
-            "time": "17:40"
-          }
-        ],
-        [
-          {
-            "time": "17:40"
-          },
-          {
-            "time": "17:50"
           }
         ],
         [
@@ -1843,6 +1822,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "13:18",
+          "price": 79,
+          "is_hot_deal": false
+        },
+        {
           "time": "13:45",
           "price": 79,
           "is_hot_deal": false
@@ -2087,11 +2071,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "18:52",
-          "price": 47.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "19:00",
           "price": 47.0,
           "is_hot_deal": false
@@ -2140,14 +2119,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "18:52"
-          },
-          {
-            "time": "19:00"
-          }
-        ],
-        [
-          {
             "time": "19:22"
           },
           {
@@ -2171,8 +2142,8 @@
           }
         ]
       ],
-      "earliest_slot": "18:52",
-      "earliest_2team": "18:52 + 19:00"
+      "earliest_slot": "19:00",
+      "earliest_2team": "19:22 + 19:30"
     },
     {
       "name": "Kingswood Golf & Country Club",
@@ -4239,12 +4210,12 @@
       "status": "green",
       "slots": [
         {
-          "time": "06:40",
+          "time": "06:16",
           "price": null,
           "is_hot_deal": false
         },
         {
-          "time": "12:32",
+          "time": "06:40",
           "price": null,
           "is_hot_deal": false
         },
@@ -4555,14 +4526,6 @@
       "booking_url": "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=STHS&FromCourseWebsite=true",
       "cart_mandatory": false,
       "consecutive_slots": [
-        [
-          {
-            "time": "12:32"
-          },
-          {
-            "time": "12:40"
-          }
-        ],
         [
           {
             "time": "12:40"
@@ -4964,8 +4927,8 @@
           }
         ]
       ],
-      "earliest_slot": "06:40",
-      "earliest_2team": "12:32 + 12:40"
+      "earliest_slot": "06:16",
+      "earliest_2team": "12:40 + 12:48"
     },
     {
       "name": "Oakwood Golf Course",
@@ -5729,11 +5692,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "14:15",
-          "price": 45.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "14:22",
           "price": 45.0,
           "is_hot_deal": false
@@ -5919,14 +5877,6 @@
           },
           {
             "time": "13:45"
-          }
-        ],
-        [
-          {
-            "time": "14:07"
-          },
-          {
-            "time": "14:15"
           }
         ],
         [
