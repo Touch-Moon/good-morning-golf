@@ -2955,11 +2955,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:03",
-          "price": 99,
-          "is_hot_deal": false
-        },
-        {
           "time": "08:12",
           "price": 99,
           "is_hot_deal": false
@@ -3241,22 +3236,6 @@
       "booking_url": "https://bridgesgccan.cps.golf/onlineresweb/search-teetime?TeeOffTimeMin=0&TeeOffTimeMax=23.999722222222225",
       "cart_mandatory": true,
       "consecutive_slots": [
-        [
-          {
-            "time": "07:54"
-          },
-          {
-            "time": "08:03"
-          }
-        ],
-        [
-          {
-            "time": "08:03"
-          },
-          {
-            "time": "08:12"
-          }
-        ],
         [
           {
             "time": "08:12"
@@ -3627,7 +3606,7 @@
         ]
       ],
       "earliest_slot": "07:27",
-      "earliest_2team": "07:54 + 08:03"
+      "earliest_2team": "08:12 + 08:21"
     },
     {
       "name": "Larters at St. Andrews Golf Course",
@@ -7360,11 +7339,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:04",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:12",
           "price": null,
           "is_hot_deal": false
@@ -7877,14 +7851,6 @@
           },
           {
             "time": "10:24"
-          }
-        ],
-        [
-          {
-            "time": "11:04"
-          },
-          {
-            "time": "11:12"
           }
         ],
         [
@@ -9368,11 +9334,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "12:00",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:07",
           "price": 48.0,
           "is_hot_deal": false
@@ -9734,14 +9695,6 @@
           },
           {
             "time": "11:45"
-          }
-        ],
-        [
-          {
-            "time": "11:52"
-          },
-          {
-            "time": "12:00"
           }
         ],
         [
@@ -11574,7 +11527,7 @@
     "with_slots": 14,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
-    "notion_export": "success (18 created, 0 updated)",
+    "notion_export": "success (0 created, 18 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-08-01.csv"
   }
