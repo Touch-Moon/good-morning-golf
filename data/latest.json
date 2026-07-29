@@ -2888,11 +2888,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "14:07",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "14:15",
           "price": 68.0,
           "is_hot_deal": false
@@ -3061,14 +3056,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "14:07"
-          },
-          {
-            "time": "14:15"
-          }
-        ],
-        [
-          {
             "time": "14:37"
           },
           {
@@ -3172,8 +3159,8 @@
           }
         ]
       ],
-      "earliest_slot": "14:07",
-      "earliest_2team": "14:07 + 14:15"
+      "earliest_slot": "14:15",
+      "earliest_2team": "14:37 + 14:45"
     },
     {
       "name": "Kingswood Golf & Country Club",
@@ -7667,16 +7654,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "15:04",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:12",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "15:20",
           "price": null,
           "is_hot_deal": false
@@ -8155,30 +8132,6 @@
           },
           {
             "time": "14:24"
-          }
-        ],
-        [
-          {
-            "time": "14:56"
-          },
-          {
-            "time": "15:04"
-          }
-        ],
-        [
-          {
-            "time": "15:04"
-          },
-          {
-            "time": "15:12"
-          }
-        ],
-        [
-          {
-            "time": "15:12"
-          },
-          {
-            "time": "15:20"
           }
         ],
         [
