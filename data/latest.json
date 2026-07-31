@@ -4,18 +4,8 @@
     {
       "name": "River Oaks Golf Course",
       "source": "individual",
-      "status": "green",
+      "status": "afternoon",
       "slots": [
-        {
-          "time": "07:40",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:20",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
         {
           "time": "12:28",
           "price": 56.7,
@@ -198,14 +188,6 @@
       "booking_url": "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=RIOA&FromCourseWebsite=true",
       "cart_mandatory": false,
       "consecutive_slots": [
-        [
-          {
-            "time": "12:20"
-          },
-          {
-            "time": "12:28"
-          }
-        ],
         [
           {
             "time": "12:44"
@@ -415,8 +397,8 @@
           }
         ]
       ],
-      "earliest_slot": "07:40",
-      "earliest_2team": "12:20 + 12:28"
+      "earliest_slot": "12:28",
+      "earliest_2team": "12:44 + 12:52"
     },
     {
       "name": "Lorette Golf Course",
@@ -2648,11 +2630,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "18:45",
-          "price": 47.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "18:52",
           "price": 47.0,
           "is_hot_deal": false
@@ -3506,11 +3483,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:39",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:48",
           "price": 85.0,
           "is_hot_deal": false
@@ -3789,22 +3761,6 @@
           },
           {
             "time": "10:30"
-          }
-        ],
-        [
-          {
-            "time": "10:30"
-          },
-          {
-            "time": "10:39"
-          }
-        ],
-        [
-          {
-            "time": "10:39"
-          },
-          {
-            "time": "10:48"
           }
         ],
         [
@@ -4930,11 +4886,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:28",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "09:00",
           "price": 48.0,
           "is_hot_deal": false
@@ -5243,14 +5194,6 @@
           },
           {
             "time": "08:20"
-          }
-        ],
-        [
-          {
-            "time": "08:20"
-          },
-          {
-            "time": "08:28"
           }
         ],
         [
@@ -5654,6 +5597,11 @@
       "source": "individual",
       "status": "green",
       "slots": [
+        {
+          "time": "09:20",
+          "price": 62,
+          "is_hot_deal": false
+        },
         {
           "time": "11:52",
           "price": 62,
@@ -6176,7 +6124,7 @@
           }
         ]
       ],
-      "earliest_slot": "11:52",
+      "earliest_slot": "09:20",
       "earliest_2team": "11:52 + 12:02"
     },
     {
@@ -6186,11 +6134,6 @@
       "slots": [
         {
           "time": "09:07",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:30",
           "price": 73.0,
           "is_hot_deal": false
         },
@@ -6859,11 +6802,6 @@
         },
         {
           "time": "06:48",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "07:28",
           "price": null,
           "is_hot_deal": false
         },
@@ -7728,6 +7666,11 @@
       "status": "green",
       "slots": [
         {
+          "time": "07:30",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
           "time": "10:52",
           "price": null,
           "is_hot_deal": false
@@ -8169,7 +8112,7 @@
           }
         ]
       ],
-      "earliest_slot": "10:52",
+      "earliest_slot": "07:30",
       "earliest_2team": "10:52 + 11:00"
     },
     {
@@ -8580,17 +8523,7 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:06",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:06",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:42",
           "price": null,
           "is_hot_deal": false
         },
@@ -8862,14 +8795,6 @@
           },
           {
             "time": "06:18"
-          }
-        ],
-        [
-          {
-            "time": "11:42"
-          },
-          {
-            "time": "11:51"
           }
         ],
         [
@@ -9264,6 +9189,11 @@
         },
         {
           "time": "08:00",
+          "price": 57.0,
+          "is_hot_deal": false
+        },
+        {
+          "time": "08:30",
           "price": 57.0,
           "is_hot_deal": false
         },
@@ -9845,7 +9775,7 @@
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
-    "with_slots": 16,
+    "with_slots": 15,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
     "notion_export": "success (0 created, 18 updated)",
