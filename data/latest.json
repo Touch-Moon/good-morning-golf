@@ -2635,11 +2635,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "15:30",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "15:37",
           "price": 68.0,
           "is_hot_deal": false
@@ -2701,11 +2696,6 @@
         },
         {
           "time": "17:45",
-          "price": 47.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "18:00",
           "price": 47.0,
           "is_hot_deal": false
         },
@@ -2909,7 +2899,7 @@
           }
         ]
       ],
-      "earliest_slot": "15:30",
+      "earliest_slot": "15:37",
       "earliest_2team": "15:37 + 15:45"
     },
     {
@@ -9039,6 +9029,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "09:30",
+          "price": 57.0,
+          "is_hot_deal": false
+        },
+        {
           "time": "09:37",
           "price": 57.0,
           "is_hot_deal": false
@@ -9060,11 +9055,6 @@
         },
         {
           "time": "10:15",
-          "price": 57.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:37",
           "price": 57.0,
           "is_hot_deal": false
         },
@@ -9360,6 +9350,14 @@
         ],
         [
           {
+            "time": "09:22"
+          },
+          {
+            "time": "09:30"
+          }
+        ],
+        [
+          {
             "time": "09:37"
           },
           {
@@ -9372,14 +9370,6 @@
           },
           {
             "time": "10:15"
-          }
-        ],
-        [
-          {
-            "time": "11:37"
-          },
-          {
-            "time": "11:45"
           }
         ],
         [
