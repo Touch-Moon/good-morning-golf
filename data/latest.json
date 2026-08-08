@@ -37,11 +37,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "16:50",
-          "price": 36.75,
-          "is_hot_deal": false
-        },
-        {
           "time": "17:20",
           "price": 36.75,
           "is_hot_deal": false
@@ -261,17 +256,7 @@
       "status": "green",
       "slots": [
         {
-          "time": "08:45",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:45",
+          "time": "09:22",
           "price": null,
           "is_hot_deal": false
         },
@@ -311,16 +296,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:30",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "11:45",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "12:00",
           "price": null,
           "is_hot_deal": false
@@ -332,22 +307,6 @@
       "booking_url": "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=LORE&FromCourseWebsite=true",
       "cart_mandatory": false,
       "consecutive_slots": [
-        [
-          {
-            "time": "08:45"
-          },
-          {
-            "time": "08:52"
-          }
-        ],
-        [
-          {
-            "time": "09:45"
-          },
-          {
-            "time": "09:52"
-          }
-        ],
         [
           {
             "time": "09:52"
@@ -371,18 +330,10 @@
           {
             "time": "10:30"
           }
-        ],
-        [
-          {
-            "time": "11:22"
-          },
-          {
-            "time": "11:30"
-          }
         ]
       ],
-      "earliest_slot": "08:45",
-      "earliest_2team": "08:45 + 08:52"
+      "earliest_slot": "09:22",
+      "earliest_2team": "09:52 + 10:00"
     },
     {
       "name": "Quarry Oaks Golf Course",
@@ -396,11 +347,6 @@
         },
         {
           "time": "11:54",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "12:21",
           "price": null,
           "is_hot_deal": false
         },
@@ -508,6 +454,11 @@
           "time": "17:27",
           "price": null,
           "is_hot_deal": false
+        },
+        {
+          "time": "17:36",
+          "price": null,
+          "is_hot_deal": false
         }
       ],
       "fallback_price": 74,
@@ -522,14 +473,6 @@
           },
           {
             "time": "11:54"
-          }
-        ],
-        [
-          {
-            "time": "12:21"
-          },
-          {
-            "time": "12:30"
           }
         ],
         [
@@ -667,6 +610,14 @@
           {
             "time": "17:27"
           }
+        ],
+        [
+          {
+            "time": "17:27"
+          },
+          {
+            "time": "17:36"
+          }
         ]
       ],
       "earliest_slot": "11:45",
@@ -736,22 +687,12 @@
           "is_hot_deal": false
         },
         {
-          "time": "15:51",
-          "price": 69,
-          "is_hot_deal": false
-        },
-        {
           "time": "16:00",
           "price": 69,
           "is_hot_deal": false
         },
         {
           "time": "16:18",
-          "price": 69,
-          "is_hot_deal": false
-        },
-        {
-          "time": "16:27",
           "price": 69,
           "is_hot_deal": false
         },
@@ -821,30 +762,6 @@
           },
           {
             "time": "13:45"
-          }
-        ],
-        [
-          {
-            "time": "15:51"
-          },
-          {
-            "time": "16:00"
-          }
-        ],
-        [
-          {
-            "time": "16:18"
-          },
-          {
-            "time": "16:27"
-          }
-        ],
-        [
-          {
-            "time": "16:27"
-          },
-          {
-            "time": "16:36"
           }
         ],
         [
@@ -1126,19 +1043,14 @@
       "status": "green",
       "slots": [
         {
-          "time": "09:18",
-          "price": 85.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:12",
           "price": null,
           "is_hot_deal": true
         },
         {
           "time": "10:30",
-          "price": 85.0,
-          "is_hot_deal": false
+          "price": null,
+          "is_hot_deal": true
         },
         {
           "time": "12:09",
@@ -1327,7 +1239,7 @@
           }
         ]
       ],
-      "earliest_slot": "09:18",
+      "earliest_slot": "10:12",
       "earliest_2team": "14:08 + 14:16"
     },
     {
@@ -1335,36 +1247,6 @@
       "source": "individual",
       "status": "green",
       "slots": [
-        {
-          "time": "09:07",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:15",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:22",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:30",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:37",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "09:45",
-          "price": null,
-          "is_hot_deal": false
-        },
         {
           "time": "09:52",
           "price": null,
@@ -1739,30 +1621,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "09:07"
-          },
-          {
-            "time": "09:15"
-          }
-        ],
-        [
-          {
-            "time": "09:22"
-          },
-          {
-            "time": "09:30"
-          }
-        ],
-        [
-          {
-            "time": "09:37"
-          },
-          {
-            "time": "09:45"
-          }
-        ],
-        [
-          {
             "time": "09:52"
           },
           {
@@ -2034,8 +1892,8 @@
           }
         ]
       ],
-      "earliest_slot": "09:07",
-      "earliest_2team": "09:07 + 09:15"
+      "earliest_slot": "09:52",
+      "earliest_2team": "09:52 + 10:00"
     },
     {
       "name": "Assiniboine Golf Club",
@@ -2365,11 +2223,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:00",
-          "price": 73.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:07",
           "price": 73.0,
           "is_hot_deal": false
@@ -2623,14 +2476,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "10:52"
-          },
-          {
-            "time": "11:00"
-          }
-        ],
-        [
-          {
             "time": "11:07"
           },
           {
@@ -2807,7 +2652,7 @@
         ]
       ],
       "earliest_slot": "10:37",
-      "earliest_2team": "10:52 + 11:00"
+      "earliest_2team": "11:07 + 11:15"
     },
     {
       "name": "Southside Golf Course",
@@ -2821,11 +2666,6 @@
         },
         {
           "time": "14:48",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
-          "time": "14:56",
           "price": null,
           "is_hot_deal": false
         },
@@ -2992,14 +2832,6 @@
           },
           {
             "time": "14:48"
-          }
-        ],
-        [
-          {
-            "time": "14:48"
-          },
-          {
-            "time": "14:56"
           }
         ],
         [
@@ -3172,11 +3004,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "14:52",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "15:52",
           "price": null,
           "is_hot_deal": false
@@ -3302,7 +3129,7 @@
           }
         ]
       ],
-      "earliest_slot": "14:52",
+      "earliest_slot": "15:52",
       "earliest_2team": "15:52 + 16:00"
     },
     {
@@ -3826,7 +3653,7 @@
       "status": "green",
       "slots": [
         {
-          "time": "10:00",
+          "time": "11:37",
           "price": 57.0,
           "is_hot_deal": false
         },
@@ -3966,11 +3793,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "17:15",
-          "price": 38.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "17:22",
           "price": 38.0,
           "is_hot_deal": false
@@ -4037,6 +3859,14 @@
       "booking_url": "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=TRAN&FromCourseWebsite=true",
       "cart_mandatory": false,
       "consecutive_slots": [
+        [
+          {
+            "time": "11:37"
+          },
+          {
+            "time": "11:45"
+          }
+        ],
         [
           {
             "time": "14:37"
@@ -4158,8 +3988,8 @@
           }
         ]
       ],
-      "earliest_slot": "10:00",
-      "earliest_2team": "14:37 + 14:45"
+      "earliest_slot": "11:37",
+      "earliest_2team": "11:37 + 11:45"
     }
   ],
   "stats": {
