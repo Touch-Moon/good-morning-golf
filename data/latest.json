@@ -47,11 +47,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:12",
-          "price": 56.7,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:20",
           "price": 56.7,
           "is_hot_deal": false
@@ -320,14 +315,6 @@
           },
           {
             "time": "09:56"
-          }
-        ],
-        [
-          {
-            "time": "10:12"
-          },
-          {
-            "time": "10:20"
           }
         ],
         [
@@ -1930,13 +1917,8 @@
     {
       "name": "Bridges Golf Course",
       "source": "individual",
-      "status": "green",
+      "status": "afternoon",
       "slots": [
-        {
-          "time": "09:06",
-          "price": 99,
-          "is_hot_deal": false
-        },
         {
           "time": "12:06",
           "price": 99,
@@ -2266,7 +2248,7 @@
           }
         ]
       ],
-      "earliest_slot": "09:06",
+      "earliest_slot": "12:06",
       "earliest_2team": "12:06 + 12:15"
     },
     {
@@ -2341,11 +2323,6 @@
         },
         {
           "time": "17:45",
-          "price": 47.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "18:15",
           "price": 47.0,
           "is_hot_deal": false
         },
@@ -2578,14 +2555,9 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:45",
+          "time": "09:54",
           "price": null,
           "is_hot_deal": true
-        },
-        {
-          "time": "09:54",
-          "price": 85.0,
-          "is_hot_deal": false
         },
         {
           "time": "10:03",
@@ -2693,14 +2665,6 @@
           },
           {
             "time": "07:15"
-          }
-        ],
-        [
-          {
-            "time": "09:45"
-          },
-          {
-            "time": "09:54"
           }
         ],
         [
@@ -9214,7 +9178,7 @@
     "golfnow_found": 0,
     "golfnow_dupes": 4,
     "bridges_coupon": "n/a",
-    "with_slots": 13,
+    "with_slots": 12,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
     "notion_export": "success (0 created, 18 updated)",
