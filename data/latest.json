@@ -1667,6 +1667,21 @@
           "is_hot_deal": false
         },
         {
+          "time": "13:00",
+          "price": 79,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:09",
+          "price": 79,
+          "is_hot_deal": false
+        },
+        {
+          "time": "13:18",
+          "price": 79,
+          "is_hot_deal": false
+        },
+        {
           "time": "13:45",
           "price": 79,
           "is_hot_deal": false
@@ -1777,6 +1792,30 @@
           },
           {
             "time": "12:51"
+          }
+        ],
+        [
+          {
+            "time": "12:51"
+          },
+          {
+            "time": "13:00"
+          }
+        ],
+        [
+          {
+            "time": "13:00"
+          },
+          {
+            "time": "13:09"
+          }
+        ],
+        [
+          {
+            "time": "13:09"
+          },
+          {
+            "time": "13:18"
           }
         ],
         [
@@ -1901,11 +1940,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "16:22",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "16:30",
           "price": 68.0,
           "is_hot_deal": false
@@ -1999,14 +2033,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "16:22"
-          },
-          {
-            "time": "16:30"
-          }
-        ],
-        [
-          {
             "time": "16:37"
           },
           {
@@ -2062,8 +2088,8 @@
           }
         ]
       ],
-      "earliest_slot": "16:22",
-      "earliest_2team": "16:22 + 16:30"
+      "earliest_slot": "16:30",
+      "earliest_2team": "16:37 + 16:45"
     },
     {
       "name": "Kingswood Golf & Country Club",
@@ -3143,11 +3169,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "09:08",
-          "price": 77.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "09:32",
           "price": 77.0,
           "is_hot_deal": false
@@ -3504,14 +3525,6 @@
           },
           {
             "time": "08:36"
-          }
-        ],
-        [
-          {
-            "time": "09:00"
-          },
-          {
-            "time": "09:08"
           }
         ],
         [
@@ -4335,6 +4348,11 @@
           "is_hot_deal": false
         },
         {
+          "time": "09:00",
+          "price": 75.76,
+          "is_hot_deal": false
+        },
+        {
           "time": "09:07",
           "price": 75.76,
           "is_hot_deal": false
@@ -4718,6 +4736,14 @@
           },
           {
             "time": "08:45"
+          }
+        ],
+        [
+          {
+            "time": "08:52"
+          },
+          {
+            "time": "09:00"
           }
         ],
         [
@@ -6353,11 +6379,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "17:00",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "17:22",
           "price": 48.0,
           "is_hot_deal": false
@@ -6482,14 +6503,6 @@
           },
           {
             "time": "16:45"
-          }
-        ],
-        [
-          {
-            "time": "16:52"
-          },
-          {
-            "time": "17:00"
           }
         ],
         [
