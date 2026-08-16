@@ -832,11 +832,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "13:00",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:07",
           "price": null,
           "is_hot_deal": false
@@ -1347,22 +1342,6 @@
           },
           {
             "time": "12:52"
-          }
-        ],
-        [
-          {
-            "time": "12:52"
-          },
-          {
-            "time": "13:00"
-          }
-        ],
-        [
-          {
-            "time": "13:00"
-          },
-          {
-            "time": "13:07"
           }
         ],
         [
@@ -3165,11 +3144,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "13:37",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:45",
           "price": 68.0,
           "is_hot_deal": false
@@ -3383,14 +3357,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "13:37"
-          },
-          {
-            "time": "13:45"
-          }
-        ],
-        [
-          {
             "time": "14:22"
           },
           {
@@ -3510,8 +3476,8 @@
           }
         ]
       ],
-      "earliest_slot": "13:37",
-      "earliest_2team": "13:37 + 13:45"
+      "earliest_slot": "13:45",
+      "earliest_2team": "14:22 + 14:30"
     },
     {
       "name": "Kingswood Golf & Country Club",
@@ -4576,11 +4542,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:08",
-          "price": 62,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:36",
           "price": 62,
           "is_hot_deal": false
@@ -4818,14 +4779,6 @@
           },
           {
             "time": "09:58"
-          }
-        ],
-        [
-          {
-            "time": "09:58"
-          },
-          {
-            "time": "10:08"
           }
         ],
         [
@@ -9733,7 +9686,7 @@
     "with_slots": 13,
     "telegram": "skipped (not Monday)",
     "webapp_import": "success",
-    "notion_export": "success (18 created, 0 updated)",
+    "notion_export": "success (0 created, 18 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-08-22.csv"
   }
