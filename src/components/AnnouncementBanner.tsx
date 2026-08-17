@@ -5,6 +5,7 @@ import s from "./AnnouncementBanner.module.scss";
 const FIXED_MEMBERS = ["이금정", "전지호", "박대영", "김기태", "문진철"];
 
 type ParsedLine =
+  | { type: "date"; value: string }
   | { type: "venue"; value: string }
   | { type: "time"; value: string }
   | { type: "attending"; value: string }
@@ -13,6 +14,7 @@ type ParsedLine =
 function parseMessage(message: string, maskNames: boolean): ParsedLine[] {
   return message.split("\n").flatMap((line): ParsedLine[] => {
     if (/^이번\s*주$/.test(line.trim())) return [];
+    if (line.startsWith("날짜: "))     return [{ type: "date",     value: line.slice(4) }];
     if (line.startsWith("장소: "))     return [{ type: "venue",    value: line.slice(4) }];
     if (line.startsWith("시간: "))     return [{ type: "time",     value: line.slice(4) }];
     if (line.startsWith("참가인원: ")) {
@@ -33,6 +35,14 @@ function parseMessage(message: string, maskNames: boolean): ParsedLine[] {
 }
 
 const ICONS: Record<string, React.ReactNode> = {
+  date: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  ),
   venue: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="10" r="3" />

@@ -3,6 +3,9 @@
 import { revalidatePath } from "next/cache";
 import { supabase, supabaseAdmin } from "@/lib/supabase";
 import { requireAdmin } from "@/lib/auth";
+import { sendTelegram } from "@/lib/telegram";
+
+const SITE_URL = "https://good-morning-golf.vercel.app/";
 
 // ─── Courses (WS-A: 등록/수정/삭제) ──────────────────────────────────────────────
 
@@ -207,6 +210,13 @@ export async function upsertAnnouncement(formData: FormData) {
     if (error) throw new Error(error.message);
   }
 
+  if (isActive) {
+    void sendTelegram(
+      process.env.TELEGRAM_ANNOUNCEMENT_CHAT_ID,
+      `📢 *공지 업데이트*\n\n${message}\n\n🌐 ${SITE_URL}`,
+    );
+  }
+
   revalidatePath("/admin/announcements");
   revalidatePath("/");
 }
@@ -227,11 +237,21 @@ export async function setAnnouncementActive(id: string, isActive: boolean) {
   if (isActive) {
     await supabase.from("announcements").update({ is_active: false }).neq("id", id);
   }
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from("announcements")
     .update({ is_active: isActive })
-    .eq("id", id);
+    .eq("id", id)
+    .select("message")
+    .single();
   if (error) throw new Error(error.message);
+
+  if (isActive && data) {
+    void sendTelegram(
+      process.env.TELEGRAM_ANNOUNCEMENT_CHAT_ID,
+      `📢 *공지 업데이트*\n\n${data.message}\n\n🌐 ${SITE_URL}`,
+    );
+  }
+
   revalidatePath("/admin/announcements");
   revalidatePath("/");
 }

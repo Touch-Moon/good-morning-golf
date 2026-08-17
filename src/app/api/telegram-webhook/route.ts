@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { sendTelegram } from '@/lib/telegram'
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
 const TELEGRAM_WEBHOOK_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET
 const ALLOWED_CHAT_ID = process.env.ALLOWED_TELEGRAM_CHAT_ID
 const GITHUB_PAT_WORKFLOW = process.env.GITHUB_PAT_WORKFLOW
@@ -16,24 +16,6 @@ interface TelegramMessage {
 interface TelegramUpdate {
   message?: TelegramMessage
   edited_message?: TelegramMessage
-}
-
-async function sendTelegram(chatId: string | number, text: string): Promise<void> {
-  if (!TELEGRAM_BOT_TOKEN) return
-  try {
-    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text,
-        parse_mode: 'Markdown',
-        disable_web_page_preview: true,
-      }),
-    })
-  } catch {
-    // Best-effort; do not fail the webhook
-  }
 }
 
 async function triggerWorkflow(): Promise<{ ok: boolean; status: number; detail?: string }> {
@@ -82,12 +64,19 @@ export async function POST(request: NextRequest) {
   const chatId = String(message.chat.id)
   const text = (message.text ?? '').trim()
 
-  // 3) chat ID whitelist (silent ignore)
+  // 3) /id — 새 채팅방을 화이트리스트에 등록하기 전, chat_id를 확인하기 위한 용도.
+  //    화이트리스트 체크보다 먼저 처리해서 등록 안 된 방에서도 동작해야 함.
+  if (text.startsWith('/id')) {
+    await sendTelegram(chatId, `🆔 이 채팅방 ID: \`${chatId}\``)
+    return NextResponse.json({ ok: true })
+  }
+
+  // 4) chat ID whitelist (silent ignore)
   if (ALLOWED_CHAT_ID && chatId !== ALLOWED_CHAT_ID) {
     return NextResponse.json({ ok: true })
   }
 
-  // 4) Command 분기
+  // 5) Command 분기
   if (text.startsWith('/scrape')) {
     const result = await triggerWorkflow()
     if (result.ok) {
@@ -106,8 +95,9 @@ export async function POST(request: NextRequest) {
   } else if (text.startsWith('/help') || text.startsWith('/start')) {
     const help = [
       '*Golf Agent 명령어*',
-      '`/scrape` — 즉시 크롤링 시작 (월~금 자동 외에도 수동 실행)',
+      '`/scrape` — 즉시 크롤링 시작 (토요일 자동 실행 외에도 수동 실행)',
       '`/status` — 봇 상태 확인',
+      '`/id` — 이 채팅방 ID 확인 (새 방 등록 시 사용)',
       '`/help` — 이 도움말',
       '',
       '🌐 https://good-morning-golf.vercel.app/',

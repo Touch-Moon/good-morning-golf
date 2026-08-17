@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { formatTime } from "@/lib/data";
+import { formatTime, formatDate } from "@/lib/data";
 import { upsertAnnouncement } from "../actions";
 import s from "./WeeklyBookingForm.module.scss";
 
@@ -12,8 +12,16 @@ const WINNIPEG_OFFSET = "-05:00";
 
 type CourseSlim = { name: string; slots: string[] };
 
-function buildMessage(courseName: string, times: string[], attending: string[]): string {
+function buildMessage(
+  bookingDate: string,
+  courseName: string,
+  times: string[],
+  attending: string[],
+): string {
   const lines: string[] = [];
+  if (bookingDate) {
+    lines.push(`날짜: ${formatDate(bookingDate)}`);
+  }
   lines.push(`장소: ${courseName}`);
   if (times.length > 0) {
     lines.push(`시간: ${times.map(formatTime).join(", ")}`);
@@ -57,7 +65,7 @@ export function WeeklyBookingForm({
   ];
 
   const preview = selectedCourse
-    ? buildMessage(selectedCourse, selectedTimes, allAttending)
+    ? buildMessage(bookingDate, selectedCourse, selectedTimes, allAttending)
     : "";
 
   const expiresAt = buildExpiresAt(bookingDate, selectedTimes);
