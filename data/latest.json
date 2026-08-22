@@ -2726,11 +2726,6 @@
       "status": "afternoon",
       "slots": [
         {
-          "time": "14:07",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "14:15",
           "price": 68.0,
           "is_hot_deal": false
@@ -2752,11 +2747,6 @@
         },
         {
           "time": "14:45",
-          "price": 68.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "15:00",
           "price": 68.0,
           "is_hot_deal": false
         },
@@ -2944,14 +2934,6 @@
       "consecutive_slots": [
         [
           {
-            "time": "14:07"
-          },
-          {
-            "time": "14:15"
-          }
-        ],
-        [
-          {
             "time": "14:22"
           },
           {
@@ -3095,8 +3077,8 @@
           }
         ]
       ],
-      "earliest_slot": "14:07",
-      "earliest_2team": "14:07 + 14:15"
+      "earliest_slot": "14:15",
+      "earliest_2team": "14:22 + 14:30"
     },
     {
       "name": "Kingswood Golf & Country Club",
@@ -5069,11 +5051,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:55",
-          "price": 62,
-          "is_hot_deal": false
-        },
-        {
           "time": "11:14",
           "price": 62,
           "is_hot_deal": false
@@ -5354,14 +5331,6 @@
           },
           {
             "time": "10:46"
-          }
-        ],
-        [
-          {
-            "time": "10:46"
-          },
-          {
-            "time": "10:55"
           }
         ],
         [
@@ -7604,11 +7573,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:30",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "13:00",
           "price": null,
           "is_hot_deal": false
@@ -7844,14 +7808,6 @@
         ],
         [
           {
-            "time": "08:22"
-          },
-          {
-            "time": "08:30"
-          }
-        ],
-        [
-          {
             "time": "13:07"
           },
           {
@@ -8060,11 +8016,6 @@
         },
         {
           "time": "08:22",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
-          "time": "08:30",
           "price": 48.0,
           "is_hot_deal": false
         },
@@ -8393,14 +8344,6 @@
           },
           {
             "time": "08:15"
-          }
-        ],
-        [
-          {
-            "time": "08:22"
-          },
-          {
-            "time": "08:30"
           }
         ],
         [
@@ -10128,7 +10071,7 @@
     "with_slots": 14,
     "telegram": "skipped (scheduled run)",
     "webapp_import": "success",
-    "notion_export": "success (18 created, 0 updated)",
+    "notion_export": "success (0 created, 18 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-08-29.csv"
   }
