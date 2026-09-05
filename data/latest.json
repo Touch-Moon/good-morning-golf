@@ -5230,11 +5230,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "08:48",
-          "price": null,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:00",
           "price": null,
           "is_hot_deal": false
@@ -5306,6 +5301,11 @@
         },
         {
           "time": "11:52",
+          "price": null,
+          "is_hot_deal": false
+        },
+        {
+          "time": "12:00",
           "price": null,
           "is_hot_deal": false
         },
@@ -5778,14 +5778,6 @@
         ],
         [
           {
-            "time": "08:40"
-          },
-          {
-            "time": "08:48"
-          }
-        ],
-        [
-          {
             "time": "10:00"
           },
           {
@@ -5894,6 +5886,22 @@
           },
           {
             "time": "11:52"
+          }
+        ],
+        [
+          {
+            "time": "11:52"
+          },
+          {
+            "time": "12:00"
+          }
+        ],
+        [
+          {
+            "time": "12:00"
+          },
+          {
+            "time": "12:08"
           }
         ],
         [
@@ -6613,11 +6621,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "11:30",
-          "price": 48.0,
-          "is_hot_deal": false
-        },
-        {
           "time": "14:15",
           "price": 48.0,
           "is_hot_deal": false
@@ -6795,14 +6798,6 @@
           },
           {
             "time": "11:15"
-          }
-        ],
-        [
-          {
-            "time": "11:22"
-          },
-          {
-            "time": "11:30"
           }
         ],
         [
@@ -7831,7 +7826,7 @@
     "with_slots": 13,
     "telegram": "skipped (scheduled run)",
     "webapp_import": "success",
-    "notion_export": "success (18 created, 0 updated)",
+    "notion_export": "success (0 created, 18 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-09-12.csv"
   }
