@@ -3087,16 +3087,6 @@
           "is_hot_deal": false
         },
         {
-          "time": "10:37",
-          "price": 75.76,
-          "is_hot_deal": false
-        },
-        {
-          "time": "10:45",
-          "price": 75.76,
-          "is_hot_deal": false
-        },
-        {
           "time": "10:52",
           "price": 75.76,
           "is_hot_deal": false
@@ -3439,14 +3429,6 @@
           },
           {
             "time": "10:30"
-          }
-        ],
-        [
-          {
-            "time": "10:37"
-          },
-          {
-            "time": "10:45"
           }
         ],
         [
@@ -6769,7 +6751,7 @@
     "with_slots": 11,
     "telegram": "skipped (scheduled run)",
     "webapp_import": "failed",
-    "notion_export": "success (18 created, 0 updated)",
+    "notion_export": "success (0 created, 18 updated)",
     "obsidian_export": "failed",
     "csv_backup": "/home/runner/work/golf-agent/golf-agent/backup/2026-09-26.csv"
   }
